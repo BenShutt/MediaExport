@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
+        "version" : "5.8.0"
+      }
+    },
+    {
+      "identity" : "datarequest",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BenShutt/DataRequest",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e9bd335681c5e1a876d4a2d37aef39dec1888869"
+      }
+    }
+  ],
+  "version" : 2
+}
