@@ -20,6 +20,7 @@
 		B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679F2AB8C9AD00F39D84 /* APIRequest.swift */; };
 		B82467A32AB8D1B000F39D84 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A22AB8D1B000F39D84 /* Status.swift */; };
 		B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A52AB8D31900F39D84 /* MediaFile.swift */; };
+		B82467A92AB8D4DC00F39D84 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A82AB8D4DC00F39D84 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		B824679F2AB8C9AD00F39D84 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B82467A22AB8D1B000F39D84 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		B82467A52AB8D31900F39D84 /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
+		B82467A82AB8D4DC00F39D84 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		B82467A12AB8D1A800F39D84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B82467A82AB8D4DC00F39D84 /* APIError.swift */,
 				B82467A22AB8D1B000F39D84 /* Status.swift */,
 				B82467A52AB8D31900F39D84 /* MediaFile.swift */,
 			);
@@ -304,6 +307,7 @@
 				B82467A32AB8D1B000F39D84 /* Status.swift in Sources */,
 				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
 				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
+				B82467A92AB8D4DC00F39D84 /* APIError.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,
 				B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */,
 			);

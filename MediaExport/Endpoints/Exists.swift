@@ -13,3 +13,14 @@ struct Exists: APIRequest {
     let endpoint = "/api/exists"
     var mediaFile: MediaFile
 }
+
+// MARK: - Extensions
+
+extension Exists {
+
+    static func exists(mediaFile: MediaFile) async throws -> Bool {
+        let status = try await Exists(mediaFile: mediaFile).request().status
+        guard [0, 1].contains(status) else { throw APIError.status(status) }
+        return status == 1
+    }
+}

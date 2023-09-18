@@ -20,3 +20,13 @@ struct Upload: APIRequest, DataBody {
         }
     }
 }
+
+// MARK: - Extensions
+
+extension Upload {
+
+    static func upload(mediaFile: MediaFile) async throws {
+        let status = try await Upload(mediaFile: mediaFile).request().status
+        guard status == 0 else { throw APIError.status(status) }
+    }
+}
