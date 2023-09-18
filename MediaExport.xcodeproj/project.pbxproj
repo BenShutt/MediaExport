@@ -21,6 +21,10 @@
 		B82467A32AB8D1B000F39D84 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A22AB8D1B000F39D84 /* Status.swift */; };
 		B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A52AB8D31900F39D84 /* MediaFile.swift */; };
 		B82467A92AB8D4DC00F39D84 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A82AB8D4DC00F39D84 /* APIError.swift */; };
+		B82467AC2AB8D6EA00F39D84 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */; };
+		B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */; };
+		B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467B02AB8DB4E00F39D84 /* LoadState.swift */; };
+		B82467B42AB8DC0800F39D84 /* String+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467B32AB8DC0800F39D84 /* String+Values.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		B82467A22AB8D1B000F39D84 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		B82467A52AB8D31900F39D84 /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
 		B82467A82AB8D4DC00F39D84 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
+		B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAsset+Extensions.swift"; sourceTree = "<group>"; };
+		B82467B02AB8DB4E00F39D84 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		B82467B32AB8DC0800F39D84 /* String+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Values.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +117,12 @@
 		B824676B2AB8C19B00F39D84 /* MediaExport */ = {
 			isa = PBXGroup;
 			children = (
+				B82467B22AB8DBFE00F39D84 /* Resources */,
+				B82467AF2AB8D97B00F39D84 /* Views */,
+				B82467AA2AB8D6DE00F39D84 /* PhotoLibrary */,
 				B82467A12AB8D1A800F39D84 /* Models */,
 				B82467972AB8C7E900F39D84 /* Endpoints */,
 				B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */,
-				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
 				B82467702AB8C19C00F39D84 /* Assets.xcassets */,
 				B82467722AB8C19C00F39D84 /* MediaExport.entitlements */,
 				B82467732AB8C19C00F39D84 /* Preview Content */,
@@ -163,6 +173,32 @@
 				B82467A52AB8D31900F39D84 /* MediaFile.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B82467AA2AB8D6DE00F39D84 /* PhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */,
+				B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */,
+			);
+			path = PhotoLibrary;
+			sourceTree = "<group>";
+		};
+		B82467AF2AB8D97B00F39D84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
+				B82467B02AB8DB4E00F39D84 /* LoadState.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B82467B22AB8DBFE00F39D84 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B82467B32AB8DC0800F39D84 /* String+Values.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,9 +340,13 @@
 			files = (
 				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
 				B824679C2AB8C98700F39D84 /* Upload.swift in Sources */,
+				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
+				B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */,
 				B82467A32AB8D1B000F39D84 /* Status.swift in Sources */,
 				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
+				B82467AC2AB8D6EA00F39D84 /* PhotoLibrary.swift in Sources */,
 				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
+				B82467B42AB8DC0800F39D84 /* String+Values.swift in Sources */,
 				B82467A92AB8D4DC00F39D84 /* APIError.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,
 				B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */,
