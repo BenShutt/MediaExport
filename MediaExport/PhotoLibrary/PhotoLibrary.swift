@@ -41,7 +41,7 @@ final class PhotoLibrary {
         let maxVideoSize = try await videos.maxSize()
         let maxSize = max(maxImageSize, maxVideoSize)
 
-        let formatter: ByteCountFormatter = ByteCountFormatter()
+        let formatter = ByteCountFormatter()
         formatter.countStyle = .binary
         let formattedSize = formatter.string(fromByteCount: maxSize)
         print("Max size: \(formattedSize)")

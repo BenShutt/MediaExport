@@ -10,7 +10,7 @@ import Foundation
 import DataRequest
 
 struct Upload: APIRequest, DataBody {
-    
+
     let endpoint = "/api/upload"
     var mediaFile: MediaFile
 

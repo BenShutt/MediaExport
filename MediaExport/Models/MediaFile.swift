@@ -45,7 +45,7 @@ extension MediaFile {
 private extension MediaFile.MediaType {
 
     var pathExtensions: Set<String> {
-        var set =  Set([rawValue])
+        var set = Set([rawValue])
         guard case .jpeg = self else { return set }
         set.insert("jpg")
         return set

@@ -11,7 +11,7 @@ import Alamofire
 import DataRequest
 
 protocol APIRequest: JSONDataRequest where ResponseBody == Status {
-    
+
     /// The media file to query
     var mediaFile: MediaFile { get }
 
@@ -28,7 +28,7 @@ extension APIRequest {
             HTTPHeader(name: "X-File-Name", value: mediaFile.url.lastPathComponent)
         ])
     }
-    
+
     var urlComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "http"

@@ -26,8 +26,7 @@ struct ContentView: View {
             if state.isLoading {
                 ProgressView()
                     .progressViewStyle(.circular)
-            }
-            else if let imageName = state.imageName {
+            } else if let imageName = state.imageName {
                 Image(systemName: imageName)
                     .resizable()
                     .foregroundColor(state.color)
