@@ -20,13 +20,8 @@ enum LoadState<Success> {
         return true
     }
 
-    var title: String {
-        switch self {
-        case .pending: return .LoadState.pending
-        case .loading: return .LoadState.loading
-        case let .success(items): return .LoadState.success(count: items.count)
-        case let .failure(error): return .LoadState.failure(message: error.localizedDescription)
-        }
+    var title: LocalizedStringKey {
+        return "TODO" // TODO!
     }
 
     var imageName: String? {

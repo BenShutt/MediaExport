@@ -33,9 +33,7 @@ final class PhotoLibrary {
     static func fetchAll() async throws -> [PHAsset] {
         let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
         guard status == .authorized else { throw PhotoLibraryError.authorization }
-        return mediaTypes.flatMap { mediaType in
-            fetchAll(for: mediaType)
-        }
+        return mediaTypes.flatMap { fetchAll(for: $0) }
     }
 
     static func format(byteCount: Int64) -> String {

@@ -11,52 +11,17 @@ import Photos
 
 struct ContentView: View {
 
-    @State private var state: LoadState<PHAsset> = .pending
-
-    @MainActor func execute() async {
-        state = .loading
-        do {
-            state = try await .success(PhotoLibrary.fetchAll())
-        } catch {
-            state = .failure(error)
-        }
-    }
+    @State private var path = NavigationPath()
 
     var body: some View {
-        VStack(spacing: 20) {
-            if state.isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
-            } else if let imageName = state.imageName {
-                Image(systemName: imageName)
-                    .resizable()
-                    .foregroundColor(state.color)
-                    .frame(width: 60, height: 60)
-            }
-
-            Text(verbatim: state.title)
-                .font(.largeTitle)
-                .foregroundColor(.black)
-
-            Button {
-                Task {
-                    await execute()
-                }
-            } label: {
-                Text(verbatim: .execute)
-                    .font(.headline)
-            }
-            .disabled(state.isLoading)
+        NavigationStack(path: $path) {
+            AssetsScreen()
         }
-        .padding(20)
     }
 }
 
-// MARK: - PreviewProvider
+// MARK: - Preview
 
-struct ContentView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

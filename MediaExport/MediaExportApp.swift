@@ -10,6 +10,7 @@ import SwiftUI
 
 @main
 struct MediaExportApp: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()

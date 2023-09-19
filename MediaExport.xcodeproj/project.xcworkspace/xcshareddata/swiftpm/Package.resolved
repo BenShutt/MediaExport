@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "cubefoundation-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/3sidedcube/cubefoundation-ios",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "b9d44aff2dbfd1912a21c56bcd2c6d489ee396f4"
+      }
+    },
+    {
       "identity" : "datarequest",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/BenShutt/DataRequest",
