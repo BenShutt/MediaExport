@@ -7,15 +7,16 @@
 //
 
 import SwiftUI
+import Photos
 
 struct ContentView: View {
 
-    @State private var state: LoadState = .pending
+    @State private var state: LoadState<PHAsset> = .pending
 
     @MainActor func execute() async {
         state = .loading
         do {
-            state = try await .success(PhotoLibrary.load())
+            state = try await .success(PhotoLibrary.fetchAll())
         } catch {
             state = .failure(error)
         }

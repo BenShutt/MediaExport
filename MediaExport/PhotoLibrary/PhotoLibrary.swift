@@ -9,44 +9,39 @@
 import Foundation
 import Photos
 
-struct File {
-    var mediaType: PHAssetMediaType
-}
-
 final class PhotoLibrary {
 
     static func requestAuthorization() {
         PHPhotoLibrary.requestAuthorization(for: .readWrite) { _ in }
     }
 
-    static var mediaTypes: [PHAssetMediaType] {
-        [.image, .video, .audio, .unknown]
+    private static var mediaTypes: [PHAssetMediaType] {
+        [.unknown, .image, .video, .audio]
     }
 
-    static func load() async throws -> [File] {
+    private static func fetchAll(for mediaType: PHAssetMediaType) -> [PHAsset] {
+        var assets: [PHAsset] = []
+        PHAsset.fetchAssets(
+            with: mediaType,
+            options: PHFetchOptions()
+        ).enumerateObjects { asset, _, _ in
+            assets.append(asset)
+        }
+        return assets
+    }
+
+    static func fetchAll() async throws -> [PHAsset] {
         let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
         guard status == .authorized else { throw PhotoLibraryError.authorization }
+        return mediaTypes.flatMap { mediaType in
+            fetchAll(for: mediaType)
+        }
+    }
 
-        let images = PHAsset.fetch(with: .image)
-        let videos = PHAsset.fetch(with: .video)
-        let audios = PHAsset.fetch(with: .audio)
-        let unknowns = PHAsset.fetch(with: .unknown)
-
-        print("Images count = \(images.count)")
-        print("Videos count = \(videos.count)")
-        print("Audios count = \(audios.count)")
-        print("Unknowns count = \(unknowns.count)")
-
-        let maxImageSize = try await images.maxSize()
-        let maxVideoSize = try await videos.maxSize()
-        let maxSize = max(maxImageSize, maxVideoSize)
-
+    static func format(byteCount: Int64) -> String {
         let formatter = ByteCountFormatter()
         formatter.countStyle = .binary
-        let formattedSize = formatter.string(fromByteCount: maxSize)
-        print("Max size: \(formattedSize)")
-
-        return []
+        return formatter.string(fromByteCount: byteCount)
     }
 }
 

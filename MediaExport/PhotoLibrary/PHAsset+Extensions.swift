@@ -9,15 +9,6 @@
 import Foundation
 import Photos
 
-// MARK: - Fetch
-
-extension PHAsset {
-
-    static func fetch(with mediaType: PHAssetMediaType) -> PHFetchResult<PHAsset> {
-        PHAsset.fetchAssets(with: mediaType, options: PHFetchOptions())
-    }
-}
-
 // MARK: - Resources
 
 extension PHAsset {
@@ -49,7 +40,15 @@ extension PHAsset {
 
 extension PHAsset {
 
-    func imageData() async throws -> Data {
+    func data() async throws -> Data {
+        switch mediaType {
+        case .image: return try await imageData()
+        case .video: return try await videoData()
+        default: throw PHAssetError.data
+        }
+    }
+
+    private func imageData() async throws -> Data {
         let data = await withCheckedContinuation { continuation in
             PHCachingImageManager().requestImageDataAndOrientation(
                 for: self,
@@ -62,7 +61,7 @@ extension PHAsset {
         return data
     }
 
-    func videoData() async throws -> Data {
+    private func videoData() async throws -> Data {
         let avAsset = await withCheckedContinuation { continuation in
             PHCachingImageManager().requestAVAsset(
                 forVideo: self,
@@ -77,34 +76,15 @@ extension PHAsset {
     }
 }
 
-// MARK: - Size
-
-extension PHFetchResult where ObjectType == PHAsset {
-
-    func maxSize() async throws -> Int64 {
-        var maxSize: Int64 = 0
-        var assetError: Error?
-
-        enumerateObjects { asset, _, _ in
-            guard assetError == nil else { return }
-            do {
-                maxSize = max(try asset.fileSize, maxSize)
-            } catch {
-                assetError = error
-            }
-        }
-
-        if let assetError { throw assetError }
-        return maxSize
-    }
-}
-
 // MARK: - PHAssetError
 
 enum PHAssetError: Error {
 
     case firstResource
     case fileSize
+
     case imageData
     case videoData
+
+    case data
 }

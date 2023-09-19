@@ -35,6 +35,7 @@ extension APIRequest {
         components.host = "localhost"
         components.port = 8000
         components.path = endpoint
+        components.queryItems = nil
         return components
     }
 }

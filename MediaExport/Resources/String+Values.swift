@@ -14,7 +14,7 @@ extension String {
 
     struct LoadState {
 
-        static let pending = "Tap to start"
+        static let pending = "Pending"
         static let loading = "Loading..."
 
         static func success(count: Int) -> String {

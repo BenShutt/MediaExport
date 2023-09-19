@@ -8,11 +8,11 @@
 
 import SwiftUI
 
-enum LoadState {
+enum LoadState<Success> {
 
     case pending
     case loading
-    case success([File])
+    case success([Success])
     case failure(Error)
 
     var isLoading: Bool {
@@ -24,7 +24,7 @@ enum LoadState {
         switch self {
         case .pending: return .LoadState.pending
         case .loading: return .LoadState.loading
-        case let .success(media): return .LoadState.success(count: media.count)
+        case let .success(items): return .LoadState.success(count: items.count)
         case let .failure(error): return .LoadState.failure(message: error.localizedDescription)
         }
     }
