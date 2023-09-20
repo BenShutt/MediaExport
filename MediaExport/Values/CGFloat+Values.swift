@@ -18,6 +18,8 @@ extension CGFloat {
     static let hPaddingLarge: CGFloat = 40
     static let vPaddingLarge: CGFloat = 32
 
+    static let vPaddingSmall: CGFloat = 8
+
     static let corners: CGFloat = 10
 }
 

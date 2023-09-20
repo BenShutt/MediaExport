@@ -27,20 +27,16 @@ extension Screen {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                Text(title)
-                    .header()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, .vPadding)
-
                 Text(subtitle)
                     .body()
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.vertical, .vPadding)
 
                 content
             }
             .multilineTextAlignment(.leading)
-            .padding(EdgeInsets.padding)
+            .padding(.top, .vPaddingSmall)
+            .padding(.horizontal, .hPadding)
+            .padding(.bottom, .vPadding)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
@@ -51,5 +47,6 @@ extension Screen {
         .onAppear {
             onScreenAppear()
         }
+        .navigationTitle(title)
     }
 }

@@ -26,7 +26,7 @@ struct AssetsScreen: Screen {
 
     var content: some View {
         StateView(state: assetManager.state)
-            .padding(.top, .vPadding)
+            .padding(.top, .vPaddingLarge)
     }
 
     func onScreenAppear() {

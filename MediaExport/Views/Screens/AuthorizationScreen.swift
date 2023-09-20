@@ -28,8 +28,8 @@ struct AuthorizationScreen: Screen {
         Image("access_photo_library")
             .resizable()
             .scaledToFit()
-            .frame(width: UIScreen.main.bounds.width * 0.75)
-            .padding(.top, .vPadding)
+            .frame(width: UIScreen.main.bounds.width * 0.666)
+            .padding(.top, .vPaddingLarge)
     }
 
     private func onContinue() {
