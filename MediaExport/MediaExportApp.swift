@@ -14,9 +14,6 @@ struct MediaExportApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .onAppear {
-                    PhotoLibrary.requestAuthorization()
-                }
         }
     }
 }

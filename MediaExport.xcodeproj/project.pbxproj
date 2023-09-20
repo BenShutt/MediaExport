@@ -100,8 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8979F9B2ABA273E003203C4 /* CubeFoundationSwiftUI in Frameworks */,
 				B8979F992ABA273E003203C4 /* CubeFoundation in Frameworks */,
+				B8979F9B2ABA273E003203C4 /* CubeFoundationSwiftUI in Frameworks */,
 				B824679A2AB8C97C00F39D84 /* DataRequest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,15 +146,15 @@
 		B824676B2AB8C19B00F39D84 /* MediaExport */ = {
 			isa = PBXGroup;
 			children = (
+				B8979FA52ABA27B7003203C4 /* Assets */,
+				B82467972AB8C7E900F39D84 /* Endpoints */,
+				B82467A12AB8D1A800F39D84 /* Models */,
+				B82467AA2AB8D6DE00F39D84 /* PhotoLibrary */,
 				B8A520BC2ABB36DF0013FA4A /* Utilities */,
 				B8979FAD2ABA290D003203C4 /* Values */,
-				B8979FA52ABA27B7003203C4 /* Assets */,
 				B82467AF2AB8D97B00F39D84 /* Views */,
-				B82467AA2AB8D6DE00F39D84 /* PhotoLibrary */,
-				B82467A12AB8D1A800F39D84 /* Models */,
-				B82467972AB8C7E900F39D84 /* Endpoints */,
-				B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */,
 				B82467722AB8C19C00F39D84 /* MediaExport.entitlements */,
+				B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */,
 			);
 			path = MediaExport;
 			sourceTree = "<group>";
@@ -180,8 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				B824679F2AB8C9AD00F39D84 /* APIRequest.swift */,
-				B824679B2AB8C98700F39D84 /* Upload.swift */,
 				B824679D2AB8C98D00F39D84 /* Exists.swift */,
+				B824679B2AB8C98700F39D84 /* Upload.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				B82467A82AB8D4DC00F39D84 /* APIError.swift */,
-				B82467A22AB8D1B000F39D84 /* Status.swift */,
 				B82467A52AB8D31900F39D84 /* MediaFile.swift */,
+				B82467A22AB8D1B000F39D84 /* Status.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 		B82467AA2AB8D6DE00F39D84 /* PhotoLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */,
 				B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */,
+				B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */,
 			);
 			path = PhotoLibrary;
 			sourceTree = "<group>";
@@ -208,10 +208,10 @@
 		B82467AF2AB8D97B00F39D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B8979FB42ABA3276003203C4 /* ViewModel */,
-				B8979FA82ABA2876003203C4 /* ViewModifiers */,
 				B8979F9C2ABA2779003203C4 /* Components */,
 				B8979F942ABA22F7003203C4 /* Screens */,
+				B8979FB42ABA3276003203C4 /* ViewModel */,
+				B8979FA82ABA2876003203C4 /* ViewModifiers */,
 				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
 			);
 			path = Views;
@@ -230,8 +230,8 @@
 		B8979F9C2ABA2779003203C4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B8979FA92ABA2882003203C4 /* StyledButton.swift */,
 				B85F96372ABAD95A004493B5 /* MediaGrid.swift */,
+				B8979FA92ABA2882003203C4 /* StyledButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -240,8 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				B82467702AB8C19C00F39D84 /* Assets.xcassets */,
-				B82467742AB8C19C00F39D84 /* PreviewAssets.xcassets */,
 				B8979F902ABA228F003203C4 /* Localizable.xcstrings */,
+				B82467742AB8C19C00F39D84 /* PreviewAssets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -258,9 +258,9 @@
 		B8979FAD2ABA290D003203C4 /* Values */ = {
 			isa = PBXGroup;
 			children = (
-				B8979FA62ABA2800003203C4 /* TextStyle+Values.swift */,
-				B8979FAB2ABA28C6003203C4 /* FigmaShadow+Values.swift */,
 				B8979FB02ABA2B8B003203C4 /* CGFloat+Values.swift */,
+				B8979FAB2ABA28C6003203C4 /* FigmaShadow+Values.swift */,
+				B8979FA62ABA2800003203C4 /* TextStyle+Values.swift */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -277,8 +277,8 @@
 		B8979FB72ABA3339003203C4 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				B8979F952ABA230F003203C4 /* Screen.swift */,
 				B8979FB82ABA3346003203C4 /* AppScreen.swift */,
+				B8979F952ABA230F003203C4 /* Screen.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -454,30 +454,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
-				B8979FAC2ABA28C6003203C4 /* FigmaShadow+Values.swift in Sources */,
-				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
-				B824679C2AB8C98700F39D84 /* Upload.swift in Sources */,
-				B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */,
-				B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */,
-				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
-				B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */,
-				B82467A32AB8D1B000F39D84 /* Status.swift in Sources */,
-				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
-				B82467AC2AB8D6EA00F39D84 /* PhotoLibrary.swift in Sources */,
-				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
-				B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */,
-				B8979FB32ABA3128003203C4 /* TmpScreen.swift in Sources */,
-				B8979FB12ABA2B8B003203C4 /* CGFloat+Values.swift in Sources */,
-				B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */,
-				B8979FB92ABA3346003203C4 /* AppScreen.swift in Sources */,
-				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
-				B8A520BE2ABB370B0013FA4A /* ColorUtilities.swift in Sources */,
 				B82467A92AB8D4DC00F39D84 /* APIError.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,
-				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
-				B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */,
+				B8979FB92ABA3346003203C4 /* AppScreen.swift in Sources */,
 				B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */,
+				B8979FB12ABA2B8B003203C4 /* CGFloat+Values.swift in Sources */,
+				B8A520BE2ABB370B0013FA4A /* ColorUtilities.swift in Sources */,
+				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
+				B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */,
+				B8979FAC2ABA28C6003203C4 /* FigmaShadow+Values.swift in Sources */,
+				B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */,
+				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
+				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
+				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
+				B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */,
+				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
+				B82467AC2AB8D6EA00F39D84 /* PhotoLibrary.swift in Sources */,
+				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
+				B82467A32AB8D1B000F39D84 /* Status.swift in Sources */,
+				B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */,
+				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
+				B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */,
+				B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */,
+				B8979FB32ABA3128003203C4 /* TmpScreen.swift in Sources */,
+				B824679C2AB8C98700F39D84 /* Upload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
