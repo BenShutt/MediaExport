@@ -14,6 +14,6 @@ extension FigmaShadow {
         x: 0,
         y: 2,
         blur: 15 * 2,
-        color: .appDarkGray.opacity(0.05)
+        color: .appDarkGray.opacity(0.15)
     )
 }
