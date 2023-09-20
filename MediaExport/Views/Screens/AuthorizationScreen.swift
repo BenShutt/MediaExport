@@ -27,7 +27,7 @@ struct AuthorizationScreen: View {
             Image("access_photo_library")
                 .resizable()
                 .scaledToFit()
-                .frame(width: UIScreen.main.bounds.width * 2/3)
+                .frame(width: UIScreen.main.bounds.width * 2 / 3)
                 .padding(.top, .vPaddingLarge)
         }
         .alert(
