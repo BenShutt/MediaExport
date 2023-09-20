@@ -15,7 +15,7 @@ struct AssetsScreen: AppScreen {
     var isEnabled: Bool { true }
 
     var content: some View {
-        EmptyView()
+        MediaGrid()
     }
 
     func onContinue() {

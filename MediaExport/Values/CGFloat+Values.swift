@@ -14,6 +14,11 @@ extension CGFloat {
 
     static let hPadding: CGFloat = 20
     static let vPadding: CGFloat = 16
+
+    static let hPaddingLarge: CGFloat = 40
+    static let vPaddingLarge: CGFloat = 32
+
+    static let corners: CGFloat = 10
 }
 
 // MARK: - EdgeInsets + Values
@@ -25,5 +30,12 @@ extension EdgeInsets {
         leading: .hPadding,
         bottom: .vPadding,
         trailing: .hPadding
+    )
+
+    static let paddingLarge = EdgeInsets(
+        top: .vPaddingLarge,
+        leading: .hPaddingLarge,
+        bottom: .vPaddingLarge,
+        trailing: .hPaddingLarge
     )
 }

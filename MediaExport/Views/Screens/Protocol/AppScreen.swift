@@ -31,18 +31,20 @@ extension AppScreen {
     }
 
     var screen: some View {
-        VStack(spacing: .vPadding) {
-            Text(title)
-                .header()
-                .frame(maxWidth: .infinity, alignment: .leading)
+        ScrollView {
+            LazyVStack(spacing: .vPadding) {
+                Text(title)
+                    .header()
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
-            Text(subtitle)
-                .body()
-                .frame(maxWidth: .infinity, alignment: .leading)
+                Text(subtitle)
+                    .body()
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
-            content
+                content
+            }
+            .multilineTextAlignment(.leading)
+            .padding(EdgeInsets.padding)
         }
-        .multilineTextAlignment(.leading)
-        .padding(EdgeInsets.padding)
     }
 }

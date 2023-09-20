@@ -15,11 +15,11 @@ final class PhotoLibrary {
         PHPhotoLibrary.requestAuthorization(for: .readWrite) { _ in }
     }
 
-    private static var mediaTypes: [PHAssetMediaType] {
+    static var mediaTypes: [PHAssetMediaType] {
         [.unknown, .image, .video, .audio]
     }
 
-    private static func fetchAll(for mediaType: PHAssetMediaType) -> [PHAsset] {
+    static func fetchAll(for mediaType: PHAssetMediaType) -> [PHAsset] {
         var assets: [PHAsset] = []
         PHAsset.fetchAssets(
             with: mediaType,
