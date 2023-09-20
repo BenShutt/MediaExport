@@ -10,19 +10,39 @@ import SwiftUI
 
 // MARK: - NavigationRoute
 
+/// A navigation destination
 enum NavigationRoute: Hashable {
 
-    case resources
-    case upload
+    /// Push the assets screen
+    case assets
 }
 
-// MARK: - NavigationViewModel
+// MARK: - Navigation
 
+/// View model for navigation
 final class Navigation: ObservableObject {
 
+    /// `NavigationPath`
     @Published var path = NavigationPath()
 
+    /// Push `route` on `path`
+    /// - Parameter route: `NavigationRoute`
     func push(_ route: NavigationRoute) {
         path.append(route)
+    }
+}
+
+// MARK: - View + NavigationRoute
+
+extension View {
+
+    /// Add navigation destination handler to view
+    func navigate() -> some View {
+        navigationDestination(for: NavigationRoute.self) { route in
+            switch route {
+            case .assets:
+                AssetsScreen()
+            }
+        }
     }
 }

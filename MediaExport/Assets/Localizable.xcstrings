@@ -7,7 +7,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "All media will be loaded from the device in order to sync with the server."
+            "value" : "All media is loaded from the device to be synced with the server."
           }
         }
       }
@@ -19,6 +19,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Assets"
+          }
+        }
+      }
+    },
+    "authorization_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "It is important that you grant \"Allow Full Access\" so that this app may export all of your media to the server for you."
+          }
+        }
+      }
+    },
+    "authorization_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Authorization"
           }
         }
       }

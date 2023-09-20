@@ -11,15 +11,15 @@ import Photos
 
 struct ContentView: View {
 
-    @State private var path = NavigationPath()
+    /// Storage of the `Navigation` environment instance
+    @StateObject private var navigation = Navigation()
 
     var body: some View {
-        NavigationStack(path: $path) {
-            AssetsScreen()
-                .onAppear {
-                    PhotoLibrary.requestAuthorization()
-                }
+        NavigationStack(path: $navigation.path) {
+            AuthorizationScreen()
+                .navigate()
         }
+        .environmentObject(navigation)
     }
 }
 

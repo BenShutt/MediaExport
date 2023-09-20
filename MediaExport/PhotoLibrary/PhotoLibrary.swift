@@ -13,15 +13,26 @@ typealias MediaMap = [PHAssetMediaType: [PHAsset]]
 
 final class PhotoLibrary {
 
-    static func requestAuthorization() {
-        PHPhotoLibrary.requestAuthorization(for: .readWrite) { _ in }
+    private static let accessLevel: PHAccessLevel = .readWrite
+
+    static func isAuthorized() -> Bool {
+        PHPhotoLibrary.authorizationStatus(for: accessLevel) == .authorized
+    }
+
+    static func requestAuthorization(completion: @escaping (Bool) -> Void) {
+        PHPhotoLibrary.requestAuthorization(for: accessLevel) { _ in
+            DispatchQueue.main.async {
+                completion(isAuthorized())
+            }
+        }
     }
 
     static var mediaTypes: [PHAssetMediaType] {
         [.unknown, .image, .video, .audio]
     }
 
-    static func fetchAll(for mediaType: PHAssetMediaType) -> [PHAsset] {
+    static func fetchAll(for mediaType: PHAssetMediaType) throws -> [PHAsset] {
+        guard isAuthorized() else { throw PhotoLibraryError.authorization }
         var assets: [PHAsset] = []
         PHAsset.fetchAssets(
             with: mediaType,
@@ -33,10 +44,8 @@ final class PhotoLibrary {
     }
 
     static func fetchAll() async throws -> MediaMap {
-        let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
-        guard status == .authorized else { throw PhotoLibraryError.authorization }
-        return mediaTypes.reduce(into: [:]) { map, mediaType in
-            map[mediaType, default: []] += fetchAll(for: mediaType)
+        try mediaTypes.reduce(into: [:]) { map, mediaType in
+            map[mediaType, default: []] += try fetchAll(for: mediaType)
         }
     }
 

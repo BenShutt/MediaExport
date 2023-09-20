@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-// TODO: Make authorization screen
-
 struct AssetsScreen: Screen {
 
     @StateObject private var assetManager = AssetManager()
