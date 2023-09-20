@@ -50,8 +50,8 @@ private struct GridItem: View {
                 .frame(height: 50)
                 .foregroundStyle(Color.appDarkGray)
 
-            Text("media_type_audio_count \(2)")
-                .font(.system(size: 8))
+            Text(mediaType.title(count: count))
+                .caption()
                 .lineLimit(1)
         }
         .padding(.vertical, .vPaddingLarge)

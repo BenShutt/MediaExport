@@ -16,7 +16,7 @@ extension TextStyle {
     static let header = TextStyle(.system, weight: .heavy, size: 36, lineHeight: 40)
     static let body = TextStyle(.system, weight: .regular, size: 20, lineHeight: 22)
     static let button = TextStyle(.system, weight: .heavy, size: 18, lineHeight: 22)
-    static let header2 = TextStyle(.system, weight: .bold, size: 20, lineHeight: 22)
+    static let caption = TextStyle(.system, weight: .semibold, size: 18, lineHeight: 20)
 }
 
 // MARK: - Text + TextStyles
@@ -33,8 +33,8 @@ extension Text {
             .foregroundStyle(Color.appDarkGray)
     }
 
-    func header2() -> some View {
-        self.style(.header2)
+    func caption() -> some View {
+        self.style(.caption)
             .foregroundStyle(Color.appDarkGray)
     }
 }

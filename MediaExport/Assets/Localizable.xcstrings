@@ -45,13 +45,25 @@
         }
       }
     },
-    "media_type_audio_count" : {
+    "media_type_audio_count %lld" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Audio"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Audio"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Audios"
+                }
+              }
+            }
           }
         }
       }
@@ -67,7 +79,7 @@
         }
       }
     },
-    "media_type_image_count" : {
+    "media_type_image_count %lld" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -101,7 +113,7 @@
         }
       }
     },
-    "media_type_unknown_count" : {
+    "media_type_unknown_count %lld" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -135,7 +147,7 @@
         }
       }
     },
-    "media_type_video_count" : {
+    "media_type_video_count %lld" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
