@@ -33,7 +33,7 @@ private extension Collection where Element: Equatable {
         guard let currentIndex = firstIndex(of: element) else { return element }
         if offset >= 0 {
             let maxIndex = index(endIndex, offsetBy: -offset)
-            // endIndex is off the edge so strictly less than
+            // endIndex is "past the end" so we strictly less than here
             guard currentIndex < maxIndex else { return element }
         } else {
             let minIndex = index(startIndex, offsetBy: -offset)
