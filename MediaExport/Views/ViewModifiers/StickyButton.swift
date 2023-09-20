@@ -25,18 +25,3 @@ struct StickyButton: ViewModifier {
         )
     }
 }
-
-// MARK: - View + StickyButton
-
-extension View {
-
-    @ViewBuilder func stickyButton(
-        _ stickyButton: StickyButton?
-    ) -> some View {
-        if let stickyButton {
-            self.modifier(stickyButton)
-        } else {
-            self
-        }
-    }
-}

@@ -8,17 +8,23 @@
 
 import SwiftUI
 
-struct AssetsScreen: AppScreen {
+struct AssetsScreen: Screen {
 
-    var title: LocalizedStringKey { "assets_title" }
-    var subtitle: LocalizedStringKey { "assets_subtitle" }
-    var isEnabled: Bool { true }
+    let title: LocalizedStringKey = "assets_title"
+    let subtitle: LocalizedStringKey = "assets_subtitle"
+
+    var stickyButton: StickyButton {
+        StickyButton(
+            key: "continue_button",
+            isEnabled: true
+        ) {
+            // TODO
+        }
+    }
 
     var content: some View {
         MediaGrid()
-    }
-
-    func onContinue() {
+            .padding(.top, .vPadding)
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  AppScreen.swift
+//  Screen.swift
 //  MediaExport
 //
 //  Created by Ben Shutt on 19/09/2023.
@@ -8,43 +8,41 @@
 
 import SwiftUI
 
-protocol AppScreen: Screen {
+protocol Screen: View {
     associatedtype Content: View
 
     var title: LocalizedStringKey { get }
     var subtitle: LocalizedStringKey { get }
-    var isEnabled: Bool { get }
-    var content: Content { get }
+    var stickyButton: StickyButton { get }
 
-    func onContinue()
+    var content: Content { get }
 }
 
-extension AppScreen {
+extension Screen {
 
-    var stickyButton: StickyButton? {
-        StickyButton(
-            key: "continue_button",
-            isEnabled: isEnabled
-        ) {
-            onContinue()
-        }
-    }
-
-    var screen: some View {
+    var body: some View {
         ScrollView {
-            LazyVStack(spacing: .vPadding) {
+            LazyVStack(spacing: 0) {
                 Text(title)
                     .header()
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, .vPadding)
 
                 Text(subtitle)
                     .body()
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.vertical, .vPadding)
 
                 content
             }
             .multilineTextAlignment(.leading)
             .padding(EdgeInsets.padding)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background {
+            Color.appWhite
+                .ignoresSafeArea()
+        }
+        .modifier(stickyButton)
     }
 }
