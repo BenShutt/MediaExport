@@ -8,28 +8,38 @@
 
 import SwiftUI
 
-struct AuthorizationScreen: Screen {
+struct AuthorizationScreen: View {
 
     @EnvironmentObject var navigation: Navigation
+    @State private var isPresentingUnauthorizedAlert = false
 
-    let title: LocalizedStringKey = "authorization_title"
-    let subtitle: LocalizedStringKey = "authorization_subtitle"
-
-    var stickyButton: StickyButton {
-        StickyButton(
-            key: "continue_button",
-            isEnabled: true
+    var body: some View {
+        Screen(
+            title: "authorization_title",
+            subtitle: "authorization_subtitle",
+            stickyButton: StickyButton(
+                key: "continue_button",
+                isEnabled: true
+            ) {
+                onContinue()
+            }
         ) {
-            onContinue()
+            Image("access_photo_library")
+                .resizable()
+                .scaledToFit()
+                .frame(width: UIScreen.main.bounds.width * 2/3)
+                .padding(.top, .vPaddingLarge)
         }
-    }
-
-    var content: some View {
-        Image("access_photo_library")
-            .resizable()
-            .scaledToFit()
-            .frame(width: UIScreen.main.bounds.width * 0.666)
-            .padding(.top, .vPaddingLarge)
+        .alert(
+            "unauthorized_alert_title",
+            isPresented: $isPresentingUnauthorizedAlert,
+            actions: {
+                Button("dismiss", role: .cancel) {}
+            },
+            message: {
+                Text("unauthorized_alert_message")
+            }
+        )
     }
 
     private func onContinue() {
@@ -39,7 +49,10 @@ struct AuthorizationScreen: Screen {
         }
 
         PhotoLibrary.requestAuthorization { isAuthorized in
-            guard isAuthorized else { return /* TODO */ }
+            guard isAuthorized else {
+                isPresentingUnauthorizedAlert = true
+                return
+            }
             navigation.push(.assets)
         }
     }

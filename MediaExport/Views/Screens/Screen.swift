@@ -8,21 +8,13 @@
 
 import SwiftUI
 
-protocol Screen: View {
-    associatedtype Content: View
+struct Screen<Content: View>: View {
 
-    var title: LocalizedStringKey { get }
-    var subtitle: LocalizedStringKey { get }
-    var stickyButton: StickyButton { get }
-    @ViewBuilder var content: Content { get }
+    var title: LocalizedStringKey
+    var subtitle: LocalizedStringKey
+    var stickyButton: StickyButton
 
-    func onScreenAppear()
-}
-
-extension Screen {
-
-    /// By default, do nothing
-    func onScreenAppear() {}
+    @ViewBuilder var content: () -> Content
 
     var body: some View {
         ScrollView {
@@ -31,7 +23,7 @@ extension Screen {
                     .body()
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                content
+                content()
             }
             .multilineTextAlignment(.leading)
             .padding(.top, .vPaddingSmall)
@@ -44,9 +36,6 @@ extension Screen {
                 .ignoresSafeArea()
         }
         .modifier(stickyButton)
-        .onAppear {
-            onScreenAppear()
-        }
         .navigationTitle(title)
     }
 }

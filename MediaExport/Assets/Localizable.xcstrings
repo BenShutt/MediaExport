@@ -56,6 +56,17 @@
         }
       }
     },
+    "dismiss" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
+          }
+        }
+      }
+    },
     "media_type_audio" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -188,6 +199,28 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "unauthorized_alert_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We can only proceed if photo library permission is granted."
+          }
+        }
+      }
+    },
+    "unauthorized_alert_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unauthorized"
           }
         }
       }

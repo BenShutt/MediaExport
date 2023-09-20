@@ -8,29 +8,31 @@
 
 import SwiftUI
 
-struct AssetsScreen: Screen {
+struct AssetsScreen: View {
 
     @StateObject private var assetManager = AssetManager()
 
-    let title: LocalizedStringKey = "assets_title"
-    let subtitle: LocalizedStringKey = "assets_subtitle"
-
-    var stickyButton: StickyButton {
-        StickyButton(
-            key: "continue_button",
-            isEnabled: true
+    var body: some View {
+        Screen(
+            title: "assets_title",
+            subtitle: "assets_subtitle",
+            stickyButton: StickyButton(
+                key: "continue_button",
+                isEnabled: true
+            ) {
+                onContinue()
+            }
         ) {
-            // TODO
+            StateView(state: assetManager.state)
+                .padding(.top, .vPaddingLarge)
+        }
+        .onAppear {
+            assetManager.load()
         }
     }
 
-    var content: some View {
-        StateView(state: assetManager.state)
-            .padding(.top, .vPaddingLarge)
-    }
-
-    func onScreenAppear() {
-        assetManager.load()
+    private func onContinue() {
+        // TODO
     }
 }
 
