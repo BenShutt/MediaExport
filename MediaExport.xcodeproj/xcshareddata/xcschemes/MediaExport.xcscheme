@@ -5,24 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <PostActions>
-         <ExecutionAction
-            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-            <ActionContent
-               title = "Run Script"
-               scriptText = "script=&quot;${PROJECT_DIR}/Scripts/sort-xcode-project.pl&quot;&#10;project=&quot;${PROJECT_FILE_PATH}/project.pbxproj&quot;&#10;perl &quot;${script}&quot; &quot;${project}&quot;&#10;">
-               <EnvironmentBuildable>
-                  <BuildableReference
-                     BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "B82467682AB8C19B00F39D84"
-                     BuildableName = "MediaExport.app"
-                     BlueprintName = "MediaExport"
-                     ReferencedContainer = "container:MediaExport.xcodeproj">
-                  </BuildableReference>
-               </EnvironmentBuildable>
-            </ActionContent>
-         </ExecutionAction>
-      </PostActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
