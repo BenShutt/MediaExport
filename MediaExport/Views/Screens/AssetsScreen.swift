@@ -8,7 +8,11 @@
 
 import SwiftUI
 
+// TODO: Make authorization screen
+
 struct AssetsScreen: Screen {
+
+    @StateObject private var assetManager = AssetManager()
 
     let title: LocalizedStringKey = "assets_title"
     let subtitle: LocalizedStringKey = "assets_subtitle"
@@ -23,8 +27,31 @@ struct AssetsScreen: Screen {
     }
 
     var content: some View {
-        MediaGrid()
+        StateView(state: assetManager.state)
             .padding(.top, .vPadding)
+    }
+
+    func onScreenAppear() {
+        assetManager.load()
+    }
+}
+
+// MARK: - StateView
+
+private struct StateView: View {
+
+    var state: LoadState<MediaMap>
+
+    var body: some View {
+        switch state {
+        case let .success(map):
+            MediaGrid(map: map)
+        case let .failure(error):
+            Text(verbatim: error.localizedDescription)
+                .body()
+        default:
+            LoadingView()
+        }
     }
 }
 

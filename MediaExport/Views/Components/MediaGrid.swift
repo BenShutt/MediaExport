@@ -11,21 +11,38 @@ import Photos
 
 struct MediaGrid: View {
 
-    var mediaTypes: [PHAssetMediaType] {
-        PhotoLibrary.mediaTypes
+    var map: MediaMap
+
+    var rows: [[PHAssetMediaType]] {
+        [[.image, .video], [.audio, .unknown]]
     }
 
     var body: some View {
         Grid {
-            GridRow {
-                ForEach(mediaTypes[0...1], id: \.rawValue) {
-                    GridItem(mediaType: $0, count: 1)
-                }
-            }
-            GridRow {
-                ForEach(mediaTypes[2...3], id: \.rawValue) {
-                    GridItem(mediaType: $0, count: 1)
-                }
+            MediaGridRow(row: rows[0], map: map)
+            MediaGridRow(row: rows[1], map: map)
+        }
+    }
+}
+
+// MARK: - MediaGridRow
+
+private struct MediaGridRow: View {
+
+    var row: [PHAssetMediaType]
+    var map: MediaMap
+
+    private func count(for mediaType: PHAssetMediaType) -> Int {
+        map[mediaType]?.count ?? -1
+    }
+
+    var body: some View {
+        GridRow {
+            ForEach(row, id: \.rawValue) { mediaType in
+                GridItem(
+                    mediaType: mediaType,
+                    count: count(for: mediaType)
+                )
             }
         }
     }
@@ -117,5 +134,5 @@ private extension PHAssetMediaType {
 // MARK: - Preview
 
 #Preview {
-    MediaGrid()
+    MediaGrid(map: [:])
 }

@@ -9,6 +9,8 @@
 import Foundation
 import Photos
 
+typealias MediaMap = [PHAssetMediaType: [PHAsset]]
+
 final class PhotoLibrary {
 
     static func requestAuthorization() {
@@ -30,10 +32,12 @@ final class PhotoLibrary {
         return assets
     }
 
-    static func fetchAll() async throws -> [PHAsset] {
+    static func fetchAll() async throws -> MediaMap {
         let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
         guard status == .authorized else { throw PhotoLibraryError.authorization }
-        return mediaTypes.flatMap { fetchAll(for: $0) }
+        return mediaTypes.reduce(into: [:]) { map, mediaType in
+            map[mediaType, default: []] += fetchAll(for: mediaType)
+        }
     }
 
     static func format(byteCount: Int64) -> String {

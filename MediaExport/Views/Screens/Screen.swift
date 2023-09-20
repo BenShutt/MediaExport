@@ -14,11 +14,15 @@ protocol Screen: View {
     var title: LocalizedStringKey { get }
     var subtitle: LocalizedStringKey { get }
     var stickyButton: StickyButton { get }
+    @ViewBuilder var content: Content { get }
 
-    var content: Content { get }
+    func onScreenAppear()
 }
 
 extension Screen {
+
+    /// By default, do nothing
+    func onScreenAppear() {}
 
     var body: some View {
         ScrollView {
@@ -44,5 +48,8 @@ extension Screen {
                 .ignoresSafeArea()
         }
         .modifier(stickyButton)
+        .onAppear {
+            onScreenAppear()
+        }
     }
 }
