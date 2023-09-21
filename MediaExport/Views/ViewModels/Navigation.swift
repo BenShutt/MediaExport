@@ -15,6 +15,9 @@ enum NavigationRoute: Hashable {
 
     /// Push the assets screen
     case assets
+
+    /// Push the resources screen
+    case resources
 }
 
 // MARK: - Navigation
@@ -42,6 +45,8 @@ extension View {
             switch route {
             case .assets:
                 AssetsScreen()
+            case .resources:
+                ResourcesScreen()
             }
         }
     }

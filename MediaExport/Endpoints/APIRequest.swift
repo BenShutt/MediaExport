@@ -25,7 +25,7 @@ extension APIRequest {
 
     var additionalHeaders: HTTPHeaders {
         HTTPHeaders([
-            HTTPHeader(name: "X-File-Name", value: mediaFile.url.lastPathComponent)
+            HTTPHeader(name: "X-File-Name", value: mediaFile.fileName)
         ])
     }
 

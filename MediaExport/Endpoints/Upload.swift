@@ -15,8 +15,8 @@ struct Upload: APIRequest, DataBody {
     var mediaFile: MediaFile
 
     var body: Data {
-        get throws {
-            try Data(contentsOf: mediaFile.url)
+        get async throws {
+            try await mediaFile.data()
         }
     }
 }
