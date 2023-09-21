@@ -63,21 +63,10 @@ private struct UploadContentView: View {
         case .idle: EmptyView()
 
         case .loading:
-            ProgressView(
+            BarProgressView(
                 value: uploadManager.value,
-                total: uploadManager.total,
-                label: {},
-                currentValueLabel: {
-                    if let progressString {
-                        Text(progressString)
-                            .caption()
-                    }
-                }
+                total: uploadManager.total
             )
-            .tint(.appGreen)
-            .background(.appBlack)
-            .frame(maxWidth: .infinity)
-            .padding(.top, .vPaddingLarge)
 
             LoadingView()
                 .padding(.top, .vPadding)

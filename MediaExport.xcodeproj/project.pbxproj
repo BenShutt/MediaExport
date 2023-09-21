@@ -46,6 +46,7 @@
 		B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A52ABC522F00B3A575 /* UploadScreen.swift */; };
 		B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A72ABC524700B3A575 /* UploadManager.swift */; };
 		B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */; };
+		B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		B8AB87A52ABC522F00B3A575 /* UploadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadScreen.swift; sourceTree = "<group>"; };
 		B8AB87A72ABC524700B3A575 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
 		B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 				B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */,
 				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
 				B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */,
+				B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
 				B824679C2AB8C98700F39D84 /* Upload.swift in Sources */,
 				B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */,
+				B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
