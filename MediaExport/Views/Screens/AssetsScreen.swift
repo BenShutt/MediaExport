@@ -10,45 +10,33 @@ import SwiftUI
 
 struct AssetsScreen: View {
 
-    @StateObject private var assetManager = AssetsManager()
+    @EnvironmentObject var navigation: Navigation
+    @StateObject private var assetsManager = AssetsManager()
 
     var body: some View {
         Screen(
             title: "assets_title",
             subtitle: "assets_subtitle",
-            stickyButton: StickyButton(key: "continue_button") {
+            stickyButton: StickyButton(
+                key: "continue_button",
+                isEnabled: assetsManager.state.isSuccess
+            ) {
                 onContinue()
             }
         ) {
-            StateView(state: assetManager.state)
-                .padding(.top, .vPaddingLarge)
+            LoadStateView(state: assetsManager.state) { assetsMap in
+                MediaGrid(assetsMap: assetsMap)
+            }
+            .padding(.top, .vPaddingLarge)
         }
         .onAppear {
-            assetManager.load()
+            assetsManager.load()
         }
     }
 
     private func onContinue() {
-        // TODO
-    }
-}
-
-// MARK: - StateView
-
-private struct StateView: View {
-
-    var state: LoadState<MediaMap>
-
-    var body: some View {
-        switch state {
-        case let .success(map):
-            MediaGrid(map: map)
-        case let .failure(error):
-            Text(verbatim: error.localizedDescription)
-                .body()
-        default:
-            LoadingView()
-        }
+        guard case .success(let assetsMap) = assetsManager.state else { return }
+        navigation.push(.resources(assetsMap))
     }
 }
 
@@ -56,4 +44,5 @@ private struct StateView: View {
 
 #Preview {
     AssetsScreen()
+        .environmentObject(Navigation())
 }

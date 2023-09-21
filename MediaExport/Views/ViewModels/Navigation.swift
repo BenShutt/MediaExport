@@ -17,7 +17,7 @@ enum NavigationRoute: Hashable {
     case assets
 
     /// Push the resources screen
-    case resources
+    case resources(AssetsMap)
 }
 
 // MARK: - Navigation
@@ -45,8 +45,8 @@ extension View {
             switch route {
             case .assets:
                 AssetsScreen()
-            case .resources:
-                ResourcesScreen()
+            case let .resources(assetsMap):
+                ResourcesScreen(assetsMap: assetsMap)
             }
         }
     }

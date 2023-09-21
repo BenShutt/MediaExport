@@ -11,7 +11,7 @@ import Photos
 
 struct MediaGrid: View {
 
-    var map: MediaMap
+    var assetsMap: AssetsMap
 
     var rows: [[PHAssetMediaType]] {
         [[.image, .video], [.audio, .unknown]]
@@ -19,8 +19,8 @@ struct MediaGrid: View {
 
     var body: some View {
         Grid {
-            MediaGridRow(row: rows[0], map: map)
-            MediaGridRow(row: rows[1], map: map)
+            MediaGridRow(row: rows[0], assetsMap: assetsMap)
+            MediaGridRow(row: rows[1], assetsMap: assetsMap)
         }
     }
 }
@@ -30,10 +30,10 @@ struct MediaGrid: View {
 private struct MediaGridRow: View {
 
     var row: [PHAssetMediaType]
-    var map: MediaMap
+    var assetsMap: AssetsMap
 
     private func count(for mediaType: PHAssetMediaType) -> Int {
-        map[mediaType]?.count ?? -1
+        assetsMap[mediaType]?.count ?? -1
     }
 
     var body: some View {
@@ -134,5 +134,5 @@ private extension PHAssetMediaType {
 // MARK: - Preview
 
 #Preview {
-    MediaGrid(map: [:])
+    MediaGrid(assetsMap: [:])
 }

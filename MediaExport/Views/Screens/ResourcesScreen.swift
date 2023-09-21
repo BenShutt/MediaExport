@@ -10,6 +10,13 @@ import SwiftUI
 
 struct ResourcesScreen: View {
 
+    @EnvironmentObject var navigation: Navigation
+    @StateObject private var resourcesManager: ResourcesManager
+
+    init(assetsMap: AssetsMap) {
+        _resourcesManager = .init(wrappedValue: .init(assetsMap: assetsMap))
+    }
+
     var body: some View {
         Screen(
             title: "resources_title",
@@ -18,6 +25,12 @@ struct ResourcesScreen: View {
                 onContinue()
             }
         ) {
+            LoadStateView(state: resourcesManager.state) { _ in
+            }
+            .padding(.top, .vPaddingLarge)
+        }
+        .onAppear {
+            resourcesManager.load()
         }
     }
 
@@ -29,5 +42,6 @@ struct ResourcesScreen: View {
 // MARK: - Preview
 
 #Preview {
-    ResourcesScreen()
+    ResourcesScreen(assetsMap: [:])
+        .environmentObject(Navigation())
 }

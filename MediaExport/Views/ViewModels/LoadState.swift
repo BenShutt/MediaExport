@@ -19,4 +19,9 @@ enum LoadState<Success> {
         guard case .loading = self else { return false }
         return true
     }
+
+    var isSuccess: Bool {
+        guard case .success = self else { return false }
+        return true
+    }
 }

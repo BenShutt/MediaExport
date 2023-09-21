@@ -44,12 +44,12 @@ struct AuthorizationScreen: View {
     }
 
     private func onContinue() {
-        guard !PhotoLibrary.isAuthorized() else {
+        guard !AuthorizationManager.isAuthorized() else {
             navigation.push(.assets)
             return
         }
 
-        PhotoLibrary.requestAuthorization { isAuthorized in
+        AuthorizationManager.requestAuthorization { isAuthorized in
             guard isAuthorized else {
                 isPresentingUnauthorizedAlert = true
                 return
@@ -63,4 +63,5 @@ struct AuthorizationScreen: View {
 
 #Preview {
     AuthorizationScreen()
+        .environmentObject(Navigation())
 }

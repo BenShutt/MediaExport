@@ -9,14 +9,15 @@
 import SwiftUI
 import Photos
 
+typealias MediaMap = [PHAssetMediaType: [MediaFile]]
+
 @MainActor final class ResourcesManager: ObservableObject {
 
-    @Published private(set) var state: LoadState<[MediaFile]> = .idle
+    private let assetsMap: AssetsMap
+    @Published private(set) var state: LoadState<MediaMap> = .idle
 
-    var map: MediaMap
-
-    init(map: MediaMap) {
-        self.map = map
+    init(assetsMap: AssetsMap) {
+        self.assetsMap = assetsMap
     }
 
     func load() {
@@ -30,17 +31,27 @@ import Photos
 
         state = .loading
         do {
-            // TODO
+            let mediaMap = try await MediaFileMapper.map(assetsMap: assetsMap)
+            state = .success(mediaMap)
         } catch {
             state = .failure(error)
         }
     }
+}
 
-    private func map(asset: PHAsset) throws -> MediaFile {
-        try MediaFile(
-            fileName: asset.fileName,
-            fileSize: asset.fileSize,
-            asset: asset
-        )
+// MARK: - MediaFileMapper
+
+private struct MediaFileMapper {
+
+    static func map(assetsMap: AssetsMap) async throws -> MediaMap {
+        try assetsMap.mapValues { assets in
+            try assets.map { asset in
+                try MediaFile(
+                    fileName: asset.fileName,
+                    fileSize: asset.fileSize,
+                    asset: asset
+                )
+            }
+        }
     }
 }

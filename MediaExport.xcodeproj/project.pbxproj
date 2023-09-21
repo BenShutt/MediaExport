@@ -17,7 +17,6 @@
 		B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679D2AB8C98D00F39D84 /* Exists.swift */; };
 		B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679F2AB8C9AD00F39D84 /* APIRequest.swift */; };
 		B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A52AB8D31900F39D84 /* MediaFile.swift */; };
-		B82467AC2AB8D6EA00F39D84 /* PhotoLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */; };
 		B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */; };
 		B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467B02AB8DB4E00F39D84 /* LoadState.swift */; };
 		B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F96372ABAD95A004493B5 /* MediaGrid.swift */; };
@@ -40,6 +39,8 @@
 		B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */; };
 		B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */; };
 		B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */; };
+		B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */; };
+		B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +75,6 @@
 		B824679D2AB8C98D00F39D84 /* Exists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exists.swift; sourceTree = "<group>"; };
 		B824679F2AB8C9AD00F39D84 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B82467A52AB8D31900F39D84 /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
-		B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibrary.swift; sourceTree = "<group>"; };
 		B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAsset+Extensions.swift"; sourceTree = "<group>"; };
 		B82467B02AB8DB4E00F39D84 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
 		B85F96372ABAD95A004493B5 /* MediaGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaGrid.swift; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 		B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
 		B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesScreen.swift; sourceTree = "<group>"; };
 		B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesManager.swift; sourceTree = "<group>"; };
+		B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,10 +150,10 @@
 		B824676B2AB8C19B00F39D84 /* MediaExport */ = {
 			isa = PBXGroup;
 			children = (
+				B8AB879E2ABC271400B3A575 /* Extensions */,
 				B8979FA52ABA27B7003203C4 /* Assets */,
 				B82467972AB8C7E900F39D84 /* Endpoints */,
 				B82467A12AB8D1A800F39D84 /* Models */,
-				B82467AA2AB8D6DE00F39D84 /* PhotoLibrary */,
 				B8A520BC2ABB36DF0013FA4A /* Utilities */,
 				B8979FAD2ABA290D003203C4 /* Values */,
 				B82467AF2AB8D97B00F39D84 /* Views */,
@@ -196,15 +198,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B82467AA2AB8D6DE00F39D84 /* PhotoLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */,
-				B82467AB2AB8D6EA00F39D84 /* PhotoLibrary.swift */,
-			);
-			path = PhotoLibrary;
-			sourceTree = "<group>";
-		};
 		B82467AF2AB8D97B00F39D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +206,7 @@
 				B8979FB42ABA3276003203C4 /* ViewModels */,
 				B8979FA82ABA2876003203C4 /* ViewModifiers */,
 				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
+				B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +268,7 @@
 				B8979FB52ABA3289003203C4 /* Navigation.swift */,
 				B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */,
 				B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */,
+				B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -284,6 +279,14 @@
 				B8A520BD2ABB370B0013FA4A /* ColorUtilities.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B8AB879E2ABC271400B3A575 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,13 +467,14 @@
 				B88043112ABB68A5001E6024 /* AuthorizationScreen.swift in Sources */,
 				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
 				B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */,
+				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
 				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
-				B82467AC2AB8D6EA00F39D84 /* PhotoLibrary.swift in Sources */,
 				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
 				B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */,
 				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
 				B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */,
 				B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */,
+				B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */,
 				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
 				B824679C2AB8C98700F39D84 /* Upload.swift in Sources */,
 				B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */,
