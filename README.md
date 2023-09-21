@@ -1,15 +1,12 @@
 # Media Export
 
-Collect all the media (images, videos etc) from the device to send to a server over the WIFI.
-Can be used to transfer all media to a hard-drive for storage.
+A SwiftUI iOS app that syncs media on the device (images, videos, etc) with a server over the WIFI.
 
-## References
+It is written as client for a [C-Server](https://github.com/BenShutt/C-Playground/tree/develop/Server) project that I worked on for learning purposes.
 
-* Sort Xcode project automatically
-    * Steps on [SO](https://stackoverflow.com/a/32470246/5024990)
-    * Perl script from [Github](https://github.com/WebKit/webkit/blob/main/Tools/Scripts/sort-Xcode-project-file)
-* Some colors from [Pintrest](https://www.pinterest.co.uk/pin/304626362308735903/)
+It is merely a developer-tool and not to be used for anything more.
 
 ## Credits
 
 * [Picture icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/picture)
+* [Colors from Pintrest](https://www.pinterest.co.uk/pin/304626362308735903/)

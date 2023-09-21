@@ -5,6 +5,8 @@
 # Usage: ./sort-xcode-project.sh
 #
 # Sorts the Xcode project file alphabetically.
+# SO: https://stackoverflow.com/a/32470246/5024990
+# Github: https://github.com/WebKit/webkit/blob/main/Tools/Scripts/sort-Xcode-project-file
 #
 
 # Set defaults
