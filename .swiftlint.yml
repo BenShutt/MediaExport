@@ -101,4 +101,4 @@ cyclomatic_complexity:
   ignores_case_statements: true
 attributes:
   always_on_same_line:
-    ["@MainActor", "@ViewBuilder"]
+    ["@MainActor", "@ViewBuilder", "@Environment"]

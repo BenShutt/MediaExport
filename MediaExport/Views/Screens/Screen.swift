@@ -12,7 +12,6 @@ struct Screen<Content: View>: View {
 
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey
-    var stickyButton: StickyButton
 
     @ViewBuilder var content: () -> Content
 
@@ -35,7 +34,6 @@ struct Screen<Content: View>: View {
             Color.appWhite
                 .ignoresSafeArea()
         }
-        .modifier(stickyButton)
         .navigationTitle(title)
     }
 }

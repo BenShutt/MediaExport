@@ -30,6 +30,8 @@ struct BadgeView: View {
 
             Text(verbatim: title)
                 .badge()
+                .lineLimit(1)
+                .minimumScaleFactor(0.25)
 
             Text(subtitle)
                 .caption()
@@ -37,7 +39,7 @@ struct BadgeView: View {
         .multilineTextAlignment(.center)
         .foregroundStyle(Color.appBlack)
         .frame(width: textWidth)
-        .padding(textWidth * 0.25)
+        .padding(textWidth * 0.4)
         .background {
             backgroundColor
                 .clipShape(shape)
@@ -67,7 +69,7 @@ extension BadgeView {
 #Preview {
     BadgeView(
         sfSymbol: PHAssetMediaType.video.symbol,
-        title: "102MB",
+        title: "12345.678 MB",
         subtitle: "max_size",
         backgroundColor: PHAssetMediaType.video.color
     )

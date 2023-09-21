@@ -10,7 +10,8 @@ import SwiftUI
 
 struct StyledButton: View {
 
-    private let foregroundColor: Color = .appDarkGray
+    @Environment(\.isEnabled) var isEnabled: Bool
+
     var key: LocalizedStringKey
     var onTap: () -> Void
 
@@ -18,18 +19,24 @@ struct StyledButton: View {
         Button(action: onTap) {
             Text(key)
                 .style(.button)
-                .foregroundStyle(foregroundColor)
-                .tint(foregroundColor)
+                .foregroundStyle(Color.appDarkGray)
+                .tint(.appDarkGray)
                 .frame(maxWidth: .infinity)
                 .padding(EdgeInsets.padding)
                 .background(Color.appYellow)
                 .clipShape(Capsule())
         }
+        .buttonStyle(PlainButtonStyle()) // For dimming on disabled
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    StyledButton(key: "continue_button", onTap: {})
+    VStack {
+        StyledButton(key: "continue_button", onTap: {})
+
+        StyledButton(key: "continue_button", onTap: {})
+            .disabled(true)
+    }
 }

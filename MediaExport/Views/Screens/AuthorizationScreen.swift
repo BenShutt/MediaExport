@@ -20,10 +20,7 @@ struct AuthorizationScreen: View {
     var body: some View {
         Screen(
             title: "authorization_title",
-            subtitle: "authorization_subtitle",
-            stickyButton: StickyButton(key: "continue_button") {
-                onContinue()
-            }
+            subtitle: "authorization_subtitle"
         ) {
             Image("access_photo_library")
                 .resizable()
@@ -31,6 +28,12 @@ struct AuthorizationScreen: View {
                 .frame(width: screenWidth * 2 / 3)
                 .padding(.top, .vPaddingLarge)
         }
+        .modifier(
+            StickyButton(
+                key: "continue_button",
+                onTap: { onContinue() }
+            )
+        )
         .alert(
             "unauthorized_alert_title",
             isPresented: $isPresentingUnauthorizedAlert,

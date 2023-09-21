@@ -16,19 +16,20 @@ struct AssetsScreen: View {
     var body: some View {
         Screen(
             title: "assets_title",
-            subtitle: "assets_subtitle",
-            stickyButton: StickyButton(
-                key: "continue_button",
-                isEnabled: assetsManager.state.isSuccess
-            ) {
-                onContinue()
-            }
+            subtitle: "assets_subtitle"
         ) {
             LoadStateView(state: assetsManager.state) { assetsMap in
                 MediaGrid(assetsMap: assetsMap)
             }
             .padding(.top, .vPaddingLarge)
         }
+        .modifier(
+            StickyButton(
+                key: "continue_button",
+                isEnabled: assetsManager.state.isSuccess,
+                onTap: { onContinue() }
+            )
+        )
         .onAppear {
             assetsManager.load()
         }

@@ -20,13 +20,7 @@ struct ResourcesScreen: View {
     var body: some View {
         Screen(
             title: "resources_title",
-            subtitle: "resources_subtitle",
-            stickyButton: StickyButton(
-                key: "continue_button",
-                isEnabled: resourcesManager.state.isSuccess
-            ) {
-                onContinue()
-            }
+            subtitle: "resources_subtitle"
         ) {
             LoadStateView(state: resourcesManager.state) { mediaMap in
                 if let mediaFile = maxMediaFile(from: mediaMap) {
@@ -35,6 +29,13 @@ struct ResourcesScreen: View {
             }
             .padding(.top, .vPaddingLarge)
         }
+        .modifier(
+            StickyButton(
+                key: "continue_button",
+                isEnabled: resourcesManager.state.isSuccess,
+                onTap: { onContinue() }
+            )
+        )
         .onAppear {
             resourcesManager.load()
         }

@@ -26,7 +26,6 @@ extension Text {
     func badge() -> some View {
         self.style(.badge)
             .foregroundStyle(Color.appBlack)
-            .lineLimit(1)
     }
 
     func body() -> some View {

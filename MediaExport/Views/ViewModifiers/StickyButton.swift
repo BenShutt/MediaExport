@@ -19,7 +19,6 @@ struct StickyButton: ViewModifier {
             StickyBottom {
                 StyledButton(key: key, onTap: onTap)
                     .disabled(!isEnabled)
-                    .frame(maxWidth: .infinity)
                     .padding(EdgeInsets.padding)
             }
         )
