@@ -23,8 +23,8 @@ struct MediaDirectory {
         case jpeg // Image
         case png // Image
         case heic // Image
-        case mov // video
-        case mp4 // video
+        case mov // Video
+        case mp4 // Video
     }
 
     /// Map a `URL` to an optional type
