@@ -32,7 +32,6 @@ struct PostUpload: MediaFileAPIRequest, DataBody {
 extension PostUpload {
 
     static func upload(mediaFile: MediaFile) async throws {
-        let status = try await PostUpload(mediaFile: mediaFile).request().status
-        guard status == 0 else { throw APIError.status(status) }
+        try await PostUpload(mediaFile: mediaFile).request().validate()
     }
 }

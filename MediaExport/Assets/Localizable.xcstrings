@@ -100,17 +100,6 @@
         }
       }
     },
-    "media_type_audio" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Audio"
-          }
-        }
-      }
-    },
     "media_type_audio_count %lld" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -130,17 +119,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "media_type_image" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Images"
           }
         }
       }
@@ -168,17 +146,6 @@
         }
       }
     },
-    "media_type_unknown" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unknown"
-          }
-        }
-      }
-    },
     "media_type_unknown_count %lld" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -198,17 +165,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "media_type_video" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Videos"
           }
         }
       }

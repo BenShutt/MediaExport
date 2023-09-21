@@ -22,7 +22,7 @@ struct AuthorizationScreen: View {
             title: "authorization_title",
             subtitle: "authorization_subtitle"
         ) {
-            Image("access_photo_library")
+            Image(.accessPhotoLibrary)
                 .resizable()
                 .scaledToFit()
                 .frame(width: screenWidth * 2 / 3)

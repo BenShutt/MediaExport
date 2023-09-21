@@ -33,9 +33,7 @@ struct StatusScreen: View {
             )
         )
         .onAppear {
-            statusManager.validate {
-                // Do nothing
-            }
+            statusManager.validate { _ in }
         }
     }
 
@@ -43,7 +41,8 @@ struct StatusScreen: View {
         guard statusManager.state.isFinished else { return }
         statusManager.state = .idle
 
-        statusManager.validate {
+        statusManager.validate { success in
+            guard success else { return }
             navigation.push(.upload(mediaFiles))
         }
     }

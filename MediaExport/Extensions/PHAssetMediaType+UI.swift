@@ -11,15 +11,6 @@ import Photos
 
 extension PHAssetMediaType {
 
-    var name: LocalizedStringKey {
-        switch self {
-        case .image: "media_type_image"
-        case .video: "media_type_video"
-        case .audio: "media_type_audio"
-        default: "media_type_unknown"
-        }
-    }
-
     func title(count: Int) -> LocalizedStringKey {
         switch self {
         case .image: "media_type_image_count \(count)"

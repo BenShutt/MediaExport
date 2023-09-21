@@ -70,6 +70,7 @@ private struct GridItem: View {
             Text(mediaType.title(count: count))
                 .caption()
                 .lineLimit(1)
+                .minimumScaleFactor(0.25)
         }
         .padding(.vertical, .vPaddingLarge)
         .padding(.horizontal, .hPadding)

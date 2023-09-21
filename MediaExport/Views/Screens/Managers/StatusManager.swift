@@ -12,12 +12,10 @@ import SwiftUI
 
     @Published var state: LoadState<Int> = .idle
 
-    func validate(completion: @escaping () -> Void) {
+    func validate(completion: @escaping (Bool) -> Void) {
         Task {
             await validate()
-            if state.isSuccess {
-                completion()
-            }
+            completion(state.isSuccess)
         }
     }
 

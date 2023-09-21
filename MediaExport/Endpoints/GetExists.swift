@@ -19,8 +19,8 @@ struct GetExists: MediaFileAPIRequest {
 extension GetExists {
 
     static func exists(mediaFile: MediaFile) async throws -> Bool {
-        let status = try await GetExists(mediaFile: mediaFile).request().status
-        guard [0, 1].contains(status) else { throw APIError.status(status) }
-        return status == 1
+        let status = try await GetExists(mediaFile: mediaFile).request()
+        try status.validate { status in [0, 1].contains(status) }
+        return status.status == 1
     }
 }

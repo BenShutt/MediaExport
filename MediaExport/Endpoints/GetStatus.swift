@@ -19,8 +19,6 @@ extension GetStatus {
 
     @discardableResult
     static func validate() async throws -> Int {
-        let status = try await GetStatus().request().status
-        guard status == 0 else { throw APIError.status(status) }
-        return status
+        try await GetStatus().request().validate()
     }
 }

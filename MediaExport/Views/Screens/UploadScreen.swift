@@ -28,7 +28,7 @@ struct UploadScreen: View {
             StickyButton(
                 key: "done_button",
                 backgroundColor: .appGreen,
-                isEnabled: !uploadManager.loadState.isLoading,
+                isEnabled: uploadManager.loadState.isFinished,
                 onTap: { onContinue() }
             )
         )
@@ -38,6 +38,7 @@ struct UploadScreen: View {
     }
 
     private func onContinue() {
+        guard uploadManager.loadState.isFinished else { return }
         navigation.popToRoot()
     }
 }
@@ -60,7 +61,8 @@ private struct UploadContentView: View {
 
     var body: some View {
         switch uploadManager.loadState {
-        case .idle: EmptyView()
+        case .idle:
+            EmptyView()
 
         case .loading:
             BarProgressView(

@@ -51,6 +51,7 @@
 		B8AB87B32ABC6C9700B3A575 /* MediaFileAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */; };
 		B8AB87B52ABC6DA200B3A575 /* StatusScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */; };
 		B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */; };
+		B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87BA2ABC7AF600B3A575 /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFileAPIRequest.swift; sourceTree = "<group>"; };
 		B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusScreen.swift; sourceTree = "<group>"; };
 		B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusManager.swift; sourceTree = "<group>"; };
+		B8AB87BA2ABC7AF600B3A575 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +216,9 @@
 		B82467A12AB8D1A800F39D84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B82467B02AB8DB4E00F39D84 /* LoadState.swift */,
 				B82467A52AB8D31900F39D84 /* MediaFile.swift */,
+				B8AB87BA2ABC7AF600B3A575 /* Status.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,8 +228,7 @@
 			children = (
 				B8979F9C2ABA2779003203C4 /* Components */,
 				B8979F942ABA22F7003203C4 /* Screens */,
-				B8979FB42ABA3276003203C4 /* ViewModels */,
-				B8979FA82ABA2876003203C4 /* ViewModifiers */,
+				B8979FB52ABA3289003203C4 /* Navigation.swift */,
 				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
 			);
 			path = Views;
@@ -234,7 +237,8 @@
 		B8979F942ABA22F7003203C4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B8979F952ABA230F003203C4 /* Screen.swift */,
+				B8AB87B92ABC7A3C00B3A575 /* Protocol */,
+				B8AB87B82ABC7A2D00B3A575 /* Managers */,
 				B8979F922ABA22F4003203C4 /* AssetsScreen.swift */,
 				B88043102ABB68A5001E6024 /* AuthorizationScreen.swift */,
 				B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */,
@@ -247,6 +251,7 @@
 		B8979F9C2ABA2779003203C4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B8979FA82ABA2876003203C4 /* StickyButton */,
 				B85F96372ABAD95A004493B5 /* MediaGrid.swift */,
 				B8979FA92ABA2882003203C4 /* StyledButton.swift */,
 				B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */,
@@ -268,13 +273,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		B8979FA82ABA2876003203C4 /* ViewModifiers */ = {
+		B8979FA82ABA2876003203C4 /* StickyButton */ = {
 			isa = PBXGroup;
 			children = (
 				B8979FA12ABA279A003203C4 /* StickyBottom.swift */,
 				B8979FA32ABA27A2003203C4 /* StickyButton.swift */,
 			);
-			path = ViewModifiers;
+			path = StickyButton;
 			sourceTree = "<group>";
 		};
 		B8979FAD2ABA290D003203C4 /* Values */ = {
@@ -285,20 +290,6 @@
 				B8979FA62ABA2800003203C4 /* TextStyle+Values.swift */,
 			);
 			path = Values;
-			sourceTree = "<group>";
-		};
-		B8979FB42ABA3276003203C4 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				B82467B02AB8DB4E00F39D84 /* LoadState.swift */,
-				B8979FB52ABA3289003203C4 /* Navigation.swift */,
-				B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */,
-				B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */,
-				B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */,
-				B8AB87A72ABC524700B3A575 /* UploadManager.swift */,
-				B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B8A520BC2ABB36DF0013FA4A /* Utilities */ = {
@@ -323,6 +314,26 @@
 			children = (
 				B824679F2AB8C9AD00F39D84 /* APIRequest.swift */,
 				B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B8AB87B82ABC7A2D00B3A575 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */,
+				B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */,
+				B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */,
+				B8AB87A72ABC524700B3A575 /* UploadManager.swift */,
+				B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B8AB87B92ABC7A3C00B3A575 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B8979F952ABA230F003203C4 /* Screen.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -490,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */,
 				B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */,
 				B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,

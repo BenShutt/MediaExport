@@ -12,7 +12,7 @@ import Photos
 struct BadgeView: View {
 
     var textWidth: CGFloat = 200
-    var sfSymbol: String
+    var symbol: String
     var title: String
     var subtitle: LocalizedStringKey
     var backgroundColor: Color
@@ -23,7 +23,7 @@ struct BadgeView: View {
 
     var body: some View {
         VStack(spacing: .vPaddingSmall) {
-            Image(systemName: sfSymbol)
+            Image(systemName: symbol)
                 .resizable()
                 .scaledToFit()
                 .frame(size: 50)
@@ -56,7 +56,7 @@ extension BadgeView {
 
     init(mediaFile: MediaFile) {
         self.init(
-            sfSymbol: mediaFile.mediaType.symbol,
+            symbol: mediaFile.mediaType.symbol,
             title: mediaFile.formattedFileSize,
             subtitle: "max_size",
             backgroundColor: mediaFile.mediaType.color
@@ -68,7 +68,7 @@ extension BadgeView {
 
 #Preview {
     BadgeView(
-        sfSymbol: PHAssetMediaType.video.symbol,
+        symbol: PHAssetMediaType.video.symbol,
         title: "12345.678 MB",
         subtitle: "max_size",
         backgroundColor: PHAssetMediaType.video.color
