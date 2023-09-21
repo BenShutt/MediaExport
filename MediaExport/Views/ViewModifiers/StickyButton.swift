@@ -11,7 +11,7 @@ import SwiftUI
 struct StickyButton: ViewModifier {
 
     var key: LocalizedStringKey
-    var isEnabled: Bool
+    var isEnabled = true
     var onTap: () -> Void
 
     func body(content: Content) -> some View {

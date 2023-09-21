@@ -203,6 +203,28 @@
         }
       }
     },
+    "resources_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We need to get the names of all the files and compute the largest to know the buffer size for the server."
+          }
+        }
+      }
+    },
+    "resources_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resources"
+          }
+        }
+      }
+    },
     "unauthorized_alert_message" : {
       "extractionState" : "manual",
       "localizations" : {

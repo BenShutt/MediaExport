@@ -16,10 +16,7 @@ struct AssetsScreen: View {
         Screen(
             title: "assets_title",
             subtitle: "assets_subtitle",
-            stickyButton: StickyButton(
-                key: "continue_button",
-                isEnabled: true
-            ) {
+            stickyButton: StickyButton(key: "continue_button") {
                 onContinue()
             }
         ) {

@@ -40,6 +40,7 @@
 		B8A520C02ABB47700013FA4A /* ColorUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A520BF2ABB476F0013FA4A /* ColorUtilitiesTests.swift */; };
 		B8A520C22ABB5DDB0013FA4A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */; };
 		B8A520C42ABB5E4F0013FA4A /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A520C32ABB5E4F0013FA4A /* AssetManager.swift */; };
+		B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		B8A520BF2ABB476F0013FA4A /* ColorUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtilitiesTests.swift; sourceTree = "<group>"; };
 		B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B8A520C32ABB5E4F0013FA4A /* AssetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				B8979F952ABA230F003203C4 /* Screen.swift */,
 				B8979F922ABA22F4003203C4 /* AssetsScreen.swift */,
 				B88043102ABB68A5001E6024 /* AuthorizationScreen.swift */,
+				B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B82467A92AB8D4DC00F39D84 /* APIError.swift in Sources */,
+				B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,
 				B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */,
 				B8979FB12ABA2B8B003203C4 /* CGFloat+Values.swift in Sources */,
