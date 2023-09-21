@@ -11,7 +11,7 @@ import Photos
 struct MediaFile {
 
     var fileName: String
-    var fileSize: CGFloat
+    var fileSize: Int64
     var asset: PHAsset
 
     var mediaType: PHAssetMediaType {
@@ -20,5 +20,11 @@ struct MediaFile {
 
     func data() async throws -> Data {
         try await asset.data()
+    }
+
+    var formattedFileSize: String {
+        let formatter = ByteCountFormatter()
+        formatter.countStyle = .binary
+        return formatter.string(fromByteCount: fileSize)
     }
 }

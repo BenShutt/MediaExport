@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Photos
 
 @MainActor final class ResourcesManager: ObservableObject {
 
@@ -33,5 +34,13 @@ import SwiftUI
         } catch {
             state = .failure(error)
         }
+    }
+
+    private func map(asset: PHAsset) throws -> MediaFile {
+        try MediaFile(
+            fileName: asset.fileName,
+            fileSize: asset.fileSize,
+            asset: asset
+        )
     }
 }

@@ -39,3 +39,17 @@ extension APIRequest {
         return components
     }
 }
+
+// MARK: - Status
+
+struct Status: Decodable {
+
+    var status: Int
+}
+
+// MARK: - APIError
+
+enum APIError: Error {
+
+    case status(Int)
+}

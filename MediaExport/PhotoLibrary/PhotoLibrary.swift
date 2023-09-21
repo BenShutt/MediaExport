@@ -48,12 +48,6 @@ final class PhotoLibrary {
             map[mediaType, default: []] += try fetchAll(for: mediaType)
         }
     }
-
-    static func format(byteCount: Int64) -> String {
-        let formatter = ByteCountFormatter()
-        formatter.countStyle = .binary
-        return formatter.string(fromByteCount: byteCount)
-    }
 }
 
 // MARK: - PhotoLibraryError
