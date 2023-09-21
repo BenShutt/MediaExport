@@ -9,7 +9,7 @@
 import Foundation
 
 /// Legacy SPM executable client-side logic that used 'swift-argument-parser'
-@available(*, deprecated, message: "Used to be used in SPM executable")
+@available(*, deprecated, message: "Previously used in SPM executable")
 struct MediaDirectory {
 
     /// A media file
@@ -74,7 +74,7 @@ struct MediaDirectory {
 
 // MARK: - MediaDirectory.File + Extensions
 
-@available(*, deprecated, message: "Used to be used in SPM executable")
+@available(*, deprecated, message: "Previously used in SPM executable")
 extension MediaDirectory.File {
 
     var data: Data {
@@ -96,7 +96,7 @@ extension MediaDirectory.File {
 
 // MARK: - MediaDirectory.FileType + Extensions
 
-@available(*, deprecated, message: "Used to be used in SPM executable")
+@available(*, deprecated, message: "Previously used in SPM executable")
 private extension MediaDirectory.FileType {
 
     var pathExtensions: Set<String> {

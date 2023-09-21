@@ -7,12 +7,26 @@
 //
 
 import Photos
+import CryptoKit
 
 struct MediaFile: Equatable, Hashable {
 
-    var fileName: String
+    var originalFilename: String
     var fileSize: Int64
     var asset: PHAsset
+
+    var hashId: String {
+        let data = Data(asset.localIdentifier.utf8)
+        let hashedData = SHA256.hash(data: data)
+        let hex = hashedData.compactMap { String(format: "%02x", $0) }
+            .joined()
+            .prefix(8)
+        return String(hex)
+    }
+
+    var fileName: String {
+        "\(hashId)-\(originalFilename)"
+    }
 
     var mediaType: PHAssetMediaType {
         asset.mediaType

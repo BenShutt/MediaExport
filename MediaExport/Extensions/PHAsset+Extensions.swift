@@ -21,7 +21,7 @@ extension PHAsset {
         }
     }
 
-    var fileName: String {
+    var originalFilename: String {
         get throws {
             try firstResource.originalFilename
         }

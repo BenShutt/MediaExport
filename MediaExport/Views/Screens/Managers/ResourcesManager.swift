@@ -29,9 +29,29 @@ import Photos
 
         state = .loading
         do {
-            state = try await .success(MediaFileMapper.map(assetsMap: assetsMap))
+            let mediaFiles = try await MediaFileMapper.map(assetsMap: assetsMap)
+            try checkDuplicates(in: mediaFiles)
+            state = .success(mediaFiles)
         } catch {
             state = .failure(error)
+        }
+    }
+
+    private func checkDuplicates(in mediaFiles: [MediaFile]) throws {
+        var fileNames: Set<String> = []
+        var duplicates: [String] = []
+
+        mediaFiles.forEach { mediaFile in
+            let fileName = mediaFile.fileName
+            if fileNames.contains(fileName) {
+                duplicates.append(fileName)
+            } else {
+                fileNames.insert(fileName)
+            }
+        }
+
+        guard duplicates.isEmpty else {
+            throw ResourcesManagerError.duplicates(duplicates)
         }
     }
 }
@@ -44,11 +64,18 @@ private struct MediaFileMapper {
         try assetsMap.values.flatMap { assets in
             try assets.map { asset in
                 try MediaFile(
-                    fileName: asset.fileName,
+                    originalFilename: asset.originalFilename,
                     fileSize: asset.fileSize,
                     asset: asset
                 )
             }
         }
     }
+}
+
+// MARK: - ResourcesManagerError
+
+enum ResourcesManagerError: Error {
+
+    case duplicates([String])
 }
