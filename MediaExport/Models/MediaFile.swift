@@ -8,7 +8,7 @@
 
 import Photos
 
-struct MediaFile {
+struct MediaFile: Equatable, Hashable {
 
     var fileName: String
     var fileSize: Int64

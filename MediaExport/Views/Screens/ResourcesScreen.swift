@@ -17,14 +17,19 @@ struct ResourcesScreen: View {
         _resourcesManager = .init(wrappedValue: .init(assetsMap: assetsMap))
     }
 
+    private var maxMediaFile: MediaFile? {
+        guard case .success(let mediaFiles) = resourcesManager.state else { return nil }
+        return mediaFiles.max { $0.fileSize < $1.fileSize }
+    }
+
     var body: some View {
         Screen(
             title: "resources_title",
             subtitle: "resources_subtitle"
         ) {
-            LoadStateView(state: resourcesManager.state) { mediaMap in
-                if let mediaFile = maxMediaFile(from: mediaMap) {
-                    BadgeView(mediaFile: mediaFile)
+            LoadStateView(state: resourcesManager.state) { mediaFiles in
+                if let maxMediaFile {
+                    BadgeView(mediaFile: maxMediaFile)
                 }
             }
             .padding(.top, .vPaddingLarge)
@@ -38,12 +43,6 @@ struct ResourcesScreen: View {
         )
         .onAppear {
             resourcesManager.load()
-        }
-    }
-
-    private func maxMediaFile(from mediaMap: MediaMap) -> MediaFile? {
-        mediaMap.values.flatMap { $0 }.max { f1, f2 in
-            f1.fileSize < f2.fileSize
         }
     }
 

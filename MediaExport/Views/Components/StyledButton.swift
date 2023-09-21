@@ -13,6 +13,7 @@ struct StyledButton: View {
     @Environment(\.isEnabled) var isEnabled: Bool
 
     var key: LocalizedStringKey
+    var backgroundColor: Color = .appYellow
     var onTap: () -> Void
 
     var body: some View {
@@ -23,7 +24,7 @@ struct StyledButton: View {
                 .tint(.appDarkGray)
                 .frame(maxWidth: .infinity)
                 .padding(EdgeInsets.padding)
-                .background(Color.appYellow)
+                .background(backgroundColor)
                 .clipShape(Capsule())
         }
         .buttonStyle(PlainButtonStyle()) // For dimming on disabled

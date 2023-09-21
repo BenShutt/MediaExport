@@ -9,12 +9,10 @@
 import SwiftUI
 import Photos
 
-typealias MediaMap = [PHAssetMediaType: [MediaFile]]
-
 @MainActor final class ResourcesManager: ObservableObject {
 
     private let assetsMap: AssetsMap
-    @Published private(set) var state: LoadState<MediaMap> = .idle
+    @Published private(set) var state: LoadState<[MediaFile]> = .idle
 
     init(assetsMap: AssetsMap) {
         self.assetsMap = assetsMap
@@ -43,8 +41,8 @@ typealias MediaMap = [PHAssetMediaType: [MediaFile]]
 
 private struct MediaFileMapper {
 
-    static func map(assetsMap: AssetsMap) async throws -> MediaMap {
-        try assetsMap.mapValues { assets in
+    static func map(assetsMap: AssetsMap) async throws -> [MediaFile] {
+        try assetsMap.values.flatMap { assets in
             try assets.map { asset in
                 try MediaFile(
                     fileName: asset.fileName,

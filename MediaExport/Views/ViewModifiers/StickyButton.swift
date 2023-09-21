@@ -11,15 +11,20 @@ import SwiftUI
 struct StickyButton: ViewModifier {
 
     var key: LocalizedStringKey
+    var backgroundColor: Color = .appYellow
     var isEnabled = true
     var onTap: () -> Void
 
     func body(content: Content) -> some View {
         content.modifier(
             StickyBottom {
-                StyledButton(key: key, onTap: onTap)
-                    .disabled(!isEnabled)
-                    .padding(EdgeInsets.padding)
+                StyledButton(
+                    key: key,
+                    backgroundColor: backgroundColor,
+                    onTap: onTap
+                )
+                .disabled(!isEnabled)
+                .padding(EdgeInsets.padding)
             }
         )
     }

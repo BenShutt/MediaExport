@@ -18,6 +18,9 @@ enum NavigationRoute: Hashable {
 
     /// Push the resources screen
     case resources(AssetsMap)
+
+    /// Push the upload screen
+    case upload([MediaFile])
 }
 
 // MARK: - Navigation
@@ -33,6 +36,11 @@ final class Navigation: ObservableObject {
     func push(_ route: NavigationRoute) {
         path.append(route)
     }
+
+    /// Pop to root screen
+    func popToRoot() {
+        path = NavigationPath()
+    }
 }
 
 // MARK: - View + NavigationRoute
@@ -47,6 +55,8 @@ extension View {
                 AssetsScreen()
             case let .resources(assetsMap):
                 ResourcesScreen(assetsMap: assetsMap)
+            case let .upload(mediaFiles):
+                UploadScreen(mediaFiles: mediaFiles)
             }
         }
     }

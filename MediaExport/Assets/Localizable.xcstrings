@@ -257,6 +257,28 @@
           }
         }
       }
+    },
+    "upload_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app will enumerate the media files and sync the files which do not exist yet with the server."
+          }
+        }
+      }
+    },
+    "upload_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upload"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
