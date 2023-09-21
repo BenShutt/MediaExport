@@ -45,6 +45,7 @@
 		B8AB87A42ABC327700B3A575 /* PHAssetMediaType+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */; };
 		B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A52ABC522F00B3A575 /* UploadScreen.swift */; };
 		B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A72ABC524700B3A575 /* UploadManager.swift */; };
+		B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssetMediaType+UI.swift"; sourceTree = "<group>"; };
 		B8AB87A52ABC522F00B3A575 /* UploadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadScreen.swift; sourceTree = "<group>"; };
 		B8AB87A72ABC524700B3A575 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
+		B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				B8979FA92ABA2882003203C4 /* StyledButton.swift */,
 				B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */,
 				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
+				B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */,
 				B8979FAC2ABA28C6003203C4 /* FigmaShadow+Values.swift in Sources */,
 				B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */,
+				B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */,
 				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
 				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
 				B88043112ABB68A5001E6024 /* AuthorizationScreen.swift in Sources */,

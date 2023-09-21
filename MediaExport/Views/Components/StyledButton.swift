@@ -19,8 +19,7 @@ struct StyledButton: View {
     var body: some View {
         Button(action: onTap) {
             Text(key)
-                .style(.button)
-                .foregroundStyle(Color.appDarkGray)
+                .button()
                 .tint(.appDarkGray)
                 .frame(maxWidth: .infinity)
                 .padding(EdgeInsets.padding)

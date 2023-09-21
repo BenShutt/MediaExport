@@ -26,7 +26,6 @@ struct AuthorizationScreen: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: screenWidth * 2 / 3)
-                .padding(.top, .vPaddingLarge)
         }
         .modifier(
             StickyButton(

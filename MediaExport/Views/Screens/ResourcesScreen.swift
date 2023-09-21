@@ -32,7 +32,6 @@ struct ResourcesScreen: View {
                     BadgeView(mediaFile: maxMediaFile)
                 }
             }
-            .padding(.top, .vPaddingLarge)
         }
         .modifier(
             StickyButton(
@@ -47,7 +46,8 @@ struct ResourcesScreen: View {
     }
 
     private func onContinue() {
-        // TODO
+        guard case .success(let mediaFiles) = resourcesManager.state else { return }
+        navigation.push(.upload(mediaFiles))
     }
 }
 

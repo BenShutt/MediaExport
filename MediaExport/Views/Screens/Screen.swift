@@ -23,6 +23,7 @@ struct Screen<Content: View>: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                 content()
+                    .padding(.top, .vPaddingLarge)
             }
             .multilineTextAlignment(.leading)
             .padding(.top, .vPaddingSmall)

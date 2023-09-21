@@ -30,7 +30,8 @@ import Photos
         state = .loading
         do {
             let mediaMap = try await MediaFileMapper.map(assetsMap: assetsMap)
-            state = .success(mediaMap)
+            let tmp = Array(mediaMap.prefix(3)) // TODO
+            state = .success(tmp)
         } catch {
             state = .failure(error)
         }

@@ -21,7 +21,6 @@ struct AssetsScreen: View {
             LoadStateView(state: assetsManager.state) { assetsMap in
                 MediaGrid(assetsMap: assetsMap)
             }
-            .padding(.top, .vPaddingLarge)
         }
         .modifier(
             StickyButton(

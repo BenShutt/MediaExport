@@ -17,36 +17,12 @@ struct UploadScreen: View {
         _uploadManager = .init(wrappedValue: .init(mediaFiles: mediaFiles))
     }
 
-    private var progressString: LocalizedStringKey? {
-        guard let state = uploadManager.syncState else { return nil }
-        switch state {
-        case let .checking(mediaFile):
-            return "checking \(mediaFile.fileName)"
-        case let .uploading(mediaFile):
-            return "uploading \(mediaFile.fileName)"
-        }
-    }
-
     var body: some View {
         Screen(
             title: "upload_title",
             subtitle: "upload_subtitle"
         ) {
-            ProgressView(
-                value: uploadManager.value,
-                total: uploadManager.total,
-                label: {},
-                currentValueLabel: {
-                    if let progressString {
-                        Text(progressString)
-                            .caption()
-                    }
-                }
-            )
-            .tint(.appGreen)
-            .background(.appBlack)
-            .frame(minWidth: .infinity)
-            .padding(.top, .vPaddingLarge)
+            UploadContentView(uploadManager: uploadManager)
         }
         .modifier(
             StickyButton(
@@ -63,6 +39,57 @@ struct UploadScreen: View {
 
     private func onContinue() {
         navigation.popToRoot()
+    }
+}
+
+// MARK: - UploadContentView
+
+private struct UploadContentView: View {
+
+    @ObservedObject var uploadManager: UploadManager
+
+    private var progressString: LocalizedStringKey? {
+        guard let state = uploadManager.syncState else { return nil }
+        switch state {
+        case let .checking(mediaFile):
+            return "checking \(mediaFile.fileName)"
+        case let .uploading(mediaFile):
+            return "uploading \(mediaFile.fileName)"
+        }
+    }
+
+    var body: some View {
+        switch uploadManager.loadState {
+        case .idle: EmptyView()
+
+        case .loading:
+            ProgressView(
+                value: uploadManager.value,
+                total: uploadManager.total,
+                label: {},
+                currentValueLabel: {
+                    if let progressString {
+                        Text(progressString)
+                            .caption()
+                    }
+                }
+            )
+            .tint(.appGreen)
+            .background(.appBlack)
+            .frame(maxWidth: .infinity)
+            .padding(.top, .vPaddingLarge)
+
+            LoadingView()
+                .padding(.top, .vPadding)
+
+        case .success:
+            SuccessView()
+                .frame(size: 200)
+
+        case .failure(let error):
+            Text(verbatim: error.localizedDescription)
+                .body(textColor: .appRed)
+        }
     }
 }
 
