@@ -2,9 +2,7 @@
 
 A SwiftUI iOS app that syncs media on the device (images, videos, etc) with a server over the WIFI.
 
-It is written as client for a [C-Server](https://github.com/BenShutt/C-Playground/tree/develop/Server) project that I worked on for learning purposes.
-
-It is merely a developer-tool and not to be used for anything more.
+It is written as client for a [C-Server](https://github.com/BenShutt/C-Playground/tree/develop/Server) project that I worked on for learning purposes. It is merely a developer-tool and not to be used for anything more.
 
 ## File Names
 
