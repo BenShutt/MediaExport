@@ -56,10 +56,10 @@ import SwiftUI
 
     private func sync(mediaFile: MediaFile) async throws {
         syncState = .checking(mediaFile)
-        let exists = try await Exists.exists(mediaFile: mediaFile)
+        let exists = try await GetExists.exists(mediaFile: mediaFile)
         guard !exists else { return }
 
         syncState = .uploading(mediaFile)
-        try await Upload.upload(mediaFile: mediaFile)
+        try await PostUpload.upload(mediaFile: mediaFile)
     }
 }

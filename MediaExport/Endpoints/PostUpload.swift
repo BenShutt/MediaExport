@@ -1,5 +1,5 @@
 //
-//  Upload.swift
+//  PostUpload.swift
 //  MediaExport
 //
 //  Created by Ben Shutt on 18/09/2023.
@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import Alamofire
 import DataRequest
 
-struct Upload: APIRequest, DataBody {
+struct PostUpload: MediaFileAPIRequest, DataBody {
 
+    let method: HTTPMethod = .post
     let endpoint = "/api/upload"
     var mediaFile: MediaFile
 
@@ -23,10 +25,10 @@ struct Upload: APIRequest, DataBody {
 
 // MARK: - Extensions
 
-extension Upload {
+extension PostUpload {
 
     static func upload(mediaFile: MediaFile) async throws {
-        let status = try await Upload(mediaFile: mediaFile).request().status
+        let status = try await PostUpload(mediaFile: mediaFile).request().status
         guard status == 0 else { throw APIError.status(status) }
     }
 }

@@ -65,7 +65,8 @@ private struct UploadContentView: View {
         case .loading:
             BarProgressView(
                 value: uploadManager.value,
-                total: uploadManager.total
+                total: uploadManager.total,
+                progressString: progressString
             )
 
             LoadingView()

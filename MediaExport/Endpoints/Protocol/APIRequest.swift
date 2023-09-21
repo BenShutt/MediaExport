@@ -12,9 +12,6 @@ import DataRequest
 
 protocol APIRequest: JSONDataRequest where ResponseBody == Status {
 
-    /// The media file to query
-    var mediaFile: MediaFile { get }
-
     /// The path of the URL components
     var endpoint: String { get }
 }
@@ -23,16 +20,10 @@ protocol APIRequest: JSONDataRequest where ResponseBody == Status {
 
 extension APIRequest {
 
-    var additionalHeaders: HTTPHeaders {
-        HTTPHeaders([
-            HTTPHeader(name: "X-File-Name", value: mediaFile.fileName)
-        ])
-    }
-
     var urlComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "http"
-        components.host = "localhost"
+        components.host = "192.168.0.205"
         components.port = 8000
         components.path = endpoint
         components.queryItems = nil

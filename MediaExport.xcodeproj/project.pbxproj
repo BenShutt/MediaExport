@@ -13,8 +13,8 @@
 		B82467892AB8C19D00F39D84 /* MediaExportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467882AB8C19D00F39D84 /* MediaExportUITests.swift */; };
 		B824678B2AB8C19D00F39D84 /* MediaExportUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824678A2AB8C19D00F39D84 /* MediaExportUITestsLaunchTests.swift */; };
 		B824679A2AB8C97C00F39D84 /* DataRequest in Frameworks */ = {isa = PBXBuildFile; productRef = B82467992AB8C97C00F39D84 /* DataRequest */; };
-		B824679C2AB8C98700F39D84 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679B2AB8C98700F39D84 /* Upload.swift */; };
-		B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679D2AB8C98D00F39D84 /* Exists.swift */; };
+		B824679C2AB8C98700F39D84 /* PostUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679B2AB8C98700F39D84 /* PostUpload.swift */; };
+		B824679E2AB8C98D00F39D84 /* GetExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679D2AB8C98D00F39D84 /* GetExists.swift */; };
 		B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679F2AB8C9AD00F39D84 /* APIRequest.swift */; };
 		B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A52AB8D31900F39D84 /* MediaFile.swift */; };
 		B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */; };
@@ -47,6 +47,8 @@
 		B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A72ABC524700B3A575 /* UploadManager.swift */; };
 		B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */; };
 		B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */; };
+		B8AB87B02ABC6C2C00B3A575 /* GetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AF2ABC6C2C00B3A575 /* GetStatus.swift */; };
+		B8AB87B32ABC6C9700B3A575 /* MediaFileAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +79,8 @@
 		B82467842AB8C19C00F39D84 /* MediaExportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaExportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82467882AB8C19D00F39D84 /* MediaExportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaExportUITests.swift; sourceTree = "<group>"; };
 		B824678A2AB8C19D00F39D84 /* MediaExportUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaExportUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B824679B2AB8C98700F39D84 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		B824679D2AB8C98D00F39D84 /* Exists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exists.swift; sourceTree = "<group>"; };
+		B824679B2AB8C98700F39D84 /* PostUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUpload.swift; sourceTree = "<group>"; };
+		B824679D2AB8C98D00F39D84 /* GetExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExists.swift; sourceTree = "<group>"; };
 		B824679F2AB8C9AD00F39D84 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		B82467A52AB8D31900F39D84 /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
 		B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAsset+Extensions.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,8 @@
 		B8AB87A72ABC524700B3A575 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
 		B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressView.swift; sourceTree = "<group>"; };
+		B8AB87AF2ABC6C2C00B3A575 /* GetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatus.swift; sourceTree = "<group>"; };
+		B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFileAPIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,9 +199,10 @@
 		B82467972AB8C7E900F39D84 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				B824679F2AB8C9AD00F39D84 /* APIRequest.swift */,
-				B824679D2AB8C98D00F39D84 /* Exists.swift */,
-				B824679B2AB8C98700F39D84 /* Upload.swift */,
+				B8AB87B12ABC6C8800B3A575 /* Protocol */,
+				B824679D2AB8C98D00F39D84 /* GetExists.swift */,
+				B824679B2AB8C98700F39D84 /* PostUpload.swift */,
+				B8AB87AF2ABC6C2C00B3A575 /* GetStatus.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -305,6 +310,15 @@
 				B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B8AB87B12ABC6C8800B3A575 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B824679F2AB8C9AD00F39D84 /* APIRequest.swift */,
+				B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,12 +487,13 @@
 				B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,
 				B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */,
+				B8AB87B32ABC6C9700B3A575 /* MediaFileAPIRequest.swift in Sources */,
 				B8979FB12ABA2B8B003203C4 /* CGFloat+Values.swift in Sources */,
 				B8A520BE2ABB370B0013FA4A /* ColorUtilities.swift in Sources */,
 				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
 				B8A520C22ABB5DDB0013FA4A /* LoadingView.swift in Sources */,
 				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
-				B824679E2AB8C98D00F39D84 /* Exists.swift in Sources */,
+				B824679E2AB8C98D00F39D84 /* GetExists.swift in Sources */,
 				B8979FAC2ABA28C6003203C4 /* FigmaShadow+Values.swift in Sources */,
 				B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */,
 				B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */,
@@ -491,6 +506,7 @@
 				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
 				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
 				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
+				B8AB87B02ABC6C2C00B3A575 /* GetStatus.swift in Sources */,
 				B8AB87A42ABC327700B3A575 /* PHAssetMediaType+UI.swift in Sources */,
 				B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */,
 				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
@@ -499,7 +515,7 @@
 				B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
 				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
-				B824679C2AB8C98700F39D84 /* Upload.swift in Sources */,
+				B824679C2AB8C98700F39D84 /* PostUpload.swift in Sources */,
 				B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */,
 				B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */,
 			);
