@@ -52,6 +52,7 @@
 		B8AB87B52ABC6DA200B3A575 /* StatusScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */; };
 		B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */; };
 		B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87BA2ABC7AF600B3A575 /* Status.swift */; };
+		B8AB87BD2ABC855D00B3A575 /* MediaDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87BC2ABC855D00B3A575 /* MediaDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusScreen.swift; sourceTree = "<group>"; };
 		B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusManager.swift; sourceTree = "<group>"; };
 		B8AB87BA2ABC7AF600B3A575 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		B8AB87BC2ABC855D00B3A575 /* MediaDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDirectory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A520BD2ABB370B0013FA4A /* ColorUtilities.swift */,
+				B8AB87BC2ABC855D00B3A575 /* MediaDirectory.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */,
 				B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
+				B8AB87BD2ABC855D00B3A575 /* MediaDirectory.swift in Sources */,
 				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
 				B824679C2AB8C98700F39D84 /* PostUpload.swift in Sources */,
 				B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */,
