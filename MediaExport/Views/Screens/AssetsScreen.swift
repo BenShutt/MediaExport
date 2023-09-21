@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AssetsScreen: View {
 
-    @StateObject private var assetManager = AssetManager()
+    @StateObject private var assetManager = AssetsManager()
 
     var body: some View {
         Screen(

@@ -1,5 +1,5 @@
 //
-//  AssetManager.swift
+//  AssetsManager.swift
 //  MediaExport
 //
 //  Created by Ben Shutt on 20/09/2023.
@@ -8,17 +8,17 @@
 
 import SwiftUI
 
-@MainActor final class AssetManager: ObservableObject {
+@MainActor final class AssetsManager: ObservableObject {
 
     @Published private(set) var state: LoadState<MediaMap> = .idle
 
     func load() {
         Task {
-            await update()
+            await fetchAll()
         }
     }
 
-    private func update() async {
+    private func fetchAll() async {
         guard case .idle = state else { return }
 
         state = .loading
