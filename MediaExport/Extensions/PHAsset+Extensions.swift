@@ -83,8 +83,7 @@ enum PHAssetError: Error {
     case firstResource
     case fileSize
 
+    case data
     case imageData
     case videoData
-
-    case data
 }

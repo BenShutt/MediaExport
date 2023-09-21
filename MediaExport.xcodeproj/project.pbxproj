@@ -42,6 +42,7 @@
 		B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */; };
 		B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */; };
 		B8AB87A22ABC2E3100B3A575 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */; };
+		B8AB87A42ABC327700B3A575 /* PHAssetMediaType+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStateView.swift; sourceTree = "<group>"; };
 		B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssetMediaType+UI.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +211,6 @@
 				B8979FA82ABA2876003203C4 /* ViewModifiers */,
 				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
 				B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */,
-				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +232,7 @@
 				B85F96372ABAD95A004493B5 /* MediaGrid.swift */,
 				B8979FA92ABA2882003203C4 /* StyledButton.swift */,
 				B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */,
+				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */,
+				B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
 				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
 				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
+				B8AB87A42ABC327700B3A575 /* PHAssetMediaType+UI.swift in Sources */,
 				B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */,
 				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
 				B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */,

@@ -67,6 +67,17 @@
         }
       }
     },
+    "max_size" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Max Size"
+          }
+        }
+      }
+    },
     "media_type_audio" : {
       "extractionState" : "manual",
       "localizations" : {

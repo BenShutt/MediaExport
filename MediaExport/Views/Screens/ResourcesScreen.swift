@@ -21,16 +21,28 @@ struct ResourcesScreen: View {
         Screen(
             title: "resources_title",
             subtitle: "resources_subtitle",
-            stickyButton: StickyButton(key: "continue_button") {
+            stickyButton: StickyButton(
+                key: "continue_button",
+                isEnabled: resourcesManager.state.isSuccess
+            ) {
                 onContinue()
             }
         ) {
             LoadStateView(state: resourcesManager.state) { mediaMap in
+                if let mediaFile = maxMediaFile(from: mediaMap) {
+                    BadgeView(mediaFile: mediaFile)
+                }
             }
             .padding(.top, .vPaddingLarge)
         }
         .onAppear {
             resourcesManager.load()
+        }
+    }
+
+    private func maxMediaFile(from mediaMap: MediaMap) -> MediaFile? {
+        mediaMap.values.flatMap { $0 }.max { f1, f2 in
+            f1.fileSize < f2.fileSize
         }
     }
 
