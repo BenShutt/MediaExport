@@ -16,6 +16,10 @@ struct PostUpload: MediaFileAPIRequest, DataBody {
     let endpoint = "/api/upload"
     var mediaFile: MediaFile
 
+    var timeoutInterval: TimeInterval {
+        60 * 60 // 1hr
+    }
+
     var body: Data {
         get async throws {
             try await mediaFile.data()

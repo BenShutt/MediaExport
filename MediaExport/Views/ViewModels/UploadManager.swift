@@ -15,7 +15,7 @@ import SwiftUI
         case uploading(MediaFile)
     }
 
-    let mediaFiles: [MediaFile]
+    private let mediaFiles: [MediaFile]
     @Published private(set) var syncedMediaFiles: [MediaFile] = []
     @Published private(set) var loadState: LoadState<[MediaFile]> = .idle
     @Published private(set) var syncState: SyncState?
@@ -41,7 +41,9 @@ import SwiftUI
     private func syncAll() async {
         guard case .idle = loadState else { return }
 
+        syncedMediaFiles = []
         loadState = .loading
+        syncState = nil
         defer { syncState = nil }
 
         do {
@@ -57,9 +59,10 @@ import SwiftUI
     private func sync(mediaFile: MediaFile) async throws {
         syncState = .checking(mediaFile)
         let exists = try await GetExists.exists(mediaFile: mediaFile)
-        guard !exists else { return }
-
-        syncState = .uploading(mediaFile)
-        try await PostUpload.upload(mediaFile: mediaFile)
+        if !exists {
+            syncState = .uploading(mediaFile)
+            try await PostUpload.upload(mediaFile: mediaFile)
+        }
+        syncedMediaFiles.append(mediaFile)
     }
 }
