@@ -25,7 +25,7 @@ struct ResourcesScreen: View {
                 onContinue()
             }
         ) {
-            LoadStateView(state: resourcesManager.state) { _ in
+            LoadStateView(state: resourcesManager.state) { mediaMap in
             }
             .padding(.top, .vPaddingLarge)
         }

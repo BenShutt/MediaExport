@@ -21,6 +21,7 @@ extension CGFloat {
     static let vPaddingSmall: CGFloat = 8
 
     static let corners: CGFloat = 10
+    static let border: CGFloat = 5
 }
 
 // MARK: - EdgeInsets + Values

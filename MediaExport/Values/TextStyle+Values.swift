@@ -13,7 +13,7 @@ import CubeFoundationSwiftUI
 
 extension TextStyle {
 
-    static let header = TextStyle(.system, weight: .heavy, size: 36, lineHeight: 40)
+    static let badge = TextStyle(.system, weight: .heavy, size: 45, lineHeight: 45)
     static let body = TextStyle(.system, weight: .regular, size: 20, lineHeight: 22)
     static let button = TextStyle(.system, weight: .heavy, size: 18, lineHeight: 22)
     static let caption = TextStyle(.system, weight: .semibold, size: 18, lineHeight: 20)
@@ -23,9 +23,10 @@ extension TextStyle {
 
 extension Text {
 
-    func header() -> some View {
-        self.style(.header)
+    func badge() -> some View {
+        self.style(.badge)
             .foregroundStyle(Color.appBlack)
+            .lineLimit(1)
     }
 
     func body() -> some View {

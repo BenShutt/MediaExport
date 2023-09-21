@@ -41,6 +41,7 @@
 		B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */; };
 		B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */; };
 		B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */; };
+		B8AB87A22ABC2E3100B3A575 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesManager.swift; sourceTree = "<group>"; };
 		B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStateView.swift; sourceTree = "<group>"; };
+		B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				B8979FA82ABA2876003203C4 /* ViewModifiers */,
 				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
 				B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */,
+				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				B88043112ABB68A5001E6024 /* AuthorizationScreen.swift in Sources */,
 				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
 				B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */,
+				B8AB87A22ABC2E3100B3A575 /* BadgeView.swift in Sources */,
 				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
 				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
 				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
