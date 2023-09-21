@@ -15,9 +15,12 @@ struct GetStatus: APIRequest {
 
 // MARK: - Extensions
 
-extension GetExists {
+extension GetStatus {
 
-    static func status() async throws -> Int {
-        try await GetStatus().request().status
+    @discardableResult
+    static func validate() async throws -> Int {
+        let status = try await GetStatus().request().status
+        guard status == 0 else { throw APIError.status(status) }
+        return status
     }
 }

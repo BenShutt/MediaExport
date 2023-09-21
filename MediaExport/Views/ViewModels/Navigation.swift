@@ -19,6 +19,9 @@ enum NavigationRoute: Hashable {
     /// Push the resources screen
     case resources(AssetsMap)
 
+    /// Push the status screen
+    case status([MediaFile])
+
     /// Push the upload screen
     case upload([MediaFile])
 }
@@ -55,6 +58,8 @@ extension View {
                 AssetsScreen()
             case let .resources(assetsMap):
                 ResourcesScreen(assetsMap: assetsMap)
+            case let .status(mediaFiles):
+                StatusScreen(mediaFiles: mediaFiles)
             case let .upload(mediaFiles):
                 UploadScreen(mediaFiles: mediaFiles)
             }

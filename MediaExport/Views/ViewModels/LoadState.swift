@@ -24,4 +24,11 @@ enum LoadState<Success> {
         guard case .success = self else { return false }
         return true
     }
+
+    var isFinished: Bool {
+        switch self {
+        case .idle, .loading: false
+        case .success, .failure: true
+        }
+    }
 }

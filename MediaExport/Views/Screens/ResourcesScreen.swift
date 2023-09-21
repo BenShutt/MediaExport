@@ -47,7 +47,7 @@ struct ResourcesScreen: View {
 
     private func onContinue() {
         guard case .success(let mediaFiles) = resourcesManager.state else { return }
-        navigation.push(.upload(mediaFiles))
+        navigation.push(.status(mediaFiles))
     }
 }
 

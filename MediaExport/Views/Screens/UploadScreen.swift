@@ -74,7 +74,7 @@ private struct UploadContentView: View {
 
         case .success:
             SuccessView()
-                .frame(size: 200)
+                .frame(size: 250)
 
         case .failure(let error):
             Text(verbatim: error.localizedDescription)

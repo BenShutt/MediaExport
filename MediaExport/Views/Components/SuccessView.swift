@@ -20,5 +20,5 @@ struct SuccessView: View {
 
 #Preview {
     SuccessView()
-        .frame(size: 200)
+        .frame(size: 250)
 }

@@ -258,6 +258,28 @@
         }
       }
     },
+    "status_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We just need to check we can communicate with the server. Click the button to continue."
+          }
+        }
+      }
+    },
+    "status_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Status"
+          }
+        }
+      }
+    },
     "unauthorized_alert_message" : {
       "extractionState" : "manual",
       "localizations" : {

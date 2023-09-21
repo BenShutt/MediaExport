@@ -15,13 +15,15 @@ struct LoadStateView<Success, Content: View>: View {
 
     var body: some View {
         switch state {
+        case .idle:
+            EmptyView()
+        case .loading:
+            LoadingView()
         case let .success(success):
             content(success)
         case let .failure(error):
             Text(verbatim: error.localizedDescription)
-                .body()
-        default:
-            LoadingView()
+                .body(textColor: .appRed)
         }
     }
 }
