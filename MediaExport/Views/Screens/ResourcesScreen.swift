@@ -27,7 +27,7 @@ struct ResourcesScreen: View {
             title: "resources_title",
             subtitle: "resources_subtitle"
         ) {
-            LoadStateView(state: resourcesManager.state) { mediaFiles in
+            LoadStateView(state: resourcesManager.state) { _ in
                 if let maxMediaFile {
                     BadgeView(mediaFile: maxMediaFile)
                 }

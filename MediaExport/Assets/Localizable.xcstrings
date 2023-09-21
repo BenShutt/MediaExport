@@ -45,6 +45,17 @@
         }
       }
     },
+    "checking %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking %@..."
+          }
+        }
+      }
+    },
     "continue_button" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -63,6 +74,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dismiss"
+          }
+        }
+      }
+    },
+    "done_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DONE"
           }
         }
       }
@@ -276,6 +298,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Upload"
+          }
+        }
+      }
+    },
+    "uploading %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uploading %@..."
           }
         }
       }

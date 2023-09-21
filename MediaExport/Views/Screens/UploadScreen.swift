@@ -17,19 +17,42 @@ struct UploadScreen: View {
         _uploadManager = .init(wrappedValue: .init(mediaFiles: mediaFiles))
     }
 
+    private var progressString: LocalizedStringKey? {
+        guard let state = uploadManager.syncState else { return nil }
+        switch state {
+        case let .checking(mediaFile):
+            return "checking \(mediaFile.fileName)"
+        case let .uploading(mediaFile):
+            return "uploading \(mediaFile.fileName)"
+        }
+    }
+
     var body: some View {
         Screen(
             title: "upload_title",
             subtitle: "upload_subtitle"
         ) {
-            EmptyView() // TODO
-                .padding(.top, .vPaddingLarge)
+            ProgressView(
+                value: uploadManager.value,
+                total: uploadManager.total,
+                label: {},
+                currentValueLabel: {
+                    if let progressString {
+                        Text(progressString)
+                            .caption()
+                    }
+                }
+            )
+            .tint(.appGreen)
+            .background(.appBlack)
+            .frame(minWidth: .infinity)
+            .padding(.top, .vPaddingLarge)
         }
         .modifier(
             StickyButton(
-                key: "continue_button",
+                key: "done_button",
                 backgroundColor: .appGreen,
-                isEnabled: !uploadManager.state.isLoading,
+                isEnabled: !uploadManager.loadState.isLoading,
                 onTap: { onContinue() }
             )
         )

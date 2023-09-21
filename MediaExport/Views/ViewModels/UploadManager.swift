@@ -10,10 +10,23 @@ import SwiftUI
 
 @MainActor final class UploadManager: ObservableObject {
 
-    private let mediaFiles: [MediaFile]
-    @Published private(set) var state: LoadState<Void> = .idle
-    @Published var currentMediaFile: MediaFile?
-    @Published var lastMediaFile: (MediaFile, existed: Bool)?
+    enum SyncState {
+        case checking(MediaFile)
+        case uploading(MediaFile)
+    }
+
+    let mediaFiles: [MediaFile]
+    @Published private(set) var syncedMediaFiles: [MediaFile] = []
+    @Published private(set) var loadState: LoadState<[MediaFile]> = .idle
+    @Published private(set) var syncState: SyncState?
+
+    var value: CGFloat {
+        CGFloat(syncedMediaFiles.count)
+    }
+
+    var total: CGFloat {
+        CGFloat(mediaFiles.count)
+    }
 
     init(mediaFiles: [MediaFile]) {
         self.mediaFiles = mediaFiles
@@ -26,28 +39,27 @@ import SwiftUI
     }
 
     private func syncAll() async {
-        guard case .idle = state else { return }
+        guard case .idle = loadState else { return }
 
-        state = .loading
-        defer { currentMediaFile = nil }
+        loadState = .loading
+        defer { syncState = nil }
 
         do {
             for mediaFile in mediaFiles {
                 try await sync(mediaFile: mediaFile)
             }
-            state = .success(())
+            loadState = .success(syncedMediaFiles)
         } catch {
-            state = .failure(error)
+            loadState = .failure(error)
         }
     }
 
     private func sync(mediaFile: MediaFile) async throws {
-        currentMediaFile = mediaFile
-        if try await Exists.exists(mediaFile: mediaFile) {
-            lastMediaFile = (mediaFile, true)
-        } else {
-            try await Upload.upload(mediaFile: mediaFile)
-            lastMediaFile = (mediaFile, false)
-        }
+        syncState = .checking(mediaFile)
+        let exists = try await Exists.exists(mediaFile: mediaFile)
+        guard !exists else { return }
+
+        syncState = .uploading(mediaFile)
+        try await Upload.upload(mediaFile: mediaFile)
     }
 }
