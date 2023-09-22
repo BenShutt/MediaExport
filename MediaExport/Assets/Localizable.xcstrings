@@ -198,7 +198,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "We need to get the names of all the files and compute the largest to know the buffer size for the server."
+            "value" : "We need to fetch the file names and file sizes of all the assets to proceed."
           }
         }
       }

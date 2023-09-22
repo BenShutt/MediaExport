@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+// TODO: This and file sizes aren't needed anymore now we are uploading
+
 struct ResourcesScreen: View {
 
     @EnvironmentObject var navigation: Navigation

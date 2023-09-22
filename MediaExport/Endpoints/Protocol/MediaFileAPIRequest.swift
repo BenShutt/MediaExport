@@ -21,8 +21,8 @@ protocol MediaFileAPIRequest: APIRequest {
 extension MediaFileAPIRequest {
 
     var additionalHeaders: HTTPHeaders {
-        HTTPHeaders([
+        [
             HTTPHeader(name: "X-File-Name", value: mediaFile.fileName)
-        ])
+        ]
     }
 }
