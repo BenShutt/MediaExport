@@ -178,9 +178,9 @@
 		B824676B2AB8C19B00F39D84 /* MediaExport */ = {
 			isa = PBXGroup;
 			children = (
-				B8AB879E2ABC271400B3A575 /* Extensions */,
 				B8979FA52ABA27B7003203C4 /* Assets */,
 				B82467972AB8C7E900F39D84 /* Endpoints */,
+				B8AB879E2ABC271400B3A575 /* Extensions */,
 				B82467A12AB8D1A800F39D84 /* Models */,
 				B8A520BC2ABB36DF0013FA4A /* Utilities */,
 				B8979FAD2ABA290D003203C4 /* Values */,
@@ -214,8 +214,8 @@
 			children = (
 				B8AB87B12ABC6C8800B3A575 /* Protocol */,
 				B824679D2AB8C98D00F39D84 /* GetExists.swift */,
-				B824679B2AB8C98700F39D84 /* PostUpload.swift */,
 				B8AB87AF2ABC6C2C00B3A575 /* GetStatus.swift */,
+				B824679B2AB8C98700F39D84 /* PostUpload.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -235,8 +235,8 @@
 			children = (
 				B8979F9C2ABA2779003203C4 /* Components */,
 				B8979F942ABA22F7003203C4 /* Screens */,
-				B8979FB52ABA3289003203C4 /* Navigation.swift */,
 				B824676E2AB8C19B00F39D84 /* ContentView.swift */,
+				B8979FB52ABA3289003203C4 /* Navigation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,13 +244,13 @@
 		B8979F942ABA22F7003203C4 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B8AB87B92ABC7A3C00B3A575 /* Protocol */,
 				B8AB87B82ABC7A2D00B3A575 /* Managers */,
+				B8AB87B92ABC7A3C00B3A575 /* Protocol */,
 				B8979F922ABA22F4003203C4 /* AssetsScreen.swift */,
 				B88043102ABB68A5001E6024 /* AuthorizationScreen.swift */,
 				B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */,
-				B8AB87A52ABC522F00B3A575 /* UploadScreen.swift */,
 				B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */,
+				B8AB87A52ABC522F00B3A575 /* UploadScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -259,13 +259,13 @@
 			isa = PBXGroup;
 			children = (
 				B8979FA82ABA2876003203C4 /* StickyButton */,
+				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
+				B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */,
+				B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */,
+				B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */,
 				B85F96372ABAD95A004493B5 /* MediaGrid.swift */,
 				B8979FA92ABA2882003203C4 /* StyledButton.swift */,
-				B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */,
-				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
 				B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */,
-				B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */,
-				B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -331,10 +331,10 @@
 			isa = PBXGroup;
 			children = (
 				B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */,
-				B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */,
 				B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */,
-				B8AB87A72ABC524700B3A575 /* UploadManager.swift */,
+				B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */,
 				B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */,
+				B8AB87A72ABC524700B3A575 /* UploadManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -510,45 +510,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */,
-				B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */,
-				B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,
+				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
 				B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */,
-				B8AB87B32ABC6C9700B3A575 /* MediaFileAPIRequest.swift in Sources */,
+				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
+				B88043112ABB68A5001E6024 /* AuthorizationScreen.swift in Sources */,
+				B8AB87A22ABC2E3100B3A575 /* BadgeView.swift in Sources */,
+				B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */,
 				B8979FB12ABA2B8B003203C4 /* CGFloat+Values.swift in Sources */,
 				B8A520BE2ABB370B0013FA4A /* ColorUtilities.swift in Sources */,
-				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
-				B8A520C22ABB5DDB0013FA4A /* LoadingView.swift in Sources */,
 				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
-				B824679E2AB8C98D00F39D84 /* GetExists.swift in Sources */,
 				B8979FAC2ABA28C6003203C4 /* FigmaShadow+Values.swift in Sources */,
+				B824679E2AB8C98D00F39D84 /* GetExists.swift in Sources */,
+				B8AB87B02ABC6C2C00B3A575 /* GetStatus.swift in Sources */,
+				B8A520C22ABB5DDB0013FA4A /* LoadingView.swift in Sources */,
 				B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */,
-				B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */,
+				B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */,
+				B8AB87BD2ABC855D00B3A575 /* MediaDirectory.swift in Sources */,
 				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
 				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
-				B8661E6C2ABCE123006D46ED /* MediaId.swift in Sources */,
-				B88043112ABB68A5001E6024 /* AuthorizationScreen.swift in Sources */,
+				B8AB87B32ABC6C9700B3A575 /* MediaFileAPIRequest.swift in Sources */,
 				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
+				B8661E6C2ABCE123006D46ED /* MediaId.swift in Sources */,
 				B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */,
-				B8AB87A22ABC2E3100B3A575 /* BadgeView.swift in Sources */,
-				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
 				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
-				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
-				B8AB87B02ABC6C2C00B3A575 /* GetStatus.swift in Sources */,
 				B8AB87A42ABC327700B3A575 /* PHAssetMediaType+UI.swift in Sources */,
+				B824679C2AB8C98700F39D84 /* PostUpload.swift in Sources */,
+				B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */,
+				B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */,
+				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
+				B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */,
+				B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */,
 				B8AB87B52ABC6DA200B3A575 /* StatusScreen.swift in Sources */,
 				B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */,
 				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
 				B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */,
+				B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */,
 				B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */,
-				B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */,
+				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
-				B8AB87BD2ABC855D00B3A575 /* MediaDirectory.swift in Sources */,
-				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
-				B824679C2AB8C98700F39D84 /* PostUpload.swift in Sources */,
-				B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */,
-				B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
