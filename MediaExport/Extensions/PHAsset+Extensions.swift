@@ -8,16 +8,17 @@
 
 import Foundation
 import Photos
+import CubeFoundation
 
 // MARK: - Resources
 
 extension PHAsset {
 
+    /// - Warning: Each PHAsset object references one or *more* resources.
     private var firstResource: PHAssetResource {
         get throws {
-            let resource = PHAssetResource.assetResources(for: self).first
-            guard let resource else { throw PHAssetError.firstResource }
-            return resource
+            let resources = PHAssetResource.assetResources(for: self)
+            return try resources.first ?! PHAssetError.firstResource
         }
     }
 
@@ -28,52 +29,9 @@ extension PHAsset {
     }
 }
 
-// MARK: - Data
-
-extension PHAsset {
-
-    func data() async throws -> Data {
-        switch mediaType {
-        case .image: return try await imageData()
-        case .video: return try await videoData()
-        default: throw PHAssetError.data
-        }
-    }
-
-    private func imageData() async throws -> Data {
-        let data = await withCheckedContinuation { continuation in
-            PHCachingImageManager().requestImageDataAndOrientation(
-                for: self,
-                options: PHImageRequestOptions()
-            ) { data, _, _, _ in
-                continuation.resume(returning: data)
-            }
-        }
-        guard let data else { throw PHAssetError.imageData }
-        return data
-    }
-
-    private func videoData() async throws -> Data {
-        let avAsset = await withCheckedContinuation { continuation in
-            PHCachingImageManager().requestAVAsset(
-                forVideo: self,
-                options: PHVideoRequestOptions()
-            ) { avAsset, _, _ in
-                continuation.resume(returning: avAsset)
-            }
-        }
-        let avURLAsset = avAsset as? AVURLAsset
-        guard let avURLAsset else { throw PHAssetError.videoData }
-        return try Data(contentsOf: avURLAsset.url)
-    }
-}
-
 // MARK: - PHAssetError
 
 enum PHAssetError: Error {
 
     case firstResource
-    case data
-    case imageData
-    case videoData
 }

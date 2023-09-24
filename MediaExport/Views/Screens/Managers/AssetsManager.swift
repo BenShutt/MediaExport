@@ -57,5 +57,6 @@ typealias AssetsMap = [PHAssetMediaType: [PHAsset]]
 // MARK: - AssetsManagerError
 
 enum AssetsManagerError: Error {
+
     case authorization
 }

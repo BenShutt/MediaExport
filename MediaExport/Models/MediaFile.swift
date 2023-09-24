@@ -24,6 +24,17 @@ struct MediaFile: Equatable, Hashable {
     }
 
     func data() async throws -> Data {
-        try await asset.data()
+        switch mediaType {
+        case .image: return try await ImageFetcher.data(for: asset)
+        case .video: return try await VideoFetcher.data(for: self)
+        default: throw MediaFileError.data
+        }
     }
+}
+
+// MARK: - MediaFileError
+
+enum MediaFileError: Error {
+
+    case data
 }
