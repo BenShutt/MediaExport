@@ -50,27 +50,13 @@ struct BadgeView: View {
     }
 }
 
-// MARK: - BadgeView + MediaFile
-
-extension BadgeView {
-
-    init(mediaFile: MediaFile) {
-        self.init(
-            symbol: mediaFile.mediaType.symbol,
-            title: mediaFile.formattedFileSize,
-            subtitle: "max_size",
-            backgroundColor: mediaFile.mediaType.color
-        )
-    }
-}
-
 // MARK: - BadgeView
 
 #Preview {
     BadgeView(
-        symbol: PHAssetMediaType.video.symbol,
-        title: "12345.678 MB",
-        subtitle: "max_size",
-        backgroundColor: PHAssetMediaType.video.color
+        symbol: "number",
+        title: "12,345",
+        subtitle: "media_file_count",
+        backgroundColor: .appWhite
     )
 }

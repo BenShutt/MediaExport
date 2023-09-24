@@ -13,7 +13,7 @@ import Photos
 
 extension PHAsset {
 
-    var firstResource: PHAssetResource {
+    private var firstResource: PHAssetResource {
         get throws {
             let resource = PHAssetResource.assetResources(for: self).first
             guard let resource else { throw PHAssetError.firstResource }
@@ -24,14 +24,6 @@ extension PHAsset {
     var originalFilename: String {
         get throws {
             try firstResource.originalFilename
-        }
-    }
-
-    var fileSize: Int64 {
-        get throws {
-            let long = try firstResource.value(forKey: "fileSize") as? CLong
-            guard let long else { throw PHAssetError.fileSize }
-            return Int64(bitPattern: UInt64(long))
         }
     }
 }
@@ -81,8 +73,6 @@ extension PHAsset {
 enum PHAssetError: Error {
 
     case firstResource
-    case fileSize
-
     case data
     case imageData
     case videoData

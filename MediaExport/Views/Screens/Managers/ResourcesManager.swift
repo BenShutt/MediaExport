@@ -65,7 +65,6 @@ private struct MediaFileMapper {
             try assets.map { asset in
                 try MediaFile(
                     originalFilename: asset.originalFilename,
-                    fileSize: asset.fileSize,
                     asset: asset
                 )
             }

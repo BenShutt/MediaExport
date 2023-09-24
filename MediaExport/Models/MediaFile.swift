@@ -11,7 +11,6 @@ import Photos
 struct MediaFile: Equatable, Hashable {
 
     var originalFilename: String
-    var fileSize: Int64
     var asset: PHAsset
 
     // MARK: - Computed
@@ -26,11 +25,5 @@ struct MediaFile: Equatable, Hashable {
 
     func data() async throws -> Data {
         try await asset.data()
-    }
-
-    var formattedFileSize: String {
-        let formatter = ByteCountFormatter()
-        formatter.countStyle = .binary
-        return formatter.string(fromByteCount: fileSize)
     }
 }

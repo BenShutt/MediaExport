@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-// TODO: This and file sizes aren't needed anymore now we are uploading
-
 struct ResourcesScreen: View {
 
     @EnvironmentObject var navigation: Navigation
@@ -19,9 +17,12 @@ struct ResourcesScreen: View {
         _resourcesManager = .init(wrappedValue: .init(assetsMap: assetsMap))
     }
 
-    private var maxMediaFile: MediaFile? {
+    private var mediaFileCount: String? {
         guard case .success(let mediaFiles) = resourcesManager.state else { return nil }
-        return mediaFiles.max { $0.fileSize < $1.fileSize }
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: mediaFiles.count as NSNumber)
     }
 
     var body: some View {
@@ -30,8 +31,13 @@ struct ResourcesScreen: View {
             subtitle: "resources_subtitle"
         ) {
             LoadStateView(state: resourcesManager.state) { _ in
-                if let maxMediaFile {
-                    BadgeView(mediaFile: maxMediaFile)
+                if let mediaFileCount {
+                    BadgeView(
+                        symbol: "number",
+                        title: mediaFileCount,
+                        subtitle: "media_file_count",
+                        backgroundColor: .appWhite
+                    )
                 }
             }
         }

@@ -89,13 +89,13 @@
         }
       }
     },
-    "max_size" : {
+    "media_file_count" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Max Size"
+            "value" : "Media Files"
           }
         }
       }
