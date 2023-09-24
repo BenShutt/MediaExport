@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct GetStatus: APIRequest {
+struct GetStatus: DecodableEndpoint {
 
     let endpoint = "/api/status"
 }
@@ -17,8 +17,7 @@ struct GetStatus: APIRequest {
 
 extension GetStatus {
 
-    @discardableResult
-    static func validate() async throws -> Int {
+    static func request() async throws -> Int {
         try await GetStatus().request().validate()
     }
 }

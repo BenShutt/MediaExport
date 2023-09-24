@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 @MainActor final class UploadManager: ObservableObject {
 
@@ -58,7 +59,7 @@ import SwiftUI
 
     private func sync(mediaFile: MediaFile) async throws {
         syncState = .checking(mediaFile)
-        let exists = try await GetExists.exists(mediaFile: mediaFile)
+        let exists = try await GetExists.request(mediaFile: mediaFile)
         if !exists {
             syncState = .uploading(mediaFile)
             try await PostUpload.upload(mediaFile: mediaFile)

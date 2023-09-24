@@ -1,5 +1,5 @@
 //
-//  APIRequest.swift
+//  Endpoint.swift
 //  MediaExport
 //
 //  Created by Ben Shutt on 18/09/2023.
@@ -10,15 +10,14 @@ import Foundation
 import Alamofire
 import DataRequest
 
-protocol APIRequest: JSONDataRequest where ResponseBody == Status {
+// MARK: - Endpoint
 
-    /// The path of the URL components
+protocol Endpoint: URLRequestMaker {
+
     var endpoint: String { get }
 }
 
-// MARK: - Extensions
-
-extension APIRequest {
+extension Endpoint {
 
     var urlComponents: URLComponents {
         var components = URLComponents()
@@ -29,4 +28,15 @@ extension APIRequest {
         components.queryItems = nil
         return components
     }
+
+    func additionalHeaders(mediaFile: MediaFile) -> HTTPHeaders {
+        var headers = HTTPHeaders()
+        headers.append(.acceptJSON)
+        headers.append(HTTPHeader(name: "X-File-Name", value: mediaFile.fileName))
+        return headers
+    }
 }
+
+// MARK: - DecodableEndpoint
+
+protocol DecodableEndpoint: Endpoint, DecodableRequest where ResponseBody == Status {}

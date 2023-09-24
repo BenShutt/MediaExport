@@ -24,7 +24,7 @@ import SwiftUI
 
         state = .loading
         do {
-            state = try await .success(GetStatus.validate())
+            state = try await .success(GetStatus.request())
         } catch {
             state = .failure(error)
         }

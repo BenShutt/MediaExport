@@ -15,7 +15,7 @@
 		B824679A2AB8C97C00F39D84 /* DataRequest in Frameworks */ = {isa = PBXBuildFile; productRef = B82467992AB8C97C00F39D84 /* DataRequest */; };
 		B824679C2AB8C98700F39D84 /* PostUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679B2AB8C98700F39D84 /* PostUpload.swift */; };
 		B824679E2AB8C98D00F39D84 /* GetExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679D2AB8C98D00F39D84 /* GetExists.swift */; };
-		B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679F2AB8C9AD00F39D84 /* APIRequest.swift */; };
+		B82467A02AB8C9AD00F39D84 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824679F2AB8C9AD00F39D84 /* Endpoint.swift */; };
 		B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467A52AB8D31900F39D84 /* MediaFile.swift */; };
 		B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */; };
 		B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82467B02AB8DB4E00F39D84 /* LoadState.swift */; };
@@ -50,7 +50,6 @@
 		B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */; };
 		B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */; };
 		B8AB87B02ABC6C2C00B3A575 /* GetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87AF2ABC6C2C00B3A575 /* GetStatus.swift */; };
-		B8AB87B32ABC6C9700B3A575 /* MediaFileAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */; };
 		B8AB87B52ABC6DA200B3A575 /* StatusScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */; };
 		B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */; };
 		B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87BA2ABC7AF600B3A575 /* Status.swift */; };
@@ -87,7 +86,7 @@
 		B824678A2AB8C19D00F39D84 /* MediaExportUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaExportUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B824679B2AB8C98700F39D84 /* PostUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUpload.swift; sourceTree = "<group>"; };
 		B824679D2AB8C98D00F39D84 /* GetExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExists.swift; sourceTree = "<group>"; };
-		B824679F2AB8C9AD00F39D84 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		B824679F2AB8C9AD00F39D84 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B82467A52AB8D31900F39D84 /* MediaFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFile.swift; sourceTree = "<group>"; };
 		B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAsset+Extensions.swift"; sourceTree = "<group>"; };
 		B82467B02AB8DB4E00F39D84 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		B8AB87AD2ABC61ED00B3A575 /* BarProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarProgressView.swift; sourceTree = "<group>"; };
 		B8AB87AF2ABC6C2C00B3A575 /* GetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatus.swift; sourceTree = "<group>"; };
-		B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFileAPIRequest.swift; sourceTree = "<group>"; };
 		B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusScreen.swift; sourceTree = "<group>"; };
 		B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusManager.swift; sourceTree = "<group>"; };
 		B8AB87BA2ABC7AF600B3A575 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
@@ -212,7 +210,7 @@
 		B82467972AB8C7E900F39D84 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				B8AB87B12ABC6C8800B3A575 /* Protocol */,
+				B824679F2AB8C9AD00F39D84 /* Endpoint.swift */,
 				B824679D2AB8C98D00F39D84 /* GetExists.swift */,
 				B8AB87AF2ABC6C2C00B3A575 /* GetStatus.swift */,
 				B824679B2AB8C98700F39D84 /* PostUpload.swift */,
@@ -316,15 +314,6 @@
 				B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B8AB87B12ABC6C8800B3A575 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				B824679F2AB8C9AD00F39D84 /* APIRequest.swift */,
-				B8AB87B22ABC6C9700B3A575 /* MediaFileAPIRequest.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		B8AB87B82ABC7A2D00B3A575 /* Managers */ = {
@@ -510,7 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B82467A02AB8C9AD00F39D84 /* APIRequest.swift in Sources */,
+				B82467A02AB8C9AD00F39D84 /* Endpoint.swift in Sources */,
 				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
 				B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */,
 				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
@@ -529,7 +518,6 @@
 				B8AB87BD2ABC855D00B3A575 /* MediaDirectory.swift in Sources */,
 				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
 				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
-				B8AB87B32ABC6C9700B3A575 /* MediaFileAPIRequest.swift in Sources */,
 				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
 				B8661E6C2ABCE123006D46ED /* MediaId.swift in Sources */,
 				B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */,
