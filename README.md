@@ -16,7 +16,7 @@ For images, [requestImageDataAndOrientation(for:options:resultHandler:)](https:/
 For videos though, since an [AVURLAsset](https://developer.apple.com/documentation/avfoundation/avurlasset) is not guaranteed, we were required to use [requestExportSession(forVideo:options:exportPreset:resultHandler:)](https://developer.apple.com/documentation/photokit/phimagemanager/1616981-requestexportsession) and write to a temporary file. For both, various request options needed to be set.
 The logic for each is encapsulated in `ImageFetcher` and `VideoFetcher` respectively.
 
-A part of the complexity comes from `PHAsset`s having more than one [PHAssetResource](https://developer.apple.com/documentation/photokit/phassetresource) but are sent to the server and saved as a single file.
+A part of the complexity may come from `PHAsset`s sometimes having more than one [PHAssetResource](https://developer.apple.com/documentation/photokit/phassetresource) but are assumed to be a single file (that we send to the server).
 
 It is assumed that the first `PHAssetResource` of a `PHAsset` contains the (original) file name.
 
