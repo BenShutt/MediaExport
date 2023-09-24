@@ -25,9 +25,6 @@ extension PostUpload {
 
     static func upload(mediaFile: MediaFile) async throws {
         try await AF.upload(mediaFile.data(), with: PostUpload(mediaFile: mediaFile))
-            .uploadProgress { progress in
-                print("Upload progress \(progress.fractionCompleted)")
-            }
             .decodeValue(Status.self)
             .validate()
     }

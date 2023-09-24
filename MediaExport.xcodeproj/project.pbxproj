@@ -256,10 +256,10 @@
 			isa = PBXGroup;
 			children = (
 				B8AB87B82ABC7A2D00B3A575 /* Managers */,
-				B8AB87B92ABC7A3C00B3A575 /* Protocol */,
 				B8979F922ABA22F4003203C4 /* AssetsScreen.swift */,
 				B88043102ABB68A5001E6024 /* AuthorizationScreen.swift */,
 				B8AB87982ABC202600B3A575 /* ResourcesScreen.swift */,
+				B8979F952ABA230F003203C4 /* Screen.swift */,
 				B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */,
 				B8AB87A52ABC522F00B3A575 /* UploadScreen.swift */,
 			);
@@ -340,14 +340,6 @@
 				B8AB87A72ABC524700B3A575 /* UploadManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		B8AB87B92ABC7A3C00B3A575 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				B8979F952ABA230F003203C4 /* Screen.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

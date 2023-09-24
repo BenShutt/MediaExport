@@ -25,22 +25,22 @@ extension TextStyle {
 extension Text {
 
     func badge(textColor: Color = .appBlack) -> some View {
-        self.style(.badge)
+        style(.badge)
             .foregroundStyle(textColor)
     }
 
     func body(textColor: Color = .appDarkGray) -> some View {
-        self.style(.body)
+        style(.body)
             .foregroundStyle(textColor)
     }
 
     func caption(textColor: Color = .appDarkGray) -> some View {
-        self.style(.caption)
+        style(.caption)
             .foregroundStyle(textColor)
     }
 
     func button(textColor: Color = .appDarkGray) -> some View {
-        self.style(.button)
+        style(.button)
             .foregroundStyle(textColor)
     }
 }

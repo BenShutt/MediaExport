@@ -12,6 +12,7 @@ import Alamofire
 @MainActor final class UploadManager: ObservableObject {
 
     enum SyncState {
+
         case checking(MediaFile)
         case uploading(MediaFile)
     }
