@@ -9,14 +9,10 @@ import SwiftUI
 import Photos
 
 struct ContentView: View {
-    @StateObject private var navigation = Navigation()
-
     var body: some View {
-        NavigationStack(path: $navigation.path) {
+        RootNavigationStack {
             AuthorizationScreen()
-                .navigate()
         }
-        .environmentObject(navigation)
     }
 }
 

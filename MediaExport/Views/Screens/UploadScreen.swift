@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct UploadScreen: View {
-    @EnvironmentObject var navigation: Navigation
+    @Environment(\.popToRoot) private var popToRoot
     @StateObject private var uploadManager: UploadManager
 
     init(mediaFiles: [MediaFile]) {
@@ -38,7 +38,7 @@ struct UploadScreen: View {
 
     private func onContinue() {
         guard uploadManager.loadState.isFinished else { return }
-        navigation.popToRoot()
+        popToRoot()
     }
 }
 
@@ -87,5 +87,4 @@ private struct UploadContentView: View {
 
 #Preview {
     UploadScreen(mediaFiles: [])
-        .environmentObject(Navigation())
 }

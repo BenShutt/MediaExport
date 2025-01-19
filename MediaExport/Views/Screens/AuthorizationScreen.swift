@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AuthorizationScreen: View {
-    @EnvironmentObject var navigation: Navigation
+    @Environment(\.push) private var push
     @State private var isPresentingUnauthorizedAlert = false
 
     private var screenWidth: CGFloat {
@@ -49,13 +49,13 @@ struct AuthorizationScreen: View {
 
     private func onContinue() async {
         guard !AuthorizationManager.isAuthorized else {
-            navigation.push(.assets)
+            push(.assets)
             return
         }
 
         let isAuthorized = await AuthorizationManager.requestAuthorization()
         if isAuthorized {
-            navigation.push(.assets)
+            push(.assets)
         } else {
             isPresentingUnauthorizedAlert = true
         }
@@ -66,5 +66,4 @@ struct AuthorizationScreen: View {
 
 #Preview {
     AuthorizationScreen()
-        .environmentObject(Navigation())
 }

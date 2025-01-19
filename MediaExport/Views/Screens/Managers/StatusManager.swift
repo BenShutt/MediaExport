@@ -18,7 +18,6 @@ final class StatusManager: ObservableObject {
 
     func validate() async {
         guard case .idle = state else { return }
-
         state = .loading
         do {
             let status = try await GetStatus().requestValue()

@@ -22,6 +22,8 @@ struct MediaId: CustomStringConvertible {
     }
 
     static func hash(for localIdentifier: String) async -> String {
+        dispatchPrecondition(condition: .notOnQueue(.main))
+
         let data = Data(localIdentifier.utf8)
         let hashedData = SHA256.hash(data: data)
         let hexString = hashedData

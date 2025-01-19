@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct StatusScreen: View {
-    @EnvironmentObject var navigation: Navigation
+    @Environment(\.push) private var push
     @StateObject private var statusManager = StatusManager()
 
     var mediaFiles: [MediaFile]
@@ -47,9 +47,8 @@ struct StatusScreen: View {
 
         statusManager.reset()
         await statusManager.validate()
-        if state.isSuccess {
-            navigation.push(.upload(mediaFiles))
-        }
+        guard state.isSuccess else { return }
+        push(.upload(mediaFiles))
     }
 }
 
@@ -57,5 +56,4 @@ struct StatusScreen: View {
 
 #Preview {
     StatusScreen(mediaFiles: [])
-        .environmentObject(Navigation())
 }

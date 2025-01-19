@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AssetsScreen: View {
-    @EnvironmentObject var navigation: Navigation
+    @Environment(\.push) private var push
     @StateObject private var assetsManager = AssetsManager()
 
     var body: some View {
@@ -35,7 +35,7 @@ struct AssetsScreen: View {
 
     private func onContinue() {
         guard case .success(let assetsMap) = assetsManager.state else { return }
-        navigation.push(.resources(assetsMap))
+        push(.resources(assetsMap))
     }
 }
 
@@ -43,5 +43,4 @@ struct AssetsScreen: View {
 
 #Preview {
     AssetsScreen()
-        .environmentObject(Navigation())
 }

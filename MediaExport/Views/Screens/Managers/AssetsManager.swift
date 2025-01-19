@@ -16,9 +16,9 @@ final class AssetsManager: ObservableObject {
     private let mediaTypes: [PHAssetMediaType] = [.unknown, .image, .video, .audio]
     @Published private(set) var state: LoadState<AssetsMap> = .idle
 
+    // TODO: Improve LoadState code re-use
     func load() async {
         guard case .idle = state else { return }
-
         state = .loading
         do {
             state = try await .success(fetchAll())

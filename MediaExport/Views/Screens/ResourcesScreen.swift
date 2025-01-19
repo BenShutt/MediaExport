@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ResourcesScreen: View {
-    @EnvironmentObject var navigation: Navigation
+    @Environment(\.push) private var push
     @StateObject private var resourcesManager: ResourcesManager
 
     init(assetsMap: AssetsMap) {
@@ -54,7 +54,7 @@ struct ResourcesScreen: View {
 
     private func onContinue() {
         guard case .success(let mediaFiles) = resourcesManager.state else { return }
-        navigation.push(.status(mediaFiles))
+        push(.status(mediaFiles))
     }
 }
 
@@ -62,5 +62,4 @@ struct ResourcesScreen: View {
 
 #Preview {
     ResourcesScreen(assetsMap: [:])
-        .environmentObject(Navigation())
 }
