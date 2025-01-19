@@ -16,7 +16,7 @@ struct VideoFetcher {
         let options = PHVideoRequestOptions()
         options.version = .current
         options.deliveryMode = .highQualityFormat
-        // options.isNetworkAccessAllowed = true
+        options.isNetworkAccessAllowed = true
         return options
     }()
 
