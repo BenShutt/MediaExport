@@ -16,13 +16,7 @@ final class AssetsManager: ObservableObject {
     private let mediaTypes: [PHAssetMediaType] = [.unknown, .image, .video, .audio]
     @Published private(set) var state: LoadState<AssetsMap> = .idle
 
-    func load() {
-        Task {
-            await loadAsync()
-        }
-    }
-
-    private func loadAsync() async {
+    func load() async {
         guard case .idle = state else { return }
 
         state = .loading
@@ -33,23 +27,41 @@ final class AssetsManager: ObservableObject {
         }
     }
 
-    private func fetchAll(for mediaType: PHAssetMediaType) throws -> [PHAsset] {
-        let isAuthorized = AuthorizationManager.isAuthorized()
-        guard isAuthorized else { throw AssetsManagerError.authorization }
+    private static nonisolated func fetchAll(
+        for mediaType: PHAssetMediaType
+    ) async throws -> [PHAsset] {
+        guard await AuthorizationManager.isAuthorized else {
+            throw AssetsManagerError.authorization
+        }
+
+        // Ignore iCloud and iTunes media
+        let options = PHFetchOptions()
+        options.includeAssetSourceTypes = [.typeUserLibrary]
 
         var assets: [PHAsset] = []
         PHAsset.fetchAssets(
             with: mediaType,
-            options: PHFetchOptions()
+            options: options
         ).enumerateObjects { asset, _, _ in
             assets.append(asset)
         }
         return assets
     }
 
-    private func fetchAll() async throws -> AssetsMap {
-        try mediaTypes.reduce(into: [:]) { map, mediaType in
-            map[mediaType, default: []] += try fetchAll(for: mediaType)
+    private nonisolated func fetchAll() async throws -> AssetsMap {
+        try await withThrowingTaskGroup(
+            of: (PHAssetMediaType, [PHAsset]).self
+        ) { group in
+            for mediaType in mediaTypes {
+                group.addTask {
+                    let assets = try await Self.fetchAll(for: mediaType)
+                    return (mediaType, assets)
+                }
+            }
+
+            return try await group.reduce(into: [:]) { map, tuple in
+                map[tuple.0] = tuple.1
+            }
         }
     }
 }

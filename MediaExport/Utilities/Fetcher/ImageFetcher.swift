@@ -10,8 +10,9 @@ import Foundation
 import Photos
 import Utilities
 
+@MainActor
 struct ImageFetcher {
-    private static var options: PHImageRequestOptions {
+    private static let options = {
         let options = PHImageRequestOptions()
         options.version = .current
         options.deliveryMode = .highQualityFormat
@@ -21,7 +22,7 @@ struct ImageFetcher {
             options.allowSecondaryDegradedImage = false
         }
         return options
-    }
+    }()
 
     static func data(for asset: PHAsset) async throws -> Data {
         try await withCheckedThrowingContinuation { continuation in

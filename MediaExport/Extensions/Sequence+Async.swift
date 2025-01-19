@@ -7,6 +7,16 @@
 //
 
 extension Sequence {
+    func asyncMap<T>(
+        _ transform: (Element) async throws -> T
+    ) async rethrows -> [T] {
+        var values = [T]()
+        for element in self {
+            try await values.append(transform(element))
+        }
+        return values
+    }
+
     func asyncFlatMap<T>(
         _ transform: (Element) async throws -> [T]
     ) async rethrows -> [T] {
@@ -17,13 +27,14 @@ extension Sequence {
         return values
     }
 
-    func asyncMap<T>(
-        _ transform: (Element) async throws -> T
-    ) async rethrows -> [T] {
-        var values = [T]()
+    func asyncReduce<Result>(
+        _ initialResult: Result,
+        _ nextPartialResult: ((Result, Element) async throws -> Result)
+    ) async rethrows -> Result {
+        var result = initialResult
         for element in self {
-            try await values.append(transform(element))
+            result = try await nextPartialResult(result, element)
         }
-        return values
+        return result
     }
 }

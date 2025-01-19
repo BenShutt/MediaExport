@@ -14,12 +14,16 @@ struct StatusScreen: View {
 
     var mediaFiles: [MediaFile]
 
+    private var state: LoadState<Int> {
+        statusManager.state
+    }
+
     var body: some View {
         Screen(
             title: "status_title",
             subtitle: "status_subtitle"
         ) {
-            LoadStateView(state: statusManager.state) { _ in
+            LoadStateView(state: state) { _ in
                 SuccessView()
                     .frame(width: 250, height: 250)
             }
@@ -27,21 +31,23 @@ struct StatusScreen: View {
         .modifier(
             StickyButton(
                 key: "continue_button",
-                isEnabled: statusManager.state.isFinished,
-                onTap: { onContinue() }
+                isEnabled: state.isFinished,
+                onTap: {
+                    Task { await onContinue() }
+                }
             )
         )
-        .onAppear {
-            statusManager.validate { _ in }
+        .task {
+            await statusManager.validate()
         }
     }
 
-    private func onContinue() {
-        guard statusManager.state.isFinished else { return }
-        statusManager.reset()
+    private func onContinue() async {
+        guard state.isFinished else { return }
 
-        statusManager.validate { success in
-            guard success else { return }
+        statusManager.reset()
+        await statusManager.validate()
+        if state.isSuccess {
             navigation.push(.upload(mediaFiles))
         }
     }

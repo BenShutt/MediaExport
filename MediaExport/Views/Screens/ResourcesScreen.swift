@@ -44,11 +44,11 @@ struct ResourcesScreen: View {
             StickyButton(
                 key: "continue_button",
                 isEnabled: resourcesManager.state.isSuccess,
-                onTap: { onContinue() }
+                onTap: onContinue
             )
         )
-        .onAppear {
-            resourcesManager.load()
+        .task {
+            await resourcesManager.load()
         }
     }
 

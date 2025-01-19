@@ -33,13 +33,7 @@ final class UploadManager: ObservableObject {
         self.mediaFiles = mediaFiles
     }
 
-    func sync() {
-        Task {
-            await syncAll()
-        }
-    }
-
-    private func syncAll() async {
+    func sync() async {
         guard case .idle = loadState else { return }
 
         syncedMediaFiles = []

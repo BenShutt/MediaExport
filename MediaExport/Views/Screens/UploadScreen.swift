@@ -28,11 +28,11 @@ struct UploadScreen: View {
                 key: "done_button",
                 backgroundColor: .appGreen,
                 isEnabled: uploadManager.loadState.isFinished,
-                onTap: { onContinue() }
+                onTap: onContinue
             )
         )
-        .onAppear {
-            uploadManager.sync()
+        .task {
+            await uploadManager.sync()
         }
     }
 

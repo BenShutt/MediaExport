@@ -13,14 +13,27 @@ struct StickyBottom<Bottom: View>: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .safeAreaInset(edge: .bottom) {
+            .safeAreaInset(edge: .bottom, spacing: 0) {
                 bottom()
                     .background {
-                        Color.appWhite
+                        StickyBottomBackground()
                             .ignoresSafeArea()
-                            .shadow(.sticky)
                     }
                     .ignoresSafeArea(.keyboard)
             }
+    }
+}
+
+// MARK: - StickyBottomBackground
+
+private struct StickyBottomBackground: View {
+    var body: some View {
+        Color.appWhite
+            .shadow(
+                color: .appDarkGray.opacity(0.15),
+                radius: 15,
+                x: 0,
+                y: 2
+            )
     }
 }

@@ -12,18 +12,11 @@ import SwiftUI
 final class StatusManager: ObservableObject {
     @Published private(set) var state: LoadState<Int> = .idle
 
-    func validate(completion: @escaping (Bool) -> Void) {
-        Task {
-            await validate()
-            completion(state.isSuccess)
-        }
-    }
-
     func reset() {
         state = .idle
     }
 
-    private func validate() async {
+    func validate() async {
         guard case .idle = state else { return }
 
         state = .loading

@@ -6,37 +6,38 @@
 //  Copyright © 2023 Ben Shutt. All rights reserved.
 //
 
-import XCTest
+import Testing
 @testable import MediaExport
 
-final class ColorUtilitiesTests: XCTestCase {
-    func testNegative() {
+@Suite("Unit tests for ColorUtilities")
+struct ColorUtilitiesTests {
+    @Test func negative() {
         let hexString = ColorUtilities.mappedHexString("#FE98D2", offset: -2)
-        XCTAssertEqual(hexString, "#DC76B0")
+        #expect(hexString == "#DC76B0")
     }
 
-    func testPositive() {
+    @Test func positive() {
         let hexString = ColorUtilities.mappedHexString("#0A8DEF", offset: 2)
-        XCTAssertEqual(hexString, "#2CAFEF")
+        #expect(hexString == "#2CAFEF")
     }
 
-    func testBoundNegative() {
+    @Test func boundNegative() {
         let hexString = ColorUtilities.mappedHexString("#91F120", offset: -2)
-        XCTAssertEqual(hexString, "#71D100")
+        #expect(hexString == "#71D100")
     }
 
-    func testBoundPositive() {
+    @Test func boundPositive() {
         let hexString = ColorUtilities.mappedHexString("#DF09ED", offset: 2)
-        XCTAssertEqual(hexString, "#FF2BEF")
+        #expect(hexString == "#FF2BEF")
     }
 
-    func testBlackNegative() {
+    @Test func blackNegative() {
         let hexString = ColorUtilities.mappedHexString("#000000", offset: -2)
-        XCTAssertEqual(hexString, "#000000")
+        #expect(hexString == "#000000")
     }
 
-    func testWhitePositive() {
+    @Test func whitePositive() {
         let hexString = ColorUtilities.mappedHexString("#FFFFFF", offset: 2)
-        XCTAssertEqual(hexString, "#FFFFFF")
+        #expect(hexString == "#FFFFFF")
     }
 }

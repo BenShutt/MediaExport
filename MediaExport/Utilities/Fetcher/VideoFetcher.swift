@@ -10,59 +10,27 @@ import Foundation
 import Photos
 import Utilities
 
+@MainActor
 struct VideoFetcher {
-    private static func fileType(
-        for fileName: String
-    ) throws -> AVFileType {
-        let pathExtension = URL(filePath: fileName).pathExtension.lowercased()
-        switch pathExtension {
-        case "mov": return .mov
-        case "mp4": return .mp4
-        case "m4v": return .m4v
-        case "m4a": return .m4a
-        case "caf": return .caf
-        case "wav": return .wav
-        case "mp3": return .mp3
-        case "jpg": return .jpg
-        case "heic": return .heic
-        case "tif": return .tif
-        default: throw VideoFetcherError.fileType(pathExtension) // Not all are supported
-        }
-    }
-
-    private static func export(
-        session: AVAssetExportSession,
-        fileName: String
-    ) async throws -> Data {
-        let url = FileManager.default
-            .temporaryDirectory
-            .appending(path: fileName)
-        defer {
-            try? FileManager.default.removeItem(at: url)
-        }
-        session.outputURL = url
-        session.outputFileType = try fileType(for: fileName)
-        await session.export()
-        return try Data(contentsOf: url) // Video is loaded into memory...
-    }
-
-    private static var options: PHVideoRequestOptions {
+    private static let options = {
         let options = PHVideoRequestOptions()
         options.version = .current
         options.deliveryMode = .highQualityFormat
         // options.isNetworkAccessAllowed = true
         return options
-    }
+    }()
 
     static func data(for mediaFile: MediaFile) async throws -> Data {
-        let session = try await withCheckedThrowingContinuation { continuation in
+        try await withCheckedThrowingContinuation { continuation in
             PHImageManager.shared.requestExportSession(
                 forVideo: mediaFile.asset,
                 options: options,
                 exportPreset: AVAssetExportPresetHighestQuality
             ) { session, info in
                 if let session {
-                    continuation.resume(returning: session)
+                    session.export(fileName: mediaFile.fileName) { result in
+                        continuation.resume(with: result)
+                    }
                 } else if let error = info?[PHImageErrorKey] as? Error {
                     continuation.resume(throwing: error)
                 } else {
@@ -70,10 +38,57 @@ struct VideoFetcher {
                 }
             }
         }
-        return try await export(
-            session: session,
-            fileName: mediaFile.fileName
+    }
+}
+
+// MARK: - AVAssetExportSession + Extensions
+
+extension AVAssetExportSession {
+    // Needed so we do not send AVAssetExportSession
+    @MainActor
+    func export(
+        fileName: String,
+        completion: @escaping (Result<Data, Error>) -> Void
+    ) {
+        Task {
+            do {
+                let data = try await export(fileName: fileName)
+                completion(.success(data))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+
+    private func fileType(for fileName: String) throws -> AVFileType {
+        let pathExtension = URL(filePath: fileName).pathExtension
+        return switch pathExtension.lowercased() {
+        case "mov": .mov
+        case "mp4": .mp4
+        case "m4v": .m4v
+        case "m4a": .m4a
+        case "caf": .caf
+        case "wav": .wav
+        case "mp3": .mp3
+        case "jpg": .jpg
+        case "heic": .heic
+        case "tif": .tif
+        default: throw VideoFetcherError.fileType(pathExtension) // Not all are supported
+        }
+    }
+
+    private func export(fileName: String) async throws -> Data {
+        let url = FileManager.default
+            .temporaryDirectory
+            .appending(path: fileName)
+        defer {
+            try? FileManager.default.removeItem(at: url)
+        }
+        try await export(
+            to: url,
+            as: fileType(for: fileName)
         )
+        return try Data(contentsOf: url) // Video is loaded into memory...
     }
 }
 

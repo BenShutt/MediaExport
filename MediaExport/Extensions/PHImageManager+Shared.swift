@@ -8,6 +8,7 @@
 
 import Photos
 
+@MainActor
 extension PHImageManager {
     static let shared = PHImageManager()
 }

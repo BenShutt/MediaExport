@@ -25,11 +25,11 @@ struct AssetsScreen: View {
             StickyButton(
                 key: "continue_button",
                 isEnabled: assetsManager.state.isSuccess,
-                onTap: { onContinue() }
+                onTap: onContinue
             )
         )
-        .onAppear {
-            assetsManager.load()
+        .task {
+            await assetsManager.load()
         }
     }
 

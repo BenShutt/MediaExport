@@ -1,5 +1,5 @@
 {
-  "originHash" : "d77d731cb097279955d47fbf0146af50ab55da0cac8d75812028d65be5b861dc",
+  "originHash" : "1e524c3798e37e3b493807484237268e7a5545382b24b779f0cffc3dbf4372c2",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -8,15 +8,6 @@
       "state" : {
         "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
         "version" : "5.10.2"
-      }
-    },
-    {
-      "identity" : "cubefoundation-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/3sidedcube/cubefoundation-ios",
-      "state" : {
-        "branch" : "develop",
-        "revision" : "6453860cc84fdd9ab8a1d561161fb4322c13041c"
       }
     },
     {

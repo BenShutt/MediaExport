@@ -18,13 +18,7 @@ final class ResourcesManager: ObservableObject {
         self.assetsMap = assetsMap
     }
 
-    func load() {
-        Task {
-            await fetchAll()
-        }
-    }
-
-    private func fetchAll() async {
+    func load() async {
         guard case .idle = state else { return }
 
         state = .loading

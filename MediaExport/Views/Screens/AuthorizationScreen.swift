@@ -29,7 +29,9 @@ struct AuthorizationScreen: View {
         .modifier(
             StickyButton(
                 key: "continue_button",
-                onTap: { onContinue() }
+                onTap: {
+                    Task { await onContinue() }
+                }
             )
         )
         .alert(
@@ -44,18 +46,17 @@ struct AuthorizationScreen: View {
         )
     }
 
-    private func onContinue() {
-        guard !AuthorizationManager.isAuthorized() else {
+    private func onContinue() async {
+        guard !AuthorizationManager.isAuthorized else {
             navigation.push(.assets)
             return
         }
 
-        AuthorizationManager.requestAuthorization { isAuthorized in
-            guard isAuthorized else {
-                isPresentingUnauthorizedAlert = true
-                return
-            }
+        let isAuthorized = await AuthorizationManager.requestAuthorization()
+        if isAuthorized {
             navigation.push(.assets)
+        } else {
+            isPresentingUnauthorizedAlert = true
         }
     }
 }

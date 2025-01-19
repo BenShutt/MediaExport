@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		42953AF92D3C0A0B00991950 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AF82D3C0A0B00991950 /* Utilities */; };
 		42953AFC2D3C18EF00991950 /* ColorUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AFB2D3C18EF00991950 /* ColorUtilities */; };
-		42953AFF2D3C19B500991950 /* CubeFoundationSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AFE2D3C19B500991950 /* CubeFoundationSwiftUI */; };
 		42953B012D3D22B000991950 /* Sequence+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B002D3D22AC00991950 /* Sequence+Async.swift */; };
 		42953B032D3D239C00991950 /* PHImageManager+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B022D3D239A00991950 /* PHImageManager+Shared.swift */; };
 		B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */; };
@@ -35,9 +34,8 @@
 		B8979F962ABA230F003203C4 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979F952ABA230F003203C4 /* Screen.swift */; };
 		B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA12ABA279A003203C4 /* StickyBottom.swift */; };
 		B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA32ABA27A2003203C4 /* StickyButton.swift */; };
-		B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA62ABA2800003203C4 /* TextStyle+Values.swift */; };
+		B8979FA72ABA2800003203C4 /* View+TextStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA62ABA2800003203C4 /* View+TextStyles.swift */; };
 		B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA92ABA2882003203C4 /* StyledButton.swift */; };
-		B8979FAC2ABA28C6003203C4 /* FigmaShadow+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FAB2ABA28C6003203C4 /* FigmaShadow+Values.swift */; };
 		B8979FB12ABA2B8B003203C4 /* CGFloat+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FB02ABA2B8B003203C4 /* CGFloat+Values.swift */; };
 		B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FB52ABA3289003203C4 /* Navigation.swift */; };
 		B8A520BE2ABB370B0013FA4A /* ColorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A520BD2ABB370B0013FA4A /* ColorUtilities.swift */; };
@@ -107,9 +105,8 @@
 		B8979F952ABA230F003203C4 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		B8979FA12ABA279A003203C4 /* StickyBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBottom.swift; sourceTree = "<group>"; };
 		B8979FA32ABA27A2003203C4 /* StickyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyButton.swift; sourceTree = "<group>"; };
-		B8979FA62ABA2800003203C4 /* TextStyle+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextStyle+Values.swift"; sourceTree = "<group>"; };
+		B8979FA62ABA2800003203C4 /* View+TextStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+TextStyles.swift"; sourceTree = "<group>"; };
 		B8979FA92ABA2882003203C4 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
-		B8979FAB2ABA28C6003203C4 /* FigmaShadow+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FigmaShadow+Values.swift"; sourceTree = "<group>"; };
 		B8979FB02ABA2B8B003203C4 /* CGFloat+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Values.swift"; sourceTree = "<group>"; };
 		B8979FB52ABA3289003203C4 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		B8A520BD2ABB370B0013FA4A /* ColorUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtilities.swift; sourceTree = "<group>"; };
@@ -140,7 +137,6 @@
 			files = (
 				B824679A2AB8C97C00F39D84 /* DataRequest in Frameworks */,
 				42953AF92D3C0A0B00991950 /* Utilities in Frameworks */,
-				42953AFF2D3C19B500991950 /* CubeFoundationSwiftUI in Frameworks */,
 				42953AFC2D3C18EF00991950 /* ColorUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,8 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				B8979FB02ABA2B8B003203C4 /* CGFloat+Values.swift */,
-				B8979FAB2ABA28C6003203C4 /* FigmaShadow+Values.swift */,
-				B8979FA62ABA2800003203C4 /* TextStyle+Values.swift */,
+				B8979FA62ABA2800003203C4 /* View+TextStyles.swift */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -377,7 +372,6 @@
 				B82467992AB8C97C00F39D84 /* DataRequest */,
 				42953AF82D3C0A0B00991950 /* Utilities */,
 				42953AFB2D3C18EF00991950 /* ColorUtilities */,
-				42953AFE2D3C19B500991950 /* CubeFoundationSwiftUI */,
 			);
 			productName = MediaExport;
 			productReference = B82467692AB8C19B00F39D84 /* MediaExport.app */;
@@ -427,7 +421,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "Ben Shutt";
 				TargetAttributes = {
 					B82467682AB8C19B00F39D84 = {
@@ -455,7 +449,6 @@
 			packageReferences = (
 				B82467982AB8C97C00F39D84 /* XCRemoteSwiftPackageReference "DataRequest" */,
 				42953AF72D3C0A0B00991950 /* XCRemoteSwiftPackageReference "Utilities" */,
-				42953AFD2D3C19B500991950 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */,
 			);
 			productRefGroup = B824676A2AB8C19B00F39D84 /* Products */;
 			projectDirPath = "";
@@ -531,7 +524,6 @@
 				B8A520BE2ABB370B0013FA4A /* ColorUtilities.swift in Sources */,
 				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* Endpoint.swift in Sources */,
-				B8979FAC2ABA28C6003203C4 /* FigmaShadow+Values.swift in Sources */,
 				B824679E2AB8C98D00F39D84 /* GetExists.swift in Sources */,
 				B8AB87B02ABC6C2C00B3A575 /* GetStatus.swift in Sources */,
 				B86BA4562AC05596006F06FC /* ImageFetcher.swift in Sources */,
@@ -558,7 +550,7 @@
 				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
 				B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */,
 				B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */,
-				B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */,
+				B8979FA72ABA2800003203C4 /* View+TextStyles.swift in Sources */,
 				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
 				B86BA4592AC05627006F06FC /* VideoFetcher.swift in Sources */,
@@ -638,6 +630,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -652,11 +645,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -698,6 +693,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -706,10 +702,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
@@ -726,6 +724,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5353635B2M;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Media Export";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
@@ -740,7 +739,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
@@ -751,7 +749,6 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -769,6 +766,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5353635B2M;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Media Export";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
@@ -783,7 +781,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
@@ -794,7 +791,6 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -802,13 +798,11 @@
 		B82467922AB8C19D00F39D84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.MediaExportTests;
@@ -816,7 +810,6 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaExport.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MediaExport";
 			};
@@ -825,13 +818,11 @@
 		B82467932AB8C19D00F39D84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.MediaExportTests;
@@ -839,7 +830,6 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediaExport.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MediaExport";
 			};
@@ -848,12 +838,10 @@
 		B82467952AB8C19D00F39D84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.MediaExportUITests;
@@ -861,7 +849,6 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MediaExport;
 			};
@@ -870,12 +857,10 @@
 		B82467962AB8C19D00F39D84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benshutt.MediaExportUITests;
@@ -883,7 +868,6 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = MediaExport;
 			};
@@ -939,14 +923,6 @@
 				kind = branch;
 			};
 		};
-		42953AFD2D3C19B500991950 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/3sidedcube/cubefoundation-ios";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		B82467982AB8C97C00F39D84 /* XCRemoteSwiftPackageReference "DataRequest" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BenShutt/DataRequest";
@@ -967,11 +943,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 42953AF72D3C0A0B00991950 /* XCRemoteSwiftPackageReference "Utilities" */;
 			productName = ColorUtilities;
-		};
-		42953AFE2D3C19B500991950 /* CubeFoundationSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42953AFD2D3C19B500991950 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */;
-			productName = CubeFoundationSwiftUI;
 		};
 		B82467992AB8C97C00F39D84 /* DataRequest */ = {
 			isa = XCSwiftPackageProductDependency;

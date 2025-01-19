@@ -19,7 +19,7 @@ struct ColorUtilities {
     }
 
     static func mappedColor(_ color: Color, offset: Int) -> Color {
-        let mappedHexString = mappedHexString(color.hexString(), offset: offset)
+        let mappedHexString = mappedHexString(color.hex(), offset: offset)
         return Color(hex: mappedHexString) ?? color
     }
 }
