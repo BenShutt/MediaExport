@@ -3,7 +3,7 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 21/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
+
 //
 
 import SwiftUI
@@ -24,6 +24,7 @@ struct BadgeView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 50, height: 50)
+                .accessibilityHidden(true)
 
             Text(verbatim: title)
                 .badge()

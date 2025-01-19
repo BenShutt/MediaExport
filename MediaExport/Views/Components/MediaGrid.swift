@@ -3,7 +3,7 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 20/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
+
 //
 
 import SwiftUI
@@ -61,6 +61,7 @@ private struct GridItem: View {
                 .scaledToFit()
                 .frame(height: 50)
                 .foregroundStyle(Color.appDarkGray)
+                .accessibilityHidden(true)
 
             Text(mediaType.title(count: count))
                 .caption()

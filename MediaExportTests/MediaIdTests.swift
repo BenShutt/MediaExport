@@ -3,13 +3,13 @@
 //  MediaExportTests
 //
 //  Created by Ben Shutt on 21/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
+
 //
 
 import Testing
 @testable import MediaExport
 
-@Suite
+@Suite("Unit tests for MediaId")
 struct MediaIdTests {
     @Test func mediaId() async {
         let mediaId = await MediaId(

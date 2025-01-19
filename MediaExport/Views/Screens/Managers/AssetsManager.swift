@@ -3,7 +3,7 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 20/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
+
 //
 
 import SwiftUI
@@ -42,7 +42,8 @@ final class AssetsManager: ObservableObject {
         PHAsset.fetchAssets(
             with: mediaType,
             options: options
-        ).enumerateObjects { asset, _, _ in
+        )
+        .enumerateObjects { asset, _, _ in
             assets.append(asset)
         }
         return assets

@@ -3,7 +3,7 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 21/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
+
 //
 
 import Foundation
@@ -46,9 +46,8 @@ struct MediaDirectory {
             at: directoryURL,
             includingPropertiesForKeys: nil,
             options: [.skipsHiddenFiles]
-        ).compactMap { url in
-            operation(url)
-        }
+        )
+        .compactMap(operation)
     }
 
     /// Get the media files printing when a file is not a valid media

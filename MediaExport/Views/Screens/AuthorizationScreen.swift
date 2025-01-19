@@ -3,7 +3,7 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 20/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
+
 //
 
 import SwiftUI
@@ -25,6 +25,7 @@ struct AuthorizationScreen: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: screenWidth * 2 / 3)
+                .accessibilityHidden(true)
         }
         .modifier(
             StickyButton(

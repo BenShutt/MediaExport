@@ -1,104 +1,60 @@
 excluded:
-  - Carthage
-  - Pods
   - .build
-disabled_rules:
-  - file_header
-  - identifier_name
+analyzer_rules:
+  - unused_declaration
+  - unused_import
 opt_in_rules:
-  - array_init
-  - attributes
-  - closure_end_indentation
-  - closure_spacing
-  - collection_alignment
-  - contains_over_filter_count
-  - contains_over_filter_is_empty
-  - contains_over_first_not_nil
-  - contains_over_range_nil_comparison
-  - discouraged_object_literal
-  - empty_collection_literal
-  - empty_count
-  - empty_string
-  - empty_xctest_method
-  - enum_case_associated_values_count
-  - explicit_init
-  - extension_access_modifier
-  - fallthrough
-  - fatal_error_message
-  - file_header
-  - file_name
-  - first_where
-  - flatmap_over_map_reduce
-  - identical_operands
-  - joined_default_parameter
-  - legacy_random
-  - let_var_whitespace
-  - last_where
-  - legacy_multiple
-  - literal_expression_end_indentation
-  - lower_acl_than_parent
-  - modifier_order
-  - nimble_operator
-  - nslocalizedstring_key
-  - number_separator
-#  - object_literal
-  - operator_usage_whitespace
-  - overridden_super_call
-  - override_in_extension
-  - pattern_matching_keywords
-  - prefer_self_type_over_type_of_self
-  - private_action
-  - private_outlet
-  - prohibited_interface_builder
-  - prohibited_super_call
-  - quick_discouraged_call
-  - quick_discouraged_focused_test
-  - quick_discouraged_pending_test
-  - reduce_into
-  - redundant_nil_coalescing
-  - redundant_type_annotation
-  - single_test_class
-  - sorted_first_last
-#  - sorted_imports
-  - static_operator
-  - strong_iboutlet
-  - toggle_bool
-  - unavailable_function
-  - unneeded_parentheses_in_closure_argument
-  - unowned_variable_capture
-  - untyped_error_in_catch
-  - vertical_parameter_alignment_on_call
-  - vertical_whitespace_closing_braces
-#  - vertical_whitespace_opening_braces
-  - xct_specific_matcher
-  - yoda_condition
-force_cast: warning
-force_try:
-  severity: error
-line_length:
-  warning: 100
-  ignores_comments: true
-  ignores_urls: true
-type_body_length:
-  warning: 400
-  error: 500
-file_length:
-  warning: 500
-  error: 600
-reporter: "xcode"
+  - all
+disabled_rules:
+  - anonymous_argument_in_multiline_closure
+  - async_without_await # https://github.com/realm/SwiftLint/issues/5082#issuecomment-1609693266
+  - balanced_xctest_lifecycle
+  - conditional_returns_on_newline
+  - contrasted_opening_brace
+  - convenience_type
+  - explicit_acl
+  - explicit_enum_raw_value
+  - explicit_top_level_acl
+  - explicit_type_interface
+  - file_types_order
+  - function_default_parameter_at_end
+  - identifier_name
+  - legacy_objc_type
+  - missing_docs
+  - no_empty_block
+  - no_extension_access_modifier
+  - no_grouping_extension
+  - no_magic_numbers
+  - one_declaration_per_file
+  - optional_data_string_conversion
+  - prefer_nimble
+  - prefer_self_in_static_references
+  - prefixed_toplevel_constant
+  - required_deinit
+  - sorted_enum_cases
+  - sorted_imports
+  - switch_case_on_newline
+  - trailing_closure
+  - type_contents_order # For SwiftUI body (https://github.com/realm/SwiftLint/issues/3548)
+  - unused_parameter
+  - vertical_whitespace_between_cases
+  - vertical_whitespace_opening_braces
+attributes:
+  attributes_with_arguments_always_on_line_above: false
+  always_on_line_above:
+    - "@MainActor"
+    - "@Option"
+    - "@Suite"
+  always_on_same_line:
+    - "@ViewBuilder"
+    - "@Environment"
+    - "@EnvironmentObject"
+    - "@Test"
+closure_body_length:
+    warning: 50
+    error: 60
+function_body_length: 60
+large_tuple: 3
 number_separator:
   minimum_length: 5
-file_name:
-  excluded:
-    - main.swift
-    - LinuxMain.swift
-type_name:
-  min_length: 3
-  max_length: 50
-private_outlet:
-  allow_private_set: true
-cyclomatic_complexity:
-  ignores_case_statements: true
-attributes:
-  always_on_same_line:
-    ["@MainActor", "@ViewBuilder", "@Environment"]
+type_body_length: 400

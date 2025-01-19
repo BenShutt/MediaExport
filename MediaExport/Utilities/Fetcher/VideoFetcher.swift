@@ -3,7 +3,7 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 24/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
+
 //
 
 import Foundation
@@ -60,6 +60,7 @@ extension AVAssetExportSession {
         }
     }
 
+    // swiftlint:disable cyclomatic_complexity
     private func fileType(for fileName: String) throws -> AVFileType {
         let pathExtension = URL(filePath: fileName).pathExtension
         return switch pathExtension.lowercased() {
@@ -76,6 +77,7 @@ extension AVAssetExportSession {
         default: throw VideoFetcherError.fileType(pathExtension) // Not all are supported
         }
     }
+    // swiftlint:enable cyclomatic_complexity
 
     private func export(fileName: String) async throws -> Data {
         let url = FileManager.default

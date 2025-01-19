@@ -3,14 +3,13 @@
 //  MediaExportUITests
 //
 //  Created by Ben Shutt on 18/09/2023.
-//  Copyright © 2023 Ben Shutt. All rights reserved.
 //
 
 import XCTest
 
 @MainActor
 final class MediaExportUITestsLaunchTests: XCTestCase {
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+    override static var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 
