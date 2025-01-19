@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct StyledButton: View {
-
     @Environment(\.isEnabled) var isEnabled: Bool
 
     var key: LocalizedStringKey
@@ -35,7 +34,6 @@ struct StyledButton: View {
 #Preview {
     VStack {
         StyledButton(key: "continue_button", onTap: {})
-
         StyledButton(key: "continue_button", onTap: {})
             .disabled(true)
     }

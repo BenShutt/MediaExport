@@ -8,11 +8,12 @@
 
 import Foundation
 import Photos
-import CubeFoundation
+import Utilities
 
 struct VideoFetcher {
-
-    private static func fileType(for fileName: String) throws -> AVFileType {
+    private static func fileType(
+        for fileName: String
+    ) throws -> AVFileType {
         let pathExtension = URL(filePath: fileName).pathExtension.lowercased()
         switch pathExtension {
         case "mov": return .mov
@@ -33,7 +34,9 @@ struct VideoFetcher {
         session: AVAssetExportSession,
         fileName: String
     ) async throws -> Data {
-        let url = FileManager.default.temporaryDirectory.appending(path: fileName)
+        let url = FileManager.default
+            .temporaryDirectory
+            .appending(path: fileName)
         defer {
             try? FileManager.default.removeItem(at: url)
         }
@@ -43,54 +46,47 @@ struct VideoFetcher {
         return try Data(contentsOf: url) // Video is loaded into memory...
     }
 
-    private static func export(
-        session: AVAssetExportSession?,
-        fileName: String,
-        completion: @escaping (Result<Data, Error>) -> Void
-    ) {
-        Task {
-            let result: Result<Data, Error>
-            do {
-                let session = try session ?! VideoFetcherError.session
-                let data = try await export(session: session, fileName: fileName)
-                result = .success(data)
-            } catch {
-                result = .failure(error)
-            }
-
-            await MainActor.run {
-                completion(result)
-            }
-        }
-    }
-
     private static var options: PHVideoRequestOptions {
         let options = PHVideoRequestOptions()
         options.version = .current
         options.deliveryMode = .highQualityFormat
+        // options.isNetworkAccessAllowed = true
         return options
     }
 
     static func data(for mediaFile: MediaFile) async throws -> Data {
-        try await withCheckedContinuation { continuation in
-            PHImageManager().requestExportSession(
+        let session = try await withCheckedThrowingContinuation { continuation in
+            PHImageManager.shared.requestExportSession(
                 forVideo: mediaFile.asset,
                 options: options,
-                exportPreset: AVAssetExportPresetHighestQuality,
-                resultHandler: { session, _ in
-                    export(session: session, fileName: mediaFile.fileName) {
-                        continuation.resume(returning: $0)
-                    }
+                exportPreset: AVAssetExportPresetHighestQuality
+            ) { session, info in
+                if let session {
+                    continuation.resume(returning: session)
+                } else if let error = info?[PHImageErrorKey] as? Error {
+                    continuation.resume(throwing: error)
+                } else {
+                    continuation.resume(throwing: VideoFetcherError.session)
                 }
-            )
-        }.get()
+            }
+        }
+        return try await export(
+            session: session,
+            fileName: mediaFile.fileName
+        )
     }
 }
 
 // MARK: - VideoFetcherError
 
-enum VideoFetcherError: Error {
-
+enum VideoFetcherError: Error, CustomStringConvertible {
     case session
     case fileType(String)
+
+    var description: String {
+        switch self {
+        case .session: "Failed to fetch video session"
+        case let .fileType(fileType): "Unsupported file type: \(fileType)"
+        }
+    }
 }

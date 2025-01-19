@@ -8,7 +8,7 @@
 
 import Foundation
 import Photos
-import CubeFoundation
+import Utilities
 
 // MARK: - Resources
 
@@ -33,6 +33,5 @@ extension PHAsset {
 // MARK: - PHAssetError
 
 enum PHAssetError: Error {
-
     case firstResource
 }

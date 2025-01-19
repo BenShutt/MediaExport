@@ -10,6 +10,7 @@ import SwiftUI
 import Photos
 
 struct BadgeView: View {
+    private let shape = Circle()
 
     var textWidth: CGFloat = 200
     var symbol: String
@@ -17,16 +18,12 @@ struct BadgeView: View {
     var subtitle: LocalizedStringKey
     var backgroundColor: Color
 
-    private var shape: some InsettableShape {
-        Circle()
-    }
-
     var body: some View {
         VStack(spacing: .vPaddingSmall) {
             Image(systemName: symbol)
                 .resizable()
                 .scaledToFit()
-                .frame(size: 50)
+                .frame(width: 50, height: 50)
 
             Text(verbatim: title)
                 .badge()

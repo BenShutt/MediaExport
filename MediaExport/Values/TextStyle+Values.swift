@@ -12,7 +12,6 @@ import CubeFoundationSwiftUI
 // MARK: - TextStyle + Values
 
 extension TextStyle {
-
     static let badge = TextStyle(.system, weight: .heavy, size: 45, lineHeight: 47)
     static let body = TextStyle(.system, weight: .regular, size: 20, lineHeight: 22)
     static let caption = TextStyle(.system, weight: .semibold, size: 18, lineHeight: 20)
@@ -23,7 +22,6 @@ extension TextStyle {
 // MARK: - Text + TextStyles
 
 extension Text {
-
     func badge(textColor: Color = .appBlack) -> some View {
         style(.badge)
             .foregroundStyle(textColor)

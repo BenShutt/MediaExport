@@ -10,7 +10,6 @@ import SwiftUI
 import Photos
 
 struct MediaGrid: View {
-
     var assetsMap: AssetsMap
 
     var rows: [[PHAssetMediaType]] {
@@ -28,7 +27,6 @@ struct MediaGrid: View {
 // MARK: - MediaGridRow
 
 private struct MediaGridRow: View {
-
     var row: [PHAssetMediaType]
     var assetsMap: AssetsMap
 
@@ -51,13 +49,10 @@ private struct MediaGridRow: View {
 // MARK: - GridItem
 
 private struct GridItem: View {
+    private let border = RoundedRectangle(cornerRadius: .corners)
 
     var mediaType: PHAssetMediaType
     var count: Int
-
-    var border: some InsettableShape {
-        RoundedRectangle(cornerRadius: .corners)
-    }
 
     var body: some View {
         VStack(spacing: .vPadding) {

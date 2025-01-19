@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct SuccessView: View {
-
     var body: some View {
         Image(systemName: "checkmark.circle.fill")
             .resizable()
@@ -20,5 +19,5 @@ struct SuccessView: View {
 
 #Preview {
     SuccessView()
-        .frame(size: 250)
+        .frame(width: 250, height: 250)
 }

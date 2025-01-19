@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42953AF92D3C0A0B00991950 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AF82D3C0A0B00991950 /* Utilities */; };
+		42953AFC2D3C18EF00991950 /* ColorUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AFB2D3C18EF00991950 /* ColorUtilities */; };
+		42953AFF2D3C19B500991950 /* CubeFoundationSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AFE2D3C19B500991950 /* CubeFoundationSwiftUI */; };
+		42953B012D3D22B000991950 /* Sequence+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B002D3D22AC00991950 /* Sequence+Async.swift */; };
+		42953B032D3D239C00991950 /* PHImageManager+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B022D3D239A00991950 /* PHImageManager+Shared.swift */; };
 		B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */; };
 		B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824676E2AB8C19B00F39D84 /* ContentView.swift */; };
 		B82467712AB8C19C00F39D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82467702AB8C19C00F39D84 /* Assets.xcassets */; };
@@ -28,8 +33,6 @@
 		B8979F912ABA228F003203C4 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = B8979F902ABA228F003203C4 /* Localizable.xcstrings */; };
 		B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979F922ABA22F4003203C4 /* AssetsScreen.swift */; };
 		B8979F962ABA230F003203C4 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979F952ABA230F003203C4 /* Screen.swift */; };
-		B8979F992ABA273E003203C4 /* CubeFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = B8979F982ABA273E003203C4 /* CubeFoundation */; };
-		B8979F9B2ABA273E003203C4 /* CubeFoundationSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B8979F9A2ABA273E003203C4 /* CubeFoundationSwiftUI */; };
 		B8979FA22ABA279A003203C4 /* StickyBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA12ABA279A003203C4 /* StickyBottom.swift */; };
 		B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA32ABA27A2003203C4 /* StickyButton.swift */; };
 		B8979FA72ABA2800003203C4 /* TextStyle+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8979FA62ABA2800003203C4 /* TextStyle+Values.swift */; };
@@ -76,12 +79,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42953B002D3D22AC00991950 /* Sequence+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Async.swift"; sourceTree = "<group>"; };
+		42953B022D3D239A00991950 /* PHImageManager+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHImageManager+Shared.swift"; sourceTree = "<group>"; };
 		B82467692AB8C19B00F39D84 /* MediaExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaExportApp.swift; sourceTree = "<group>"; };
 		B824676E2AB8C19B00F39D84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B82467702AB8C19C00F39D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82467722AB8C19C00F39D84 /* MediaExport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MediaExport.entitlements; sourceTree = "<group>"; };
-		B82467742AB8C19C00F39D84 /* PreviewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PreviewAssets.xcassets; sourceTree = "<group>"; };
 		B824677A2AB8C19C00F39D84 /* MediaExportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaExportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82467842AB8C19C00F39D84 /* MediaExportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediaExportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82467882AB8C19D00F39D84 /* MediaExportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaExportUITests.swift; sourceTree = "<group>"; };
@@ -134,9 +138,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8979F992ABA273E003203C4 /* CubeFoundation in Frameworks */,
-				B8979F9B2ABA273E003203C4 /* CubeFoundationSwiftUI in Frameworks */,
 				B824679A2AB8C97C00F39D84 /* DataRequest in Frameworks */,
+				42953AF92D3C0A0B00991950 /* Utilities in Frameworks */,
+				42953AFF2D3C19B500991950 /* CubeFoundationSwiftUI in Frameworks */,
+				42953AFC2D3C18EF00991950 /* ColorUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,12 +162,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42953AFA2D3C18EF00991950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B82467602AB8C19B00F39D84 = {
 			isa = PBXGroup;
 			children = (
 				B824676B2AB8C19B00F39D84 /* MediaExport */,
 				B824677D2AB8C19C00F39D84 /* MediaExportTests */,
 				B82467872AB8C19D00F39D84 /* MediaExportUITests */,
+				42953AFA2D3C18EF00991950 /* Frameworks */,
 				B824676A2AB8C19B00F39D84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -286,7 +299,6 @@
 			children = (
 				B82467702AB8C19C00F39D84 /* Assets.xcassets */,
 				B8979F902ABA228F003203C4 /* Localizable.xcstrings */,
-				B82467742AB8C19C00F39D84 /* PreviewAssets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -324,8 +336,10 @@
 		B8AB879E2ABC271400B3A575 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				42953B002D3D22AC00991950 /* Sequence+Async.swift */,
 				B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */,
 				B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */,
+				42953B022D3D239A00991950 /* PHImageManager+Shared.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -361,8 +375,9 @@
 			name = MediaExport;
 			packageProductDependencies = (
 				B82467992AB8C97C00F39D84 /* DataRequest */,
-				B8979F982ABA273E003203C4 /* CubeFoundation */,
-				B8979F9A2ABA273E003203C4 /* CubeFoundationSwiftUI */,
+				42953AF82D3C0A0B00991950 /* Utilities */,
+				42953AFB2D3C18EF00991950 /* ColorUtilities */,
+				42953AFE2D3C19B500991950 /* CubeFoundationSwiftUI */,
 			);
 			productName = MediaExport;
 			productReference = B82467692AB8C19B00F39D84 /* MediaExport.app */;
@@ -439,7 +454,8 @@
 			mainGroup = B82467602AB8C19B00F39D84;
 			packageReferences = (
 				B82467982AB8C97C00F39D84 /* XCRemoteSwiftPackageReference "DataRequest" */,
-				B8979F972ABA273E003203C4 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */,
+				42953AF72D3C0A0B00991950 /* XCRemoteSwiftPackageReference "Utilities" */,
+				42953AFD2D3C19B500991950 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */,
 			);
 			productRefGroup = B824676A2AB8C19B00F39D84 /* Products */;
 			projectDirPath = "";
@@ -527,6 +543,7 @@
 				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
 				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
 				B8661E6C2ABCE123006D46ED /* MediaId.swift in Sources */,
+				42953B032D3D239C00991950 /* PHImageManager+Shared.swift in Sources */,
 				B8979FB62ABA3289003203C4 /* Navigation.swift in Sources */,
 				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
 				B8AB87A42ABC327700B3A575 /* PHAssetMediaType+UI.swift in Sources */,
@@ -545,6 +562,7 @@
 				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
 				B86BA4592AC05627006F06FC /* VideoFetcher.swift in Sources */,
+				42953B012D3D22B000991950 /* Sequence+Async.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,7 +723,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MediaExport/Assets/PreviewAssets.xcassets\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5353635B2M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -748,7 +766,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"MediaExport/Assets/PreviewAssets.xcassets\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 5353635B2M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -913,6 +931,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		42953AF72D3C0A0B00991950 /* XCRemoteSwiftPackageReference "Utilities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BenShutt/Utilities.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		42953AFD2D3C19B500991950 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/3sidedcube/cubefoundation-ios";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		B82467982AB8C97C00F39D84 /* XCRemoteSwiftPackageReference "DataRequest" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BenShutt/DataRequest";
@@ -921,31 +955,28 @@
 				kind = branch;
 			};
 		};
-		B8979F972ABA273E003203C4 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/3sidedcube/cubefoundation-ios";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		42953AF82D3C0A0B00991950 /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42953AF72D3C0A0B00991950 /* XCRemoteSwiftPackageReference "Utilities" */;
+			productName = Utilities;
+		};
+		42953AFB2D3C18EF00991950 /* ColorUtilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42953AF72D3C0A0B00991950 /* XCRemoteSwiftPackageReference "Utilities" */;
+			productName = ColorUtilities;
+		};
+		42953AFE2D3C19B500991950 /* CubeFoundationSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42953AFD2D3C19B500991950 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */;
+			productName = CubeFoundationSwiftUI;
+		};
 		B82467992AB8C97C00F39D84 /* DataRequest */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B82467982AB8C97C00F39D84 /* XCRemoteSwiftPackageReference "DataRequest" */;
 			productName = DataRequest;
-		};
-		B8979F982ABA273E003203C4 /* CubeFoundation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8979F972ABA273E003203C4 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */;
-			productName = CubeFoundation;
-		};
-		B8979F9A2ABA273E003203C4 /* CubeFoundationSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B8979F972ABA273E003203C4 /* XCRemoteSwiftPackageReference "cubefoundation-ios" */;
-			productName = CubeFoundationSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

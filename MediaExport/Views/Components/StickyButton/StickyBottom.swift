@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct StickyBottom<Bottom: View>: ViewModifier {
-
     @ViewBuilder var bottom: () -> Bottom
 
     func body(content: Content) -> some View {

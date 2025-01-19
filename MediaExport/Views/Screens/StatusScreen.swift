@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct StatusScreen: View {
-
     @EnvironmentObject var navigation: Navigation
     @StateObject private var statusManager = StatusManager()
 
@@ -22,7 +21,7 @@ struct StatusScreen: View {
         ) {
             LoadStateView(state: statusManager.state) { _ in
                 SuccessView()
-                    .frame(size: 250)
+                    .frame(width: 250, height: 250)
             }
         }
         .modifier(
@@ -39,7 +38,7 @@ struct StatusScreen: View {
 
     private func onContinue() {
         guard statusManager.state.isFinished else { return }
-        statusManager.state = .idle
+        statusManager.reset()
 
         statusManager.validate { success in
             guard success else { return }

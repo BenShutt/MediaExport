@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct ResourcesScreen: View {
-
     @EnvironmentObject var navigation: Navigation
     @StateObject private var resourcesManager: ResourcesManager
 

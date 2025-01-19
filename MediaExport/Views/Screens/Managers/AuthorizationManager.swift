@@ -10,7 +10,6 @@ import Foundation
 import Photos
 
 struct AuthorizationManager {
-
     private static let accessLevel: PHAccessLevel = .readWrite
 
     static func isAuthorized() -> Bool {

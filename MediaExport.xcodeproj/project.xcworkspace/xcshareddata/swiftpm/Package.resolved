@@ -1,12 +1,13 @@
 {
+  "originHash" : "d77d731cb097279955d47fbf0146af50ab55da0cac8d75812028d65be5b861dc",
   "pins" : [
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "b2fa556e4e48cbf06cf8c63def138c98f4b811fa",
-        "version" : "5.8.0"
+        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+        "version" : "5.10.2"
       }
     },
     {
@@ -15,7 +16,7 @@
       "location" : "https://github.com/3sidedcube/cubefoundation-ios",
       "state" : {
         "branch" : "develop",
-        "revision" : "b9d44aff2dbfd1912a21c56bcd2c6d489ee396f4"
+        "revision" : "6453860cc84fdd9ab8a1d561161fb4322c13041c"
       }
     },
     {
@@ -24,9 +25,27 @@
       "location" : "https://github.com/BenShutt/DataRequest",
       "state" : {
         "branch" : "main",
-        "revision" : "3d565576648f03c9947b4bad9203d94f55837523"
+        "revision" : "f35e1e64d91ea62aafb987bcbd35cc95f1b5a0ad"
+      }
+    },
+    {
+      "identity" : "swiftlintplugins",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SimplyDanny/SwiftLintPlugins",
+      "state" : {
+        "revision" : "7a3d77f3dd9f91d5cea138e52c20cfceabf352de",
+        "version" : "0.58.2"
+      }
+    },
+    {
+      "identity" : "utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BenShutt/Utilities.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "9283b000d6b6c55ca9b44bfbe20e98b1cdecaf71"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

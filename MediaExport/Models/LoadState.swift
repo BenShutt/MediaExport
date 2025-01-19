@@ -9,7 +9,6 @@
 import SwiftUI
 
 enum LoadState<Success> {
-
     case idle
     case loading
     case success(Success)

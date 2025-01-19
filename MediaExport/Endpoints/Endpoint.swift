@@ -12,31 +12,28 @@ import DataRequest
 
 // MARK: - Endpoint
 
-protocol Endpoint: URLRequestMaker {
-
+protocol Endpoint: DecodableRequest where ResponseBody == Status {
     var endpoint: String { get }
 }
 
 extension Endpoint {
-
     var urlComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "http"
-        components.host = "192.168.0.205"
+        components.host = "192.168.0.9"
         components.port = 8000
         components.path = endpoint
         components.queryItems = nil
         return components
     }
 
-    func additionalHeaders(mediaFile: MediaFile) -> HTTPHeaders {
-        var headers = HTTPHeaders()
+    func headers(mediaFile: MediaFile) -> HTTPHeaders {
+        var headers: HTTPHeaders = .default
         headers.append(.acceptJSON)
-        headers.append(HTTPHeader(name: "X-File-Name", value: mediaFile.fileName))
+        headers.append(HTTPHeader(
+            name: "X-File-Name",
+            value: mediaFile.fileName
+        ))
         return headers
     }
 }
-
-// MARK: - DecodableEndpoint
-
-protocol DecodableEndpoint: Endpoint, DecodableRequest where ResponseBody == Status {}

@@ -9,23 +9,19 @@
 import Foundation
 import Alamofire
 
-struct GetExists: DecodableEndpoint {
-
+struct GetExists: Endpoint {
     let endpoint = "/api/exists"
-    var mediaFile: MediaFile
+    let mediaFile: MediaFile
 
-    var additionalHeaders: HTTPHeaders {
-        additionalHeaders(mediaFile: mediaFile)
+    var headers: HTTPHeaders {
+        headers(mediaFile: mediaFile)
     }
-}
 
-// MARK: - Extensions
-
-extension GetExists {
-
-    static func request(mediaFile: MediaFile) async throws -> Bool {
-        let status = try await GetExists(mediaFile: mediaFile).request()
-        try status.validate { status in [0, 1].contains(status) }
-        return status.status == 1
+    func requestValue() async throws -> Bool {
+        let status = try await request().status
+        guard status == 0 || status == 1 else {
+            throw StatusError.status(status)
+        }
+        return status == 1
     }
 }

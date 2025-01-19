@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct AuthorizationScreen: View {
-
     @EnvironmentObject var navigation: Navigation
     @State private var isPresentingUnauthorizedAlert = false
 

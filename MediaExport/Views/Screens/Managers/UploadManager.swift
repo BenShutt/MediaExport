@@ -9,10 +9,9 @@
 import SwiftUI
 import Alamofire
 
-@MainActor final class UploadManager: ObservableObject {
-
+@MainActor
+final class UploadManager: ObservableObject {
     enum SyncState {
-
         case checking(MediaFile)
         case uploading(MediaFile)
     }
@@ -60,10 +59,10 @@ import Alamofire
 
     private func sync(mediaFile: MediaFile) async throws {
         syncState = .checking(mediaFile)
-        let exists = try await GetExists.request(mediaFile: mediaFile)
+        let exists = try await GetExists(mediaFile: mediaFile).requestValue()
         if !exists {
             syncState = .uploading(mediaFile)
-            try await PostUpload.upload(mediaFile: mediaFile)
+            try await PostUpload(mediaFile: mediaFile).upload()
         }
         syncedMediaFiles.append(mediaFile)
     }

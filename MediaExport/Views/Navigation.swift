@@ -28,6 +28,8 @@ enum NavigationRoute: Hashable {
 
 // MARK: - Navigation
 
+// TODO: Remove
+
 /// View model for navigation
 final class Navigation: ObservableObject {
 

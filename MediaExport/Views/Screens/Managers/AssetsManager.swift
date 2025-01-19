@@ -11,8 +11,8 @@ import Photos
 
 typealias AssetsMap = [PHAssetMediaType: [PHAsset]]
 
-@MainActor final class AssetsManager: ObservableObject {
-
+@MainActor
+final class AssetsManager: ObservableObject {
     private let mediaTypes: [PHAssetMediaType] = [.unknown, .image, .video, .audio]
     @Published private(set) var state: LoadState<AssetsMap> = .idle
 
@@ -57,6 +57,5 @@ typealias AssetsMap = [PHAssetMediaType: [PHAsset]]
 // MARK: - AssetsManagerError
 
 enum AssetsManagerError: Error {
-
     case authorization
 }

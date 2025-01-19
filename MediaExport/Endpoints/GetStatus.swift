@@ -8,16 +8,12 @@
 
 import Foundation
 
-struct GetStatus: DecodableEndpoint {
-
+struct GetStatus: Endpoint {
     let endpoint = "/api/status"
-}
 
-// MARK: - Extensions
-
-extension GetStatus {
-
-    static func request() async throws -> Int {
-        try await GetStatus().request().validate()
+    func requestValue() async throws -> Int {
+        let status = try await request().status
+        guard status == 0 else { throw StatusError.status(status) }
+        return status
     }
 }

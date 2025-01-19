@@ -10,7 +10,6 @@ import SwiftUI
 import Photos
 
 extension PHAssetMediaType {
-
     func title(count: Int) -> LocalizedStringKey {
         switch self {
         case .image: "media_type_image_count \(count)"

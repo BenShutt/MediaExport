@@ -7,10 +7,9 @@
 //
 
 import SwiftUI
-import CubeFoundationSwiftUI
+import ColorUtilities
 
 struct ColorUtilities {
-
     private static let hexCharacters = "0123456789ABCDEF"
 
     static func mappedHexString(_ hexString: String, offset: Int) -> String {
@@ -21,14 +20,13 @@ struct ColorUtilities {
 
     static func mappedColor(_ color: Color, offset: Int) -> Color {
         let mappedHexString = mappedHexString(color.hexString(), offset: offset)
-        return Color(hexString: mappedHexString) ?? color
+        return Color(hex: mappedHexString) ?? color
     }
 }
 
 // MARK: - Array + Extensions
 
 private extension Collection where Element: Equatable {
-
     func map(_ element: Element, offset: Int) -> Element {
         guard let currentIndex = firstIndex(of: element) else { return element }
         if offset >= 0 {

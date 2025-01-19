@@ -8,15 +8,15 @@
 
 import Foundation
 import Photos
-import CubeFoundation
+import Utilities
 
 struct ImageFetcher {
-
     private static var options: PHImageRequestOptions {
         let options = PHImageRequestOptions()
         options.version = .current
         options.deliveryMode = .highQualityFormat
         options.resizeMode = .none
+        // options.isNetworkAccessAllowed = true
         if #available(iOS 17, *) {
             options.allowSecondaryDegradedImage = false
         }
@@ -24,22 +24,31 @@ struct ImageFetcher {
     }
 
     static func data(for asset: PHAsset) async throws -> Data {
-        try await withCheckedContinuation { continuation in
-            PHImageManager().requestImageDataAndOrientation(
+        try await withCheckedThrowingContinuation { continuation in
+            PHImageManager.shared.requestImageDataAndOrientation(
                 for: asset,
                 options: options
-            ) { data, _, _, _ in
-                continuation.resume(returning: Result(catching: {
-                    try data ?! ImageFetcherError.data
-                }))
+            ) { data, _, _, keyValues in
+                if let data {
+                    continuation.resume(returning: data)
+                } else if let error = keyValues?[PHImageErrorKey] as? Error {
+                    continuation.resume(throwing: error)
+                } else {
+                    continuation.resume(throwing: ImageFetcherError.data)
+                }
             }
-        }.get()
+        }
     }
 }
 
 // MARK: - ImageFetcherError
 
-enum ImageFetcherError: Error {
-
+enum ImageFetcherError: Error, CustomStringConvertible {
     case data
+
+    var description: String {
+        switch self {
+        case .data: "Failed to fetch image data"
+        }
+    }
 }

@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct Screen<Content: View>: View {
-
     var title: LocalizedStringKey
     var subtitle: LocalizedStringKey
 

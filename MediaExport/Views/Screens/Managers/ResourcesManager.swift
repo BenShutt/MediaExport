@@ -9,8 +9,8 @@
 import SwiftUI
 import Photos
 
-@MainActor final class ResourcesManager: ObservableObject {
-
+@MainActor
+final class ResourcesManager: ObservableObject {
     private let assetsMap: AssetsMap
     @Published private(set) var state: LoadState<[MediaFile]> = .idle
 
@@ -59,11 +59,10 @@ import Photos
 // MARK: - MediaFileMapper
 
 private struct MediaFileMapper {
-
     static func map(assetsMap: AssetsMap) async throws -> [MediaFile] {
-        try assetsMap.values.flatMap { assets in
-            try assets.map { asset in
-                try MediaFile(
+        try await assetsMap.values.asyncFlatMap { assets in
+            try await assets.asyncMap { asset in
+                try await MediaFile(
                     originalFilename: asset.originalFilename,
                     asset: asset
                 )
@@ -75,6 +74,5 @@ private struct MediaFileMapper {
 // MARK: - ResourcesManagerError
 
 enum ResourcesManagerError: Error {
-
     case duplicates([String])
 }

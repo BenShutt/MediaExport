@@ -9,7 +9,6 @@
 import XCTest
 
 final class MediaExportUITests: XCTestCase {
-
     override func setUpWithError() throws {
         try super.setUpWithError()
         continueAfterFailure = false

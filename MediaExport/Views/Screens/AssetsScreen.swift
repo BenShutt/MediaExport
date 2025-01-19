@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct AssetsScreen: View {
-
     @EnvironmentObject var navigation: Navigation
     @StateObject private var assetsManager = AssetsManager()
 

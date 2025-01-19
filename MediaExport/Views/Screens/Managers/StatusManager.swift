@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-@MainActor final class StatusManager: ObservableObject {
-
-    @Published var state: LoadState<Int> = .idle
+@MainActor
+final class StatusManager: ObservableObject {
+    @Published private(set) var state: LoadState<Int> = .idle
 
     func validate(completion: @escaping (Bool) -> Void) {
         Task {
@@ -19,12 +19,17 @@ import SwiftUI
         }
     }
 
+    func reset() {
+        state = .idle
+    }
+
     private func validate() async {
         guard case .idle = state else { return }
 
         state = .loading
         do {
-            state = try await .success(GetStatus.request())
+            let status = try await GetStatus().requestValue()
+            state = .success(status)
         } catch {
             state = .failure(error)
         }

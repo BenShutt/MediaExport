@@ -10,8 +10,6 @@ import SwiftUI
 import Photos
 
 struct ContentView: View {
-
-    /// Storage of the `Navigation` environment instance
     @StateObject private var navigation = Navigation()
 
     var body: some View {

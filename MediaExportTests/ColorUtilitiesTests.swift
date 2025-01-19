@@ -10,7 +10,6 @@ import XCTest
 @testable import MediaExport
 
 final class ColorUtilitiesTests: XCTestCase {
-
     func testNegative() {
         let hexString = ColorUtilities.mappedHexString("#FE98D2", offset: -2)
         XCTAssertEqual(hexString, "#DC76B0")

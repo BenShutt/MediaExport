@@ -9,7 +9,6 @@
 import XCTest
 
 final class MediaExportUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

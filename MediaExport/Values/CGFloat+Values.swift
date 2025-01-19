@@ -11,7 +11,6 @@ import SwiftUI
 // MARK: - CGFloat + Values
 
 extension CGFloat {
-
     static let hPadding: CGFloat = 20
     static let vPadding: CGFloat = 16
 
@@ -27,7 +26,6 @@ extension CGFloat {
 // MARK: - EdgeInsets + Values
 
 extension EdgeInsets {
-
     static let padding = EdgeInsets(
         top: .vPadding,
         leading: .hPadding,

@@ -76,7 +76,6 @@ struct MediaDirectory {
 
 @available(*, deprecated, message: "Previously used in SPM executable")
 extension MediaDirectory.File {
-
     var data: Data {
         get throws {
             try Data(contentsOf: url)
@@ -98,7 +97,6 @@ extension MediaDirectory.File {
 
 @available(*, deprecated, message: "Previously used in SPM executable")
 private extension MediaDirectory.FileType {
-
     var pathExtensions: Set<String> {
         var set = Set([rawValue])
         guard case .jpeg = self else { return set }

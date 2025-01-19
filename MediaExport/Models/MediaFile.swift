@@ -9,32 +9,45 @@
 import Photos
 
 struct MediaFile: Equatable, Hashable {
-
-    var originalFilename: String
-    var asset: PHAsset
-
-    // MARK: - Computed
-
-    var fileName: String {
-        MediaId(mediaFile: self).description
-    }
+    let originalFilename: String
+    let asset: PHAsset
+    let fileName: String
 
     var mediaType: PHAssetMediaType {
         asset.mediaType
     }
 
-    func data() async throws -> Data {
+    init(
+        originalFilename: String,
+        asset: PHAsset
+    ) async {
+        self.originalFilename = originalFilename
+        self.asset = asset
+        fileName = await MediaId(
+            localIdentifier: asset.localIdentifier,
+            originalFilename: originalFilename
+        ).description
+    }
+
+    // MARK: - Async
+
+    func loadData() async throws -> Data {
         switch mediaType {
-        case .image: return try await ImageFetcher.data(for: asset)
-        case .video: return try await VideoFetcher.data(for: self)
-        default: throw MediaFileError.data
+        case .image: try await ImageFetcher.data(for: asset)
+        case .video: try await VideoFetcher.data(for: self)
+        default: throw MediaFileError.mediaType
         }
     }
 }
 
 // MARK: - MediaFileError
 
-enum MediaFileError: Error {
+enum MediaFileError: Error, CustomStringConvertible {
+    case mediaType
 
-    case data
+    var description: String {
+        switch self {
+        case .mediaType: "Unsupported media type"
+        }
+    }
 }

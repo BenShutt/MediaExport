@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct LoadStateView<Success, Content: View>: View {
-
     var state: LoadState<Success>
     @ViewBuilder var content: (Success) -> Content
 

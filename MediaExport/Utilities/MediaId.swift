@@ -10,11 +10,18 @@ import Foundation
 import CryptoKit
 
 struct MediaId: CustomStringConvertible {
+    let hash: String
+    let originalFilename: String
 
-    var localIdentifier: String
-    var originalFilename: String
+    init(
+        localIdentifier: String,
+        originalFilename: String
+    ) async {
+        self.hash = await Self.hash(for: localIdentifier)
+        self.originalFilename = originalFilename
+    }
 
-    var hash: String {
+    static func hash(for localIdentifier: String) async -> String {
         let data = Data(localIdentifier.utf8)
         let hashedData = SHA256.hash(data: data)
         let hexString = hashedData
@@ -26,15 +33,5 @@ struct MediaId: CustomStringConvertible {
 
     var description: String {
         "\(hash)-\(originalFilename)"
-    }
-}
-
-// MARK: - Extensions
-
-extension MediaId {
-
-    init(mediaFile: MediaFile) {
-        localIdentifier = mediaFile.asset.localIdentifier
-        originalFilename = mediaFile.originalFilename
     }
 }

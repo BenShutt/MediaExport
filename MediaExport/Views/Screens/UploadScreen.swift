@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct UploadScreen: View {
-
     @EnvironmentObject var navigation: Navigation
     @StateObject private var uploadManager: UploadManager
 
@@ -46,7 +45,6 @@ struct UploadScreen: View {
 // MARK: - UploadContentView
 
 private struct UploadContentView: View {
-
     @ObservedObject var uploadManager: UploadManager
 
     private var progressString: LocalizedStringKey? {
@@ -76,10 +74,10 @@ private struct UploadContentView: View {
 
         case .success:
             SuccessView()
-                .frame(size: 250)
+                .frame(width: 250, height: 250)
 
-        case .failure(let error):
-            Text(verbatim: error.localizedDescription)
+        case let .failure(error):
+            Text(verbatim: "\(error)")
                 .body(textColor: .appRed)
         }
     }

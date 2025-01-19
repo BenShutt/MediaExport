@@ -11,21 +11,26 @@ import Alamofire
 import DataRequest
 
 struct PostUpload: Endpoint {
-
     let method: HTTPMethod = .post
     let endpoint = "/api/upload"
-    var mediaFile: MediaFile
+    let mediaFile: MediaFile
 
-    var additionalHeaders: HTTPHeaders {
-        additionalHeaders(mediaFile: mediaFile)
+    var headers: HTTPHeaders {
+        headers(mediaFile: mediaFile)
     }
-}
 
-extension PostUpload {
-
-    static func upload(mediaFile: MediaFile) async throws {
-        try await AF.upload(mediaFile.data(), with: PostUpload(mediaFile: mediaFile))
-            .decodeValue(Status.self)
-            .validate()
+    @discardableResult
+    func upload() async throws -> Status {
+        try await session
+            .upload(
+                mediaFile.loadData(),
+                with: self,
+                interceptor: interceptor
+            )
+            .decodeValue(
+                ResponseBody.self,
+                validate: validate,
+                decoder: decoder
+            )
     }
 }

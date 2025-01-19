@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct BarProgressView<Value: BinaryFloatingPoint>: View {
-
     var value: Value
     var total: Value
     var progressString: LocalizedStringKey?
@@ -30,7 +29,6 @@ struct BarProgressView<Value: BinaryFloatingPoint>: View {
 // MARK: - BarProgressViewStyle
 
 private struct BarProgressViewStyle: ProgressViewStyle {
-
     var height: CGFloat
     var backgroundColor: Color = .appBlack.opacity(0.15)
     var progressColor: Color = .appGreen

@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct StickyButton: ViewModifier {
-
     var key: LocalizedStringKey
     var backgroundColor: Color = .appYellow
     var isEnabled = true
