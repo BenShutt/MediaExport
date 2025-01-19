@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		42953AF92D3C0A0B00991950 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AF82D3C0A0B00991950 /* Utilities */; };
 		42953AFC2D3C18EF00991950 /* ColorUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 42953AFB2D3C18EF00991950 /* ColorUtilities */; };
-		42953B012D3D22B000991950 /* Sequence+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B002D3D22AC00991950 /* Sequence+Async.swift */; };
 		42953B032D3D239C00991950 /* PHImageManager+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B022D3D239A00991950 /* PHImageManager+Shared.swift */; };
 		42953B092D3D3E4000991950 /* RootNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B082D3D3E3600991950 /* RootNavigationStack.swift */; };
 		42953B0B2D3D3E8600991950 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B0A2D3D3E8000991950 /* NavigationRoute.swift */; };
@@ -78,7 +77,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		42953B002D3D22AC00991950 /* Sequence+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Async.swift"; sourceTree = "<group>"; };
 		42953B022D3D239A00991950 /* PHImageManager+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHImageManager+Shared.swift"; sourceTree = "<group>"; };
 		42953B082D3D3E3600991950 /* RootNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationStack.swift; sourceTree = "<group>"; };
 		42953B0A2D3D3E8000991950 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 		B8AB879E2ABC271400B3A575 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				42953B002D3D22AC00991950 /* Sequence+Async.swift */,
 				B82467AD2AB8D73C00F39D84 /* PHAsset+Extensions.swift */,
 				B8AB87A32ABC327700B3A575 /* PHAssetMediaType+UI.swift */,
 				42953B022D3D239A00991950 /* PHImageManager+Shared.swift */,
@@ -566,7 +563,6 @@
 				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
 				B86BA4592AC05627006F06FC /* VideoFetcher.swift in Sources */,
-				42953B012D3D22B000991950 /* Sequence+Async.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
