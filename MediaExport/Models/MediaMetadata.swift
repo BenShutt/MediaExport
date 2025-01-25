@@ -1,15 +1,14 @@
 //
-//  MediaMetaData.swift
+//  MediaMetadata.swift
 //  MediaExport
 //
 //  Created by Ben Shutt on 25/01/2025.
-//  Copyright © 2025 Ben Shutt. All rights reserved.
 //
 
 import Foundation
 import Photos
 
-struct MediaMetaData: Sendable, Equatable, Hashable, Codable, Comparable {
+struct MediaMetadata: Sendable, Equatable, Hashable, Codable, Comparable {
     var fileName: String
     var mediaType: String?
     var creationDate: Date?
@@ -32,7 +31,7 @@ struct MediaMetaData: Sendable, Equatable, Hashable, Codable, Comparable {
 
     // MARK: - Comparable
 
-    static func < (lhs: MediaMetaData, rhs: MediaMetaData) -> Bool {
+    static func < (lhs: MediaMetadata, rhs: MediaMetadata) -> Bool {
         if let lhsDate = lhs.creationDate, let rhsDate = rhs.creationDate {
             lhsDate < rhsDate
         } else if lhs.creationDate != nil {

@@ -10,7 +10,7 @@ import SwiftUI
 struct ResourcesScreen: View {
     @Environment(\.push) private var push
     @StateObject private var resourcesManager: ResourcesManager
-    @StateObject private var metaDataManager = MetaDataManager()
+    @StateObject private var metaDataManager = MetadataManager()
 
     init(assetsMap: AssetsMap) {
         _resourcesManager = .init(
@@ -22,7 +22,7 @@ struct ResourcesScreen: View {
         resourcesManager.state.success?.count
     }
 
-    private var isMetaDataDisabled: Bool {
+    private var isMetadataDisabled: Bool {
         !resourcesManager.state.isSuccess ||
             metaDataManager.state.isLoading
     }
@@ -53,9 +53,9 @@ struct ResourcesScreen: View {
                     StyledButton(
                         key: "metadata_button",
                         backgroundColor: .appGreen,
-                        onTap: onMetaData
+                        onTap: onMetadata
                     )
-                    .disabled(isMetaDataDisabled)
+                    .disabled(isMetadataDisabled)
 
                     StyledButton(
                         key: "continue_button",
@@ -84,7 +84,7 @@ struct ResourcesScreen: View {
         push(.status(mediaFiles))
     }
 
-    private func onMetaData() {
+    private func onMetadata() {
         Task {
             guard case .success(let mediaFiles) = resourcesManager.state else {
                 fatalError("Invalid state \(#function)")

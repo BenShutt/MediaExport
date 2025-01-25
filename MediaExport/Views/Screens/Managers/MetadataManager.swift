@@ -1,5 +1,5 @@
 //
-//  MetaDataManager.swift
+//  MetadataManager.swift
 //  MediaExport
 //
 //  Created by Ben Shutt on 25/01/2025.
@@ -9,7 +9,7 @@ import SwiftUI
 import Utilities
 
 @MainActor
-final class MetaDataManager: ObservableObject {
+final class MetadataManager: ObservableObject {
     @Published private(set) var state: LoadState<URL> = .idle
     @Published var presentedSheetURL: JSONFileURL?
     private let jsonExport = JSONExport(fileName: "metadata.json")
@@ -18,7 +18,7 @@ final class MetaDataManager: ObservableObject {
         guard case .idle = state else { return }
         state = .loading
         do {
-            let metaData = await MediaMetaData.map(media: media)
+            let metaData = await MediaMetadata.map(media: media)
             let url = try await jsonExport.export(metaData)
             state = .success(url)
             presentedSheetURL = JSONFileURL(url: url)
@@ -33,12 +33,12 @@ final class MetaDataManager: ObservableObject {
     }
 }
 
-// MARK: - MediaMetaData + Map
+// MARK: - MediaMetadata + Map
 
-private extension MediaMetaData {
-    static func map(media: [MediaFile]) async -> [MediaMetaData] {
+private extension MediaMetadata {
+    static func map(media: [MediaFile]) async -> [MediaMetadata] {
         media
-            .map { MediaMetaData(media: $0) }
+            .map { MediaMetadata(media: $0) }
             .sorted()
     }
 }
