@@ -10,14 +10,25 @@ import SwiftUI
 struct ResourcesScreen: View {
     @Environment(\.push) private var push
     @StateObject private var resourcesManager: ResourcesManager
+    @StateObject private var metaDataManager = MetaDataManager()
 
     init(assetsMap: AssetsMap) {
-        _resourcesManager = .init(wrappedValue: .init(assetsMap: assetsMap))
+        _resourcesManager = .init(
+            wrappedValue: .init(assetsMap: assetsMap)
+        )
     }
 
     private var mediaFileCount: Int? {
-        guard case .success(let mediaFiles) = resourcesManager.state else { return nil }
-        return mediaFiles.count
+        resourcesManager.state.success?.count
+    }
+
+    private var isMetaDataDisabled: Bool {
+        !resourcesManager.state.isSuccess ||
+            metaDataManager.state.isLoading
+    }
+
+    private var isContinueDisabled: Bool {
+        !resourcesManager.state.isSuccess
     }
 
     var body: some View {
@@ -37,20 +48,55 @@ struct ResourcesScreen: View {
             }
         }
         .modifier(
-            StickyButton(
-                key: "continue_button",
-                isEnabled: resourcesManager.state.isSuccess,
-                onTap: onContinue
-            )
+            StickyBottom {
+                VStack(spacing: .vPadding) {
+                    StyledButton(
+                        key: "metadata_button",
+                        backgroundColor: .appGreen,
+                        onTap: onMetaData
+                    )
+                    .disabled(isMetaDataDisabled)
+
+                    StyledButton(
+                        key: "continue_button",
+                        backgroundColor: .appYellow,
+                        onTap: onContinue
+                    )
+                    .disabled(isContinueDisabled)
+                }
+                .padding(EdgeInsets.padding)
+            }
         )
+        .sheet(item: $metaDataManager.presentedSheetURL) { url in
+            ShareSheet(items: [url.item]) { _, _, _, _ in
+                onShareDismissed()
+            }
+        }
         .task {
             await resourcesManager.load()
         }
     }
 
     private func onContinue() {
-        guard case .success(let mediaFiles) = resourcesManager.state else { return }
+        guard case .success(let mediaFiles) = resourcesManager.state else {
+            fatalError("Invalid state \(#function)")
+        }
         push(.status(mediaFiles))
+    }
+
+    private func onMetaData() {
+        Task {
+            guard case .success(let mediaFiles) = resourcesManager.state else {
+                fatalError("Invalid state \(#function)")
+            }
+            await metaDataManager.load(media: mediaFiles)
+        }
+    }
+
+    private func onShareDismissed() {
+        Task {
+            try? await metaDataManager.clean() // Masked
+        }
     }
 }
 

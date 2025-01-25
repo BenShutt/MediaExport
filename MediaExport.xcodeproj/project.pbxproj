@@ -12,6 +12,8 @@
 		42953B032D3D239C00991950 /* PHImageManager+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B022D3D239A00991950 /* PHImageManager+Shared.swift */; };
 		42953B092D3D3E4000991950 /* RootNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B082D3D3E3600991950 /* RootNavigationStack.swift */; };
 		42953B0B2D3D3E8600991950 /* NavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42953B0A2D3D3E8000991950 /* NavigationRoute.swift */; };
+		42BB5D442D4530AA00B867BB /* MetaDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB5D432D4530A900B867BB /* MetaDataManager.swift */; };
+		42BB5D462D45386F00B867BB /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BB5D452D45386C00B867BB /* ShareSheet.swift */; };
 		42FE35322D44F1B300B9B2C7 /* MediaMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FE35312D44F1B200B9B2C7 /* MediaMetaData.swift */; };
 		B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */; };
 		B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B824676E2AB8C19B00F39D84 /* ContentView.swift */; };
@@ -81,6 +83,8 @@
 		42953B022D3D239A00991950 /* PHImageManager+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHImageManager+Shared.swift"; sourceTree = "<group>"; };
 		42953B082D3D3E3600991950 /* RootNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationStack.swift; sourceTree = "<group>"; };
 		42953B0A2D3D3E8000991950 /* NavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoute.swift; sourceTree = "<group>"; };
+		42BB5D432D4530A900B867BB /* MetaDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaDataManager.swift; sourceTree = "<group>"; };
+		42BB5D452D45386C00B867BB /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		42FE35312D44F1B200B9B2C7 /* MediaMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMetaData.swift; sourceTree = "<group>"; };
 		B82467692AB8C19B00F39D84 /* MediaExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B824676C2AB8C19B00F39D84 /* MediaExportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaExportApp.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 		B8979F9C2ABA2779003203C4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				42BB5D452D45386C00B867BB /* ShareSheet.swift */,
 				42953B072D3D3E2900991950 /* Navigation */,
 				B8979FA82ABA2876003203C4 /* StickyButton */,
 				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
@@ -353,6 +358,7 @@
 		B8AB87B82ABC7A2D00B3A575 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				42BB5D432D4530A900B867BB /* MetaDataManager.swift */,
 				B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */,
 				B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */,
 				B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */,
@@ -525,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BB5D442D4530AA00B867BB /* MetaDataManager.swift in Sources */,
 				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
 				B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */,
 				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
@@ -567,6 +574,7 @@
 				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
 				B86BA4592AC05627006F06FC /* VideoFetcher.swift in Sources */,
+				42BB5D462D45386F00B867BB /* ShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

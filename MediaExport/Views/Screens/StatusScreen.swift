@@ -42,7 +42,7 @@ struct StatusScreen: View {
     }
 
     private func onContinue() async {
-        guard state.isFinished else { return }
+        assert(state.isFinished)
 
         statusManager.reset()
         await statusManager.validate()

@@ -89,6 +89,9 @@
         }
       }
     },
+    "export_share_title" : {
+
+    },
     "media_file_count" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -191,6 +194,9 @@
           }
         }
       }
+    },
+    "metadata_button" : {
+
     },
     "resources_subtitle" : {
       "extractionState" : "manual",

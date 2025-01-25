@@ -18,9 +18,13 @@ enum LoadState<Success> {
         return true
     }
 
+    var success: Success? {
+        guard case .success(let value) = self else { return nil }
+        return value
+    }
+
     var isSuccess: Bool {
-        guard case .success = self else { return false }
-        return true
+        success != nil
     }
 
     var isFinished: Bool {

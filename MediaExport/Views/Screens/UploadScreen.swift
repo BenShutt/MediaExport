@@ -12,7 +12,9 @@ struct UploadScreen: View {
     @StateObject private var uploadManager: UploadManager
 
     init(mediaFiles: [MediaFile]) {
-        _uploadManager = .init(wrappedValue: .init(mediaFiles: mediaFiles))
+        _uploadManager = .init(
+            wrappedValue: .init(mediaFiles: mediaFiles)
+        )
     }
 
     var body: some View {
@@ -36,7 +38,7 @@ struct UploadScreen: View {
     }
 
     private func onContinue() {
-        guard uploadManager.loadState.isFinished else { return }
+        assert(uploadManager.loadState.isFinished)
         popToRoot()
     }
 }
