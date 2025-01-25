@@ -3,7 +3,6 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 20/09/2023.
-
 //
 
 import SwiftUI
@@ -13,8 +12,13 @@ typealias AssetsMap = [PHAssetMediaType: [PHAsset]]
 
 @MainActor
 final class AssetsManager: ObservableObject {
-    private let mediaTypes: [PHAssetMediaType] = [.unknown, .image, .video, .audio]
+    let mediaTypes: [PHAssetMediaType] = [.unknown, .image, .video, .audio]
+    let photoAuthorization: PhotoAuthorization
     @Published private(set) var state: LoadState<AssetsMap> = .idle
+
+    init(photoAuthorization: PhotoAuthorization = AuthorizationManager()) {
+        self.photoAuthorization = photoAuthorization
+    }
 
     // TODO: Improve LoadState code re-use
     func load() async {
@@ -27,12 +31,10 @@ final class AssetsManager: ObservableObject {
         }
     }
 
-    private static nonisolated func fetchAll(
+    private nonisolated func fetchAll(
         for mediaType: PHAssetMediaType
     ) async throws -> [PHAsset] {
-        guard await AuthorizationManager.isAuthorized else {
-            throw AssetsManagerError.authorization
-        }
+        try await photoAuthorization.checkAuthorized()
 
         // Ignore iCloud and iTunes media
         let options = PHFetchOptions()
@@ -55,7 +57,7 @@ final class AssetsManager: ObservableObject {
         ) { group in
             for mediaType in mediaTypes {
                 group.addTask {
-                    let assets = try await Self.fetchAll(for: mediaType)
+                    let assets = try await self.fetchAll(for: mediaType)
                     return (mediaType, assets)
                 }
             }

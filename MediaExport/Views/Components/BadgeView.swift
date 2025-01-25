@@ -3,7 +3,6 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 21/09/2023.
-
 //
 
 import SwiftUI
@@ -14,7 +13,7 @@ struct BadgeView: View {
 
     var textWidth: CGFloat = 200
     var symbol: String
-    var title: String
+    var count: Int
     var subtitle: LocalizedStringKey
     var backgroundColor: Color
 
@@ -26,7 +25,7 @@ struct BadgeView: View {
                 .frame(width: 50, height: 50)
                 .accessibilityHidden(true)
 
-            Text(verbatim: title)
+            Text(count, format: .number)
                 .badge()
                 .lineLimit(1)
                 .minimumScaleFactor(0.25)
@@ -53,7 +52,7 @@ struct BadgeView: View {
 #Preview {
     BadgeView(
         symbol: "number",
-        title: "12,345",
+        count: 12_345,
         subtitle: "media_file_count",
         backgroundColor: .appWhite
     )

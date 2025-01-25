@@ -9,17 +9,20 @@ import Foundation
 import Alamofire
 import DataRequest
 
-// MARK: - Endpoint
-
 protocol Endpoint: DecodableRequest where ResponseBody == Status {
     var endpoint: String { get }
+    var timeoutInterval: TimeInterval { get }
 }
 
 extension Endpoint {
+    var timeoutInterval: TimeInterval {
+        60 * 60
+    }
+
     var urlComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "http"
-        components.host = "192.168.0.9"
+        components.host = "192.168.1.109"
         components.port = 8000
         components.path = endpoint
         components.queryItems = nil
@@ -34,5 +37,11 @@ extension Endpoint {
             value: mediaFile.fileName
         ))
         return headers
+    }
+
+    func asURLRequest() throws -> URLRequest {
+        var urlRequest = try urlRequest
+        urlRequest.timeoutInterval = timeoutInterval
+        return urlRequest
     }
 }

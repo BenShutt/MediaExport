@@ -11,7 +11,11 @@ import Photos
 struct ContentView: View {
     var body: some View {
         RootNavigationStack {
-            AuthorizationScreen()
+            if AuthorizationManager().isAuthorized {
+                AssetsScreen()
+            } else {
+                AuthorizationScreen()
+            }
         }
     }
 }

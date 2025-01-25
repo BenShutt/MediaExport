@@ -16,7 +16,7 @@ struct GetExists: Endpoint {
         headers(mediaFile: mediaFile)
     }
 
-    func requestValue() async throws -> Bool {
+    func exists() async throws -> Bool {
         let status = try await request().status
         guard status == 0 || status == 1 else {
             throw StatusError.status(status)

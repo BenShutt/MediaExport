@@ -3,7 +3,6 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 20/09/2023.
-
 //
 
 import SwiftUI
@@ -12,20 +11,18 @@ struct AuthorizationScreen: View {
     @Environment(\.push) private var push
     @State private var isPresentingUnauthorizedAlert = false
 
-    private var screenWidth: CGFloat {
-        UIScreen.main.bounds.width
-    }
-
     var body: some View {
-        Screen(
-            title: "authorization_title",
-            subtitle: "authorization_subtitle"
-        ) {
-            Image(.accessPhotoLibrary)
-                .resizable()
-                .scaledToFit()
-                .frame(width: screenWidth * 2 / 3)
-                .accessibilityHidden(true)
+        GeometryReader { metrics in
+            Screen(
+                title: "authorization_title",
+                subtitle: "authorization_subtitle"
+            ) {
+                Image(.accessPhotoLibrary)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: metrics.size.width * 2 / 3)
+                    .accessibilityHidden(true)
+            }
         }
         .modifier(
             StickyButton(
@@ -48,12 +45,13 @@ struct AuthorizationScreen: View {
     }
 
     private func onContinue() async {
-        guard !AuthorizationManager.isAuthorized else {
+        let authorization = AuthorizationManager()
+        guard !authorization.isAuthorized else {
             push(.assets)
             return
         }
 
-        let isAuthorized = await AuthorizationManager.requestAuthorization()
+        let isAuthorized = await authorization.requestAuthorization()
         if isAuthorized {
             push(.assets)
         } else {

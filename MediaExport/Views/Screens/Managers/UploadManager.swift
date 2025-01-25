@@ -3,7 +3,6 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 21/09/2023.
-
 //
 
 import SwiftUI
@@ -53,7 +52,7 @@ final class UploadManager: ObservableObject {
 
     private func sync(mediaFile: MediaFile) async throws {
         syncState = .checking(mediaFile)
-        let exists = try await GetExists(mediaFile: mediaFile).requestValue()
+        let exists = try await GetExists(mediaFile: mediaFile).exists()
         if !exists {
             syncState = .uploading(mediaFile)
             try await PostUpload(mediaFile: mediaFile).upload()

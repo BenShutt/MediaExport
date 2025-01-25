@@ -3,7 +3,6 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 21/09/2023.
-
 //
 
 import SwiftUI
@@ -16,12 +15,9 @@ struct ResourcesScreen: View {
         _resourcesManager = .init(wrappedValue: .init(assetsMap: assetsMap))
     }
 
-    private var mediaFileCount: String? {
+    private var mediaFileCount: Int? {
         guard case .success(let mediaFiles) = resourcesManager.state else { return nil }
-
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter.string(from: mediaFiles.count as NSNumber)
+        return mediaFiles.count
     }
 
     var body: some View {
@@ -33,7 +29,7 @@ struct ResourcesScreen: View {
                 if let mediaFileCount {
                     BadgeView(
                         symbol: "number",
-                        title: mediaFileCount,
+                        count: mediaFileCount,
                         subtitle: "media_file_count",
                         backgroundColor: .appWhite
                     )

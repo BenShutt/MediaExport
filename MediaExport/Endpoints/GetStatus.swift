@@ -3,15 +3,15 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 21/09/2023.
-
 //
 
 import Foundation
 
 struct GetStatus: Endpoint {
     let endpoint = "/api/status"
+    let timeoutInterval = 5
 
-    func requestValue() async throws -> Int {
+    func status() async throws -> Int {
         let status = try await request().status
         guard status == 0 else { throw StatusError.status(status) }
         return status

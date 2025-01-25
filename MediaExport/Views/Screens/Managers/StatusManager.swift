@@ -3,7 +3,6 @@
 //  MediaExport
 //
 //  Created by Ben Shutt on 21/09/2023.
-
 //
 
 import SwiftUI
@@ -20,7 +19,7 @@ final class StatusManager: ObservableObject {
         guard case .idle = state else { return }
         state = .loading
         do {
-            let status = try await GetStatus().requestValue()
+            let status = try await GetStatus().status()
             state = .success(status)
         } catch {
             state = .failure(error)
