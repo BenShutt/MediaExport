@@ -13,6 +13,7 @@ struct PostUpload: Endpoint {
     let method: HTTPMethod = .post
     let endpoint = "/api/upload"
     let mediaFile: MediaFile
+    let timeoutInterval = 3600
 
     var headers: HTTPHeaders {
         headers(mediaFile: mediaFile)

@@ -16,7 +16,7 @@ protocol Endpoint: DecodableRequest where ResponseBody == Status {
 
 extension Endpoint {
     var timeoutInterval: TimeInterval {
-        60 * 60
+        5
     }
 
     var urlComponents: URLComponents {

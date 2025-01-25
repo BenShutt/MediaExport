@@ -9,7 +9,6 @@ import Foundation
 
 struct GetStatus: Endpoint {
     let endpoint = "/api/status"
-    let timeoutInterval = 5
 
     func status() async throws -> Int {
         let status = try await request().status

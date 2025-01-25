@@ -16,9 +16,6 @@ struct AssetsManagerTests {
     @Test func fetchAll() async {
         let sut = AssetsManager(photoAuthorization: PhotoAuthorizationMock())
         await sut.load()
-        guard case .success(let count) = sut.state else {
-            Issue.record("Invalid state \(sut.state)")
-            return
-        }
+        #expect(sut.state.isSuccess)
     }
 }
