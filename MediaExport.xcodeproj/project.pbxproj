@@ -141,9 +141,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42953AFC2D3C18EF00991950 /* ColorUtilities in Frameworks */,
 				B824679A2AB8C97C00F39D84 /* DataRequest in Frameworks */,
 				42953AF92D3C0A0B00991950 /* Utilities in Frameworks */,
-				42953AFC2D3C18EF00991950 /* ColorUtilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,9 +249,9 @@
 		B82467A12AB8D1A800F39D84 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				42FE35312D44F1B200B9B2C7 /* MediaMetadata.swift */,
 				B82467B02AB8DB4E00F39D84 /* LoadState.swift */,
 				B82467A52AB8D31900F39D84 /* MediaFile.swift */,
+				42FE35312D44F1B200B9B2C7 /* MediaMetadata.swift */,
 				B8AB87BA2ABC7AF600B3A575 /* Status.swift */,
 			);
 			path = Models;
@@ -293,7 +293,6 @@
 		B8979F9C2ABA2779003203C4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				42BB5D452D45386C00B867BB /* ShareSheet.swift */,
 				42953B072D3D3E2900991950 /* Navigation */,
 				B8979FA82ABA2876003203C4 /* StickyButton */,
 				B8AB87A12ABC2E3100B3A575 /* BadgeView.swift */,
@@ -301,6 +300,7 @@
 				B8A520C12ABB5DDB0013FA4A /* LoadingView.swift */,
 				B8AB879F2ABC2AF300B3A575 /* LoadStateView.swift */,
 				B85F96372ABAD95A004493B5 /* MediaGrid.swift */,
+				42BB5D452D45386C00B867BB /* ShareSheet.swift */,
 				B8979FA92ABA2882003203C4 /* StyledButton.swift */,
 				B8AB87AB2ABC600C00B3A575 /* SuccessView.swift */,
 			);
@@ -358,9 +358,9 @@
 		B8AB87B82ABC7A2D00B3A575 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				42BB5D432D4530A900B867BB /* MetadataManager.swift */,
 				B8A520C32ABB5E4F0013FA4A /* AssetsManager.swift */,
 				B8AB879C2ABC269200B3A575 /* AuthorizationManager.swift */,
+				42BB5D432D4530A900B867BB /* MetadataManager.swift */,
 				B8AB879A2ABC226300B3A575 /* ResourcesManager.swift */,
 				B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */,
 				B8AB87A72ABC524700B3A575 /* UploadManager.swift */,
@@ -531,7 +531,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42BB5D442D4530AA00B867BB /* MetadataManager.swift in Sources */,
 				B8A520C42ABB5E4F0013FA4A /* AssetsManager.swift in Sources */,
 				B8979F932ABA22F4003203C4 /* AssetsScreen.swift in Sources */,
 				B8AB879D2ABC269200B3A575 /* AuthorizationManager.swift in Sources */,
@@ -540,8 +539,6 @@
 				B8AB87AE2ABC61ED00B3A575 /* BarProgressView.swift in Sources */,
 				B8979FB12ABA2B8B003203C4 /* CGFloat+Values.swift in Sources */,
 				B8A520BE2ABB370B0013FA4A /* ColorUtilities.swift in Sources */,
-				42953B092D3D3E4000991950 /* RootNavigationStack.swift in Sources */,
-				42953B0B2D3D3E8600991950 /* NavigationRoute.swift in Sources */,
 				B824676F2AB8C19B00F39D84 /* ContentView.swift in Sources */,
 				B82467A02AB8C9AD00F39D84 /* Endpoint.swift in Sources */,
 				B824679E2AB8C98D00F39D84 /* GetExists.swift in Sources */,
@@ -555,14 +552,18 @@
 				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
 				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
 				B8661E6C2ABCE123006D46ED /* MediaId.swift in Sources */,
-				42953B032D3D239C00991950 /* PHImageManager+Shared.swift in Sources */,
-				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
 				42FE35322D44F1B300B9B2C7 /* MediaMetadata.swift in Sources */,
+				42BB5D442D4530AA00B867BB /* MetadataManager.swift in Sources */,
+				42953B0B2D3D3E8600991950 /* NavigationRoute.swift in Sources */,
+				B82467AE2AB8D73C00F39D84 /* PHAsset+Extensions.swift in Sources */,
 				B8AB87A42ABC327700B3A575 /* PHAssetMediaType+UI.swift in Sources */,
+				42953B032D3D239C00991950 /* PHImageManager+Shared.swift in Sources */,
 				B824679C2AB8C98700F39D84 /* PostUpload.swift in Sources */,
 				B8AB879B2ABC226300B3A575 /* ResourcesManager.swift in Sources */,
 				B8AB87992ABC202600B3A575 /* ResourcesScreen.swift in Sources */,
+				42953B092D3D3E4000991950 /* RootNavigationStack.swift in Sources */,
 				B8979F962ABA230F003203C4 /* Screen.swift in Sources */,
+				42BB5D462D45386F00B867BB /* ShareSheet.swift in Sources */,
 				B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */,
 				B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */,
 				B8AB87B52ABC6DA200B3A575 /* StatusScreen.swift in Sources */,
@@ -570,11 +571,10 @@
 				B8979FA42ABA27A2003203C4 /* StickyButton.swift in Sources */,
 				B8979FAA2ABA2882003203C4 /* StyledButton.swift in Sources */,
 				B8AB87AC2ABC600C00B3A575 /* SuccessView.swift in Sources */,
-				B8979FA72ABA2800003203C4 /* View+TextStyles.swift in Sources */,
 				B8AB87A82ABC524700B3A575 /* UploadManager.swift in Sources */,
 				B8AB87A62ABC522F00B3A575 /* UploadScreen.swift in Sources */,
 				B86BA4592AC05627006F06FC /* VideoFetcher.swift in Sources */,
-				42BB5D462D45386F00B867BB /* ShareSheet.swift in Sources */,
+				B8979FA72ABA2800003203C4 /* View+TextStyles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
