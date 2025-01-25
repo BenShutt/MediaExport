@@ -8,6 +8,8 @@
 import Testing
 @testable import MediaExport
 
+// TODO: Needs to be an integration test or PHAssets are mocked
+
 @MainActor
 @Suite
 struct AssetsManagerTests {
