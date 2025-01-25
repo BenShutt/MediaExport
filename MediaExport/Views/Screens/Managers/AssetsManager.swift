@@ -48,7 +48,7 @@ final class AssetsManager: ObservableObject {
 
     private nonisolated func fetchAll() async throws -> AssetsMap {
         try await withThrowingTaskGroup(
-            of: (PHAssetMediaType, [PHAsset]).self
+            of: (key: PHAssetMediaType, value: [PHAsset]).self
         ) { group in
             for mediaType in mediaTypes {
                 group.addTask {
@@ -58,7 +58,7 @@ final class AssetsManager: ObservableObject {
             }
 
             return try await group.reduce(into: [:]) { map, tuple in
-                map[tuple.0] = tuple.1
+                map[tuple.key] = tuple.value
             }
         }
     }
