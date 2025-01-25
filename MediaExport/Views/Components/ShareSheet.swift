@@ -8,6 +8,7 @@
 import SwiftUI
 import LinkPresentation
 
+// TODO: Replace? OnDismiss is used on the sheet (which works for the dismiss gesture)
 struct ShareSheet: UIViewControllerRepresentable {
     let items: [ActivityItemSource]
     var onCompletion: UIActivityViewController.CompletionWithItemsHandler?

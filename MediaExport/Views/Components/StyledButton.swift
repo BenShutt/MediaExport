@@ -7,16 +7,26 @@
 
 import SwiftUI
 
-struct StyledButton: View {
+struct StyledButton<Content: View>: View {
     @Environment(\.isEnabled) var isEnabled: Bool
 
-    var key: LocalizedStringKey
+    @ViewBuilder var title: () -> Content
     var backgroundColor: Color = .appYellow
     var onTap: () -> Void
 
+    init(
+        title: @autoclosure @escaping () -> Content,
+        backgroundColor: Color,
+        onTap: @escaping () -> Void
+    ) {
+        self.title = title
+        self.backgroundColor = backgroundColor
+        self.onTap = onTap
+    }
+
     var body: some View {
         Button(action: onTap) {
-            Text(key)
+            title()
                 .button()
                 .tint(.appDarkGray)
                 .frame(maxWidth: .infinity)
@@ -25,6 +35,22 @@ struct StyledButton: View {
                 .clipShape(Capsule())
         }
         .buttonStyle(PlainButtonStyle()) // For dimming on disabled
+    }
+}
+
+// MARK: - StyledButton + LocalizedStringKey
+
+extension StyledButton where Content == Text {
+    init(
+        key: LocalizedStringKey,
+        backgroundColor: Color = .appYellow,
+        onTap: @escaping () -> Void
+    ) {
+        self.init(
+            title: Text(key),
+            backgroundColor: backgroundColor,
+            onTap: onTap
+        )
     }
 }
 

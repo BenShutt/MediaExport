@@ -23,12 +23,19 @@ struct ResourcesScreen: View {
     }
 
     private var isMetadataDisabled: Bool {
-        !resourcesManager.state.isSuccess ||
-            metaDataManager.state.isLoading
+        !resourcesManager.state.isSuccess || isMetadataLoading
     }
 
     private var isContinueDisabled: Bool {
         !resourcesManager.state.isSuccess
+    }
+
+    private var isMetadataLoading: Bool {
+        metaDataManager.state.isLoading
+    }
+
+    private var metadataTitle: some View {
+        isMetadataLoading ? Text(verbatim: " ") : Text("metadata_button")
     }
 
     var body: some View {
@@ -51,11 +58,16 @@ struct ResourcesScreen: View {
             StickyBottom {
                 VStack(spacing: .vPadding) {
                     StyledButton(
-                        key: "metadata_button",
+                        title: metadataTitle,
                         backgroundColor: .appGreen,
                         onTap: onMetadata
                     )
                     .disabled(isMetadataDisabled)
+                    .overlay {
+                        if isMetadataLoading {
+                            LoadingView()
+                        }
+                    }
 
                     StyledButton(
                         key: "continue_button",
@@ -67,11 +79,15 @@ struct ResourcesScreen: View {
                 .padding(EdgeInsets.padding)
             }
         )
-        .sheet(item: $metaDataManager.presentedSheetURL) { url in
-            ShareSheet(items: [url.item]) { _, _, _, _ in
+        .sheet(
+            item: $metaDataManager.presentedSheetURL,
+            onDismiss: {
                 onShareDismissed()
+            },
+            content: { url in
+                ShareSheet(items: [url.item])
             }
-        }
+        )
         .task {
             await resourcesManager.load()
         }
