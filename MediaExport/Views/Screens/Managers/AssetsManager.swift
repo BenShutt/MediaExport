@@ -13,12 +13,7 @@ typealias AssetsMap = [PHAssetMediaType: [PHAsset]]
 @MainActor
 final class AssetsManager: ObservableObject {
     let mediaTypes: [PHAssetMediaType] = [.unknown, .image, .video, .audio]
-    let photoAuthorization: PhotoAuthorization
     @Published private(set) var state: LoadState<AssetsMap> = .idle
-
-    init(photoAuthorization: PhotoAuthorization = AuthorizationManager()) {
-        self.photoAuthorization = photoAuthorization
-    }
 
     // TODO: Improve LoadState code re-use
     func load() async {
@@ -34,7 +29,7 @@ final class AssetsManager: ObservableObject {
     private nonisolated func fetchAll(
         for mediaType: PHAssetMediaType
     ) async throws -> [PHAsset] {
-        try await photoAuthorization.checkAuthorized()
+        try await AuthorizationManager().checkAuthorized()
 
         // Ignore iCloud and iTunes media
         let options = PHFetchOptions()

@@ -9,13 +9,7 @@ import Foundation
 import Photos
 
 @MainActor
-protocol PhotoAuthorization: Sendable {
-    func checkAuthorized() throws
-}
-
-// MARK: - AuthorizationManager
-
-struct AuthorizationManager: PhotoAuthorization {
+struct AuthorizationManager {
     let accessLevel: PHAccessLevel = .readWrite
 
     func checkAuthorized() throws {
