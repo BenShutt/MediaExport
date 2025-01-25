@@ -90,7 +90,14 @@
       }
     },
     "export_share_title" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share Metadata"
+          }
+        }
+      }
     },
     "media_file_count" : {
       "extractionState" : "manual",
@@ -196,7 +203,14 @@
       }
     },
     "metadata_button" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EXPORT METADATA"
+          }
+        }
+      }
     },
     "resources_subtitle" : {
       "extractionState" : "manual",
