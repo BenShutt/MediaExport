@@ -8,7 +8,6 @@
 import Photos
 
 struct MediaFile: Equatable, Hashable {
-    let originalFilename: String
     let asset: PHAsset
     let fileName: String
 
@@ -16,15 +15,11 @@ struct MediaFile: Equatable, Hashable {
         asset.mediaType
     }
 
-    init(
-        originalFilename: String,
-        asset: PHAsset
-    ) async {
-        self.originalFilename = originalFilename
+    init(asset: PHAsset) async throws {
         self.asset = asset
-        fileName = await MediaId(
+        fileName = try await MediaId(
             localIdentifier: asset.localIdentifier,
-            originalFilename: originalFilename
+            originalFilename: asset.originalFilename
         ).description
     }
 

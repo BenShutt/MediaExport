@@ -17,9 +17,7 @@ struct ImageFetcher {
         options.deliveryMode = .highQualityFormat
         options.resizeMode = .none
         options.isNetworkAccessAllowed = true
-        if #available(iOS 17, *) {
-            options.allowSecondaryDegradedImage = false
-        }
+        options.allowSecondaryDegradedImage = false
         return options
     }()
 

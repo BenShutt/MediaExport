@@ -34,9 +34,9 @@ final class UploadManager: ObservableObject {
 
     func sync() async {
         guard case .idle = loadState else { return }
+        loadState = .loading
 
         syncedMediaFiles = []
-        loadState = .loading
         syncState = nil
         defer { syncState = nil }
 

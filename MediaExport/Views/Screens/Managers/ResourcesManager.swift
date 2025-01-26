@@ -47,14 +47,12 @@ final class ResourcesManager: ObservableObject {
         }
     }
 
+    // TODO: Too many tasks?
     private func map(assetsMap: AssetsMap) async throws -> [MediaFile] {
         try await withThrowingTaskGroup(of: MediaFile.self) { group in
             for asset in assetsMap.values.flatMap(\.self) {
                 group.addTask {
-                    try await MediaFile(
-                        originalFilename: asset.originalFilename,
-                        asset: asset
-                    )
+                    try await MediaFile(asset: asset)
                 }
             }
 

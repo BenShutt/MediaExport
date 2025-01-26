@@ -13,7 +13,7 @@ import Utilities
 
 extension PHAsset {
 
-    /// - Warning: Each PHAsset object references one or *more* resources.
+    /// - Warning: Assumes each PHAsset object references at least one resource.
     private var firstResource: PHAssetResource {
         get throws {
             let resources = PHAssetResource.assetResources(for: self)

@@ -22,7 +22,7 @@ extension Endpoint {
     var urlComponents: URLComponents {
         var components = URLComponents()
         components.scheme = "http"
-        components.host = "192.168.1.109"
+        components.host = "192.168.1.109" // Update accordingly
         components.port = 8000
         components.path = endpoint
         components.queryItems = nil
