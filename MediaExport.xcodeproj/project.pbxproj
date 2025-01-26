@@ -59,7 +59,6 @@
 		B8AB87B52ABC6DA200B3A575 /* StatusScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */; };
 		B8AB87B72ABC6E3B00B3A575 /* StatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */; };
 		B8AB87BB2ABC7AF600B3A575 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87BA2ABC7AF600B3A575 /* Status.swift */; };
-		B8AB87BD2ABC855D00B3A575 /* MediaDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AB87BC2ABC855D00B3A575 /* MediaDirectory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,7 +132,6 @@
 		B8AB87B42ABC6DA200B3A575 /* StatusScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusScreen.swift; sourceTree = "<group>"; };
 		B8AB87B62ABC6E3B00B3A575 /* StatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusManager.swift; sourceTree = "<group>"; };
 		B8AB87BA2ABC7AF600B3A575 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
-		B8AB87BC2ABC855D00B3A575 /* MediaDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDirectory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,7 +337,6 @@
 			children = (
 				B86BA4572AC0561C006F06FC /* Fetcher */,
 				B8A520BD2ABB370B0013FA4A /* ColorUtilities.swift */,
-				B8AB87BC2ABC855D00B3A575 /* MediaDirectory.swift */,
 				B8661E6B2ABCE123006D46ED /* MediaId.swift */,
 			);
 			path = Utilities;
@@ -547,7 +544,6 @@
 				B8A520C22ABB5DDB0013FA4A /* LoadingView.swift in Sources */,
 				B82467B12AB8DB4E00F39D84 /* LoadState.swift in Sources */,
 				B8AB87A02ABC2AF300B3A575 /* LoadStateView.swift in Sources */,
-				B8AB87BD2ABC855D00B3A575 /* MediaDirectory.swift in Sources */,
 				B824676D2AB8C19B00F39D84 /* MediaExportApp.swift in Sources */,
 				B82467A62AB8D31900F39D84 /* MediaFile.swift in Sources */,
 				B85F96382ABAD95A004493B5 /* MediaGrid.swift in Sources */,
